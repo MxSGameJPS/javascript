@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* garante que o wrapper ocupe a tela inteira */
+}
+
+.main {
+  flex: 1 1 auto; /* permite que o main cresça e empurre o footer para baixo */
+  min-height: 0; /* evita overflow em elementos flex */
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,29 @@
+.footer {
+  width: 100%;
+  padding: 1.5rem 0;
+  background: linear-gradient(180deg, #061223, #071427);
+  color: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  margin-top: auto; /* empurra o footer para a base quando a página é um flex container */
+}
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+}
+.center {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.credit {
+  color: #79a9ff;
+  font-weight: 600;
+}
+.creditLink {
+  color: #00e1ff;
+  text-decoration: none;
+  font-weight: 700;
+}
