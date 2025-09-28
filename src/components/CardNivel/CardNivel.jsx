@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./CardNivel.module.css";
+import { useRouter } from "next/navigation";
 import translations from "../../i18n/translations";
 
 const LANG_KEY = "nextpath_lang";
@@ -14,6 +15,7 @@ const CardNivel = ({
   status = "bloqueado", // 'disponivel', 'concluido', 'bloqueado'
   onClick,
 }) => {
+  const router = useRouter();
   const [lang, setLang] = useState("pt-BR");
 
   useEffect(() => {
@@ -104,7 +106,15 @@ const CardNivel = ({
 
       <button
         className={styles.button}
-        onClick={onClick}
+        onClick={() => {
+          if (status === "bloqueado") return;
+          // se onClick foi passado, chama, senão navega para a rota do nível
+          if (typeof onClick === "function") {
+            onClick();
+          } else if (slug) {
+            router.push(`/nivel/${slug}`);
+          }
+        }}
         disabled={status === "bloqueado"}
       >
         {status === "disponivel" && <span className={styles.playIcon}>▶</span>}

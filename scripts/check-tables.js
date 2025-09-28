@@ -1,7 +1,12 @@
 const { Client } = require("pg");
-const CONNECTION =
-  process.env.NEON_DATABASE_URL ||
-  "postgresql://neondb_owner:npg_cGsr8gqvkO4J@ep-steep-darkness-ac8ctclq-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require";
+const CONNECTION = process.env.NEON_DATABASE_URL || process.env.DATABASE_URL;
+
+if (!CONNECTION) {
+  console.error(
+    "NEON_DATABASE_URL or DATABASE_URL is not set. Set the connection string in your environment and do NOT commit it to source control."
+  );
+  process.exit(1);
+}
 
 (async () => {
   const c = new Client({ connectionString: CONNECTION });

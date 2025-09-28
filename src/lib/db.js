@@ -1,13 +1,22 @@
 import { Client } from "pg";
 
-// Prefer environment variable; fallback to the provided connection string.
+// The DB connection string MUST come from an environment variable.
+// Do NOT hardcode credentials here.
 const CONNECTION_STRING =
-  process.env.NEON_DATABASE_URL ||
-  "postgresql://neondb_owner:npg_cGsr8gqvkO4J@ep-steep-darkness-ac8ctclq-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require";
+  process.env.NEON_DATABASE_URL || process.env.DATABASE_URL;
 
 let client;
 
+function ensureConnectionString() {
+  if (!CONNECTION_STRING) {
+    throw new Error(
+      "NEON_DATABASE_URL or DATABASE_URL is not set. Set it in your environment and do NOT commit credentials to source control."
+    );
+  }
+}
+
 export async function getClient() {
+  ensureConnectionString();
   if (!client) {
     client = new Client({ connectionString: CONNECTION_STRING });
     await client.connect();
