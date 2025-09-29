@@ -23,9 +23,27 @@ export default async function ProgressoPage() {
             >
               Meu Perfil
             </a>
-            <button className={styles.actionBtn}>Praticar</button>
-            <button className={styles.actionBtn}>Continuar estudo</button>
-            <button className={styles.actionBtn}>Ver Relatório</button>
+            <a
+              href="/desafios"
+              className={styles.actionBtn}
+              style={{ textAlign: "center", textDecoration: "none" }}
+            >
+              Praticar
+            </a>
+            <a
+              href="/continuar"
+              className={styles.actionBtn}
+              style={{ textAlign: "center", textDecoration: "none" }}
+            >
+              Continuar estudo
+            </a>
+            <a
+              href="/relatorio"
+              className={styles.actionBtn}
+              style={{ textAlign: "center", textDecoration: "none" }}
+            >
+              Ver Relatório
+            </a>
             <button className={styles.actionBtn}>Baixar Certificado</button>
           </div>
         </aside>

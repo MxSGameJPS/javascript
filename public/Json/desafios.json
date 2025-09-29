@@ -1,0 +1,70 @@
+{
+  "iniciante": [
+    {
+      "Desafio": "Crie uma nova página na rota `/sobre` que exiba um título `<h1>` com o texto 'Página Sobre Nós'.",
+      "Dica": "Lembre-se que o Next.js usa o sistema de arquivos para criar rotas. Onde os arquivos de página devem ser colocados? (Dica: no Pages Router, é a pasta `pages`; no App Router, é `app/sobre/page.js`).",
+      "Resposta": "No Pages Router, crie o arquivo `pages/sobre.js`:\n\n```javascript\nfunction SobrePage() {\n  return <h1>Página Sobre Nós</h1>;\n}\n\nexport default SobrePage;\n```\n\nNo App Router, crie o arquivo `app/sobre/page.js` com o mesmo conteúdo."
+    },
+    {
+      "Desafio": "Na sua página inicial (`index.js` ou `app/page.js`), adicione um link que navegue para a página `/sobre` que você acabou de criar.",
+      "Dica": "Para navegação rápida do lado do cliente, você precisa importar e usar um componente especial do Next.js em vez da tag `<a>` padrão.",
+      "Resposta": "Importe o componente `Link` de `next/link` e use-o da seguinte forma:\n\n```javascript\nimport Link from 'next/link';\n\nfunction HomePage() {\n  return (\n    <div>\n      <h1>Bem-vindo!</h1>\n      <Link href=\"/sobre\">\n        <a>Ir para a página Sobre</a>\n      </Link>\n    </div>\n  );\n}\n\nexport default HomePage;\n```"
+    },
+    {
+      "Desafio": "Crie um componente reutilizável chamado `Botao` que aceita uma propriedade (prop) `texto` e exiba esse texto. Use este componente na sua página inicial.",
+      "Dica": "Crie uma nova pasta `components` na raiz do projeto. O componente será uma função que recebe `props` como argumento e retorna um elemento `<button>`.",
+      "Resposta": "1. Crie o arquivo `components/Botao.js`:\n```javascript\nfunction Botao({ texto }) {\n  return <button>{texto}</button>;\n}\n\nexport default Botao;\n```\n\n2. Use-o na sua página:\n```javascript\nimport Botao from '../components/Botao';\n\nfunction HomePage() {\n  return (\n    <div>\n      <h1>Página Inicial</h1>\n      <Botao texto=\"Clique em Mim\" />\n      <Botao texto=\"Enviar Formulário\" />\n    </div>\n  );\n}\n```"
+    }
+  ],
+  "intermediario": [
+    {
+      "Desafio": "Crie uma página que busque uma lista de posts da API pública 'JSONPlaceholder' (`/posts`) e exiba os títulos em uma lista `<ul>`. A busca de dados deve acontecer em tempo de build (SSG).",
+      "Dica": "Você precisará exportar uma função `async` chamada `getStaticProps` de dentro do seu arquivo de página. Use a função `fetch` para buscar os dados e retorne-os como props.",
+      "Resposta": "No arquivo `pages/posts.js`:\n\n```javascript\nfunction PostsPage({ posts }) {\n  return (\n    <div>\n      <h1>Lista de Posts</h1>\n      <ul>\n        {posts.map(post => (\n          <li key={post.id}>{post.title}</li>\n        ))}\n      </ul>\n    </div>\n  );\n}\n\nexport async function getStaticProps() {\n  const res = await fetch('[https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder.typicode.com/posts)');\n  const posts = await res.json();\n\n  return {\n    props: {\n      posts,\n    },\n  };\n}\n\nexport default PostsPage;\n```"
+    },
+    {
+      "Desafio": "Crie uma rota dinâmica `/produtos/[id]` que exibe o ID do produto na tela. Por exemplo, acessar `/produtos/123` deve mostrar 'Detalhes do Produto: 123'.",
+      "Dica": "Use colchetes `[]` no nome do arquivo para indicar um parâmetro dinâmico. No componente, use o hook `useRouter` para acessar o valor do `id` que está na URL.",
+      "Resposta": "Crie o arquivo `pages/produtos/[id].js`:\n\n```javascript\nimport { useRouter } from 'next/router';\n\nfunction ProdutoDetalhePage() {\n  const router = useRouter();\n  const { id } = router.query;\n\n  return <h1>Detalhes do Produto: {id}</h1>;\n}\n\nexport default ProdutoDetalhePage;\n```"
+    },
+    {
+      "Desafio": "Crie uma API Route em `/api/usuario` que retorne um objeto JSON com seu nome e profissão quando acessada com o método GET.",
+      "Dica": "Crie um arquivo dentro da pasta `pages/api`. A função que você exportar receberá os objetos `req` (requisição) e `res` (resposta). Use `res.status(200).json(...)` para enviar a resposta.",
+      "Resposta": "Crie o arquivo `pages/api/usuario.js`:\n\n```javascript\nexport default function handler(req, res) {\n  if (req.method === 'GET') {\n    res.status(200).json({ nome: 'Seu Nome', profissao: 'Desenvolvedor' });\n  } else {\n    res.setHeader('Allow', ['GET']);\n    res.status(405).end(`Method ${req.method} Not Allowed`);\n  }\n}\n```"
+    }
+  ],
+  "avancado": [
+    {
+      "Desafio": "Crie uma página de blog dinâmica (`/blog/[slug]`) que seja gerada estaticamente para 3 posts específicos (`post-1`, `post-2`, `post-3`). A página deve buscar os dados de cada post individualmente.",
+      "Dica": "Você precisará de duas funções: `getStaticPaths` para definir a lista de slugs que serão pré-renderizados, e `getStaticProps` para buscar os dados de cada slug recebido via `params`.",
+      "Resposta": "No arquivo `pages/blog/[slug].js`:\n\n```javascript\n// Simulação de busca de dados\nconst getPostData = (slug) => ({ slug, title: `Título do ${slug}`, content: '...' });\n\nfunction PostPage({ post }) {\n  return <h1>{post.title}</h1>;\n}\n\nexport async function getStaticPaths() {\n  const paths = [\n    { params: { slug: 'post-1' } },\n    { params: { slug: 'post-2' } },\n    { params: { slug: 'post-3' } },\n  ];\n  return { paths, fallback: false };\n}\n\nexport async function getStaticProps({ params }) {\n  const postData = getPostData(params.slug);\n  return { props: { post: postData } };\n}\n\nexport default PostPage;\n```"
+    },
+    {
+      "Desafio": "Crie um Middleware que proteja todas as rotas dentro de `/dashboard/*`. Se o usuário não tiver um cookie chamado `auth_token`, ele deve ser redirecionado para a página `/login`.",
+      "Dica": "Crie um arquivo `middleware.js` na raiz do projeto (ou dentro de `pages`). Defina um `matcher` para as rotas do dashboard. Dentro da função, verifique `req.cookies.has('auth_token')` e use `NextResponse.redirect()`.",
+      "Resposta": "Crie o arquivo `middleware.js` na raiz do projeto:\n\n```javascript\nimport { NextResponse } from 'next/server';\n\nexport function middleware(req) {\n  const token = req.cookies.get('auth_token');\n\n  if (!token) {\n    const loginUrl = new URL('/login', req.url);\n    return NextResponse.redirect(loginUrl);\n  }\n\n  return NextResponse.next();\n}\n\nexport const config = {\n  matcher: '/dashboard/:path*',\n};\n```"
+    },
+    {
+      "Desafio": "Usando o App Router, crie um formulário de contato simples com um campo de 'mensagem'. Use uma Server Action para receber o valor do formulário e logá-lo no console do servidor.",
+      "Dica": "Crie uma função `async` dentro do seu componente `page.js`. Passe essa função para a prop `action` do seu elemento `<form>`. O `FormData` estará disponível como argumento da sua action.",
+      "Resposta": "No arquivo `app/contato/page.js`:\n\n```javascript\nexport default function ContatoPage() {\n  async function enviarMensagem(formData) {\n    'use server';\n    const mensagem = formData.get('mensagem');\n    console.log('Nova mensagem:', mensagem);\n  }\n\n  return (\n    <form action={enviarMensagem}>\n      <textarea name=\"mensagem\" />\n      <button type=\"submit\">Enviar</button>\n    </form>\n  );\n}\n```"
+    }
+  ],
+  "especialista": [
+    {
+      "Desafio": "Implemente a revalidação de cache sob demanda (On-Demand ISR). Crie uma página estática que exibe a hora atual. Crie uma API Route secreta que, ao ser chamada, força a regeneração dessa página estática.",
+      "Dica": "Na página, use `getStaticProps` e retorne a hora. Na API Route, verifique um token secreto, e se for válido, chame a função `res.revalidate('/caminho-da-pagina')`.",
+      "Resposta": "1. Página `pages/hora.js`:\n```javascript\nfunction HoraPage({ hora }) {\n  return <h1>Hora: {hora}</h1>;\n}\n\nexport async function getStaticProps() {\n  return { props: { hora: new Date().toLocaleTimeString() }, revalidate: 60 };\n}\n\nexport default HoraPage;\n```\n\n2. API `pages/api/revalidate.js`:\n```javascript\nexport default async function handler(req, res) {\n  if (req.query.secret !== 'SEU_TOKEN_SECRETO') {\n    return res.status(401).json({ message: 'Token inválido' });\n  }\n  try {\n    await res.revalidate('/hora');\n    return res.json({ revalidated: true });\n  } catch (err) {\n    return res.status(500).send('Erro na revalidação');\n  }\n}\n```"
+    },
+    {
+      "Desafio": "Usando o App Router, implemente Parallel Routes para um dashboard. O layout principal em `/dashboard` deve renderizar simultaneamente um componente de `@analytics` e um de `@users`, cada um com seu próprio conteúdo.",
+      "Dica": "Sua estrutura de pastas será `/dashboard/@analytics/page.js`, `/dashboard/@users/page.js` e `/dashboard/layout.js`. O componente de layout receberá `analytics` e `users` como props.",
+      "Resposta": "1. Crie as pastas e arquivos: `app/dashboard/@analytics/page.js`, `app/dashboard/@users/page.js`.\n2. Crie o layout em `app/dashboard/layout.js`:\n\n```javascript\nexport default function DashboardLayout({ children, users, analytics }) {\n  return (\n    <section>\n      {children} \n      <div style={{ display: 'flex' }}>\n        <div style={{ flex: 1 }}>{users}</div>\n        <div style={{ flex: 1 }}>{analytics}</div>\n      </div>\n    </section>\n  );\n}\n```\nO `children` aqui seria o `dashboard/page.js`."
+    },
+    {
+      "Desafio": "Em uma página de produto dinâmica no App Router (`/produto/[id]`), use a função `generateMetadata` para buscar o nome do produto de uma API e defini-lo como o título da página e a meta tag `og:title`.",
+      "Dica": "Exporte uma função `async function generateMetadata({ params })`. Dentro dela, use `params.id` para fazer um `fetch` dos dados do produto e retorne um objeto com as chaves `title` e `openGraph: { title: ... }`.",
+      "Resposta": "No arquivo `app/produto/[id]/page.js`:\n\n```javascript\nasync function getProduto(id) {\n  const res = await fetch(`https://api.exemplo.com/produtos/${id}`);\n  return res.json();\n}\n\nexport async function generateMetadata({ params }) {\n  const produto = await getProduto(params.id);\n  return {\n    title: produto.nome,\n    openGraph: {\n      title: produto.nome,\n    },\n  };\n}\n\nexport default async function ProdutoPage({ params }) {\n  const produto = await getProduto(params.id);\n  return <h1>{produto.nome}</h1>;\n}\n```"
+    }
+  ]
+}

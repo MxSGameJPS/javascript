@@ -1,12 +1,9 @@
-import { Client } from "pg";
+import { Pool } from "pg";
 
-// The DB connection string MUST come from an environment variable.
-// Do NOT hardcode credentials here.
 const CONNECTION_STRING =
   process.env.NEON_DATABASE_URL || process.env.DATABASE_URL;
 
-let client;
-
+let pool;
 function ensureConnectionString() {
   if (!CONNECTION_STRING) {
     throw new Error(
@@ -15,16 +12,15 @@ function ensureConnectionString() {
   }
 }
 
-export async function getClient() {
+function getPool() {
   ensureConnectionString();
-  if (!client) {
-    client = new Client({ connectionString: CONNECTION_STRING });
-    await client.connect();
+  if (!pool) {
+    pool = new Pool({ connectionString: CONNECTION_STRING });
   }
-  return client;
+  return pool;
 }
 
 export async function query(text, params) {
-  const c = await getClient();
-  return c.query(text, params);
+  const p = getPool();
+  return p.query(text, params);
 }

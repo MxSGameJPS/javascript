@@ -1,0 +1,48 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.niveisSection {
+  padding: 4rem 2rem 0rem;
+  position: relative;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 0;
+}
+
+.niveisGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #fafafa;
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.backBtn {
+  margin-bottom: 1.5rem;
+  margin-left: 1.5rem;
+  background: #eee;
+  color: #222;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+}

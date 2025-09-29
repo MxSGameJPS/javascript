@@ -1,3 +1,8 @@
+html,
+body,
+#__next {
+  height: 100%;
+}
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
@@ -23,7 +28,6 @@ body {
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -43,7 +47,6 @@ a {
 main {
   /* allow main to grow and push footer to bottom when content is short */
   flex: 1 1 auto;
-  min-height: 0;
 }
 
 button {

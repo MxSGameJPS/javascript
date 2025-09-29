@@ -1,10 +1,9 @@
 .page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* ocupar toda a viewport */
   background: linear-gradient(180deg, #071022, #07132a);
   color: #fff;
-  /* garantir que a página empurre o footer para baixo */
+  /* garantir que a página empurre o footer para baixo quando necessário */
   justify-content: space-between;
 }
 .progressWrap {

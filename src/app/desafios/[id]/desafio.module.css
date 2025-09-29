@@ -1,0 +1,123 @@
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.title {
+  color: #fff;
+  font-size: 1.8rem;
+}
+.nivel {
+  color: #93c5fd;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.desafio {
+  color: #e5e7eb;
+  margin: 1rem 0;
+}
+.dica {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem;
+  border-radius: 6px;
+}
+.resposta {
+  background: rgba(0, 0, 0, 0.7);
+  color: #e6fffd;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow: auto;
+}
+
+.desafioTitulo {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.dicaWrapper {
+  margin-bottom: 1rem;
+}
+.hintToggle {
+  background: #111827;
+  color: #fff;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-weight: 700;
+}
+
+.ideWrapper {
+  margin-top: 1rem;
+}
+.label {
+  color: #9ca3af;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.ide {
+  width: 100%;
+  min-height: 200px;
+  background: #010617;
+  color: #e6eef8;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono",
+    "Courier New", monospace;
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.submitBtn {
+  background: linear-gradient(90deg, #06b6d4, #0ea5e9);
+  color: #fff;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  font-weight: 700;
+  border: none;
+}
+.clearBtn {
+  background: transparent;
+  color: #94a3b8;
+  padding: 0.45rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.resultOk {
+  margin-top: 0.8rem;
+  padding: 0.6rem;
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  border-radius: 6px;
+}
+.resultErr {
+  margin-top: 0.8rem;
+  padding: 0.6rem;
+  background: rgba(239, 68, 68, 0.06);
+  color: #ef4444;
+  border-radius: 6px;
+}
+
+.reference {
+  margin-top: 1.25rem;
+}
+
+.topRow {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0.75rem;
+}
+.backToList {
+  background: transparent;
+  color: #9ca3af;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+}
