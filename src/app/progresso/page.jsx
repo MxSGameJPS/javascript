@@ -1,4 +1,5 @@
 import React from "react";
+export const dynamic = "force-dynamic";
 import { getTopUsersByGemas } from "../../data/ranking";
 import styles from "./progresso.module.css";
 import RankingTable from "./RankingTable";
