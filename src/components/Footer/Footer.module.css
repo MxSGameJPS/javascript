@@ -1,7 +1,7 @@
 /* Footer.module.css */
 .footer {
   width: 100%;
-  padding: 1.55rem 1.25rem;
+  padding: 1.2rem 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.02);
   background: linear-gradient(
     180deg,
@@ -67,6 +67,14 @@
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.12);
   font-weight: 700;
+}
+
+/* Slightly smaller credit text and link on smaller screens */
+.credit {
+  font-size: 0.95rem;
+}
+.creditLink {
+  font-size: 0.95rem;
 }
 
 .customOptions {
@@ -146,5 +154,97 @@
   }
   .left {
     justify-content: center;
+  }
+
+  /* Make inner stack vertically and center children so items don't overlap */
+  .inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0 0.6rem;
+  }
+
+  /* Ensure each block takes full width and centers its content */
+  .inner > * {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .loginLinks {
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .links {
+    justify-content: center;
+  }
+
+  /* Reposition the custom options so they open centered above the button on small screens */
+  .customOptions {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(100% + 6px);
+    min-width: 160px;
+  }
+
+  .customSelect {
+    width: auto;
+    margin: 0 auto;
+  }
+
+  /* tighten spacing between label and button specifically */
+  .links {
+    gap: 0.35rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .links label {
+    margin-right: 0.15rem;
+  }
+
+  .customSelect {
+    margin-left: 0;
+  }
+
+  /* more compact footer on small devices */
+  .footer {
+    padding: 0.9rem 0.6rem;
+  }
+
+  .credit,
+  .creditLink {
+    font-size: 0.9rem;
+  }
+
+  .customSelectButton {
+    padding: 0.3rem 0.65rem;
+    font-weight: 700;
+    min-width: 120px;
+  }
+
+  .userName {
+    color: #fff;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  /* very small screens: hide the 'developed by' label to save space */
+  @media (max-width: 420px) {
+    .left .credit {
+      display: none;
+    }
+    .left .creditLink {
+      font-size: 0.9rem;
+    }
+    .customSelectButton {
+      min-width: 100px;
+    }
   }
 }

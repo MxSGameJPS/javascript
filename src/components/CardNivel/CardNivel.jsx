@@ -4,8 +4,7 @@ import styles from "./CardNivel.module.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import translations from "../../i18n/translations";
-
-const LANG_KEY = "nextpath_lang";
+import { useLang } from "../../i18n/useLang";
 
 const CardNivel = ({
   nivel,
@@ -17,31 +16,7 @@ const CardNivel = ({
   onClick,
 }) => {
   const router = useRouter();
-  const [lang, setLang] = useState("pt-BR");
-
-  useEffect(() => {
-    const stored =
-      typeof window !== "undefined" ? localStorage.getItem(LANG_KEY) : null;
-    if (stored) setLang(stored);
-
-    function onLangChange(e) {
-      const newLang =
-        e?.detail?.lang ||
-        (typeof window !== "undefined" && localStorage.getItem(LANG_KEY));
-      if (newLang) setLang(newLang);
-    }
-
-    if (typeof window !== "undefined") {
-      window.addEventListener("nextpath:langChanged", onLangChange);
-    }
-
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener("nextpath:langChanged", onLangChange);
-      }
-    };
-  }, []);
-
+  const [lang] = useLang();
   const t = translations[lang] || translations["pt-BR"];
 
   const getStatusText = () => {

@@ -53,8 +53,40 @@
   padding: 0.35rem 0.6rem;
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(255, 255, 255, 0.03);
-  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  color: #e6eef8;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.langSelect:focus {
+  outline: 2px solid rgba(3, 169, 244, 0.25);
+  box-shadow: 0 0 0 3px rgba(3, 169, 244, 0.08);
+}
+.langSelect option {
+  background: #0b1224; /* fallback: background of dropdown */
+  color: #e6eef8;
+}
+
+/* stronger specificity to override UA styles in some browsers */
+.langWrap select,
+.langWrap .langSelect {
+  background-color: #0b1224 !important;
+  color: #e6eef8 !important;
+}
+.langWrap select option,
+.langWrap .langSelect option {
+  background-color: #0b1224 !important;
+  color: #e6eef8 !important;
+}
+
+/* hide default dropdown arrow on IE/Edge */
+.langSelect::-ms-expand {
+  display: none;
+}
+
+/* small width fix so the arrow doesn't overlap text on some browsers */
+.langWrap {
+  position: relative;
 }
 .langLabel {
   color: rgba(255, 255, 255, 0.8);

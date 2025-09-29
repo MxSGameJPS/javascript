@@ -2,53 +2,53 @@
 import styles from "./LandingHero.module.css";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import SupportCard from "../SupportCard/SupportCard";
+import { useLang } from "../../i18n/useLang";
+import translations from "../../i18n/translations";
 
 export default function LandingHero() {
   const router = useRouter();
+  const [lang] = useLang();
+  const t = translations[lang] || translations["pt-BR"];
+  const titleLines = (t.heroTitle || "").split("\n");
   return (
-    <>
-      <section className={styles.hero}>
-        <div className={styles.container}>
-          <div className={styles.left}>
-            <Image
-              src="/next.svg"
-              alt="logo"
-              width={320}
-              height={320}
-              className={styles.logoImage}
-            />
-          </div>
-          <div className={styles.right}>
-            <h1 className={styles.title}>
-              O jeito grátis, divertido e eficaz de aprender Next.Js!
-            </h1>
-            <p className={styles.subtitle}>
-              Domine os conceitos de Next através de quizzes interativos e
-              desafios práticos.
-            </p>
-            <div className={styles.actions}>
-              <button
-                className={styles.primary}
-                onClick={() => router.push("/inicio")}
-              >
-                Comece agora
-              </button>
-              <button
-                className={styles.secondary}
-                onClick={() => router.push("/entrar")}
-              >
-                Já tenho uma conta
-              </button>
-            </div>
-            <p className={styles.note}>
-              Aprenda Next do básico ao avançado com exercícios práticos,
-              sistema de níveis e acompanhamento de progresso.
-            </p>
-          </div>
+    <section className={styles.hero}>
+      <div className={styles.container}>
+        <div className={styles.left}>
+          <Image
+            src="/next.svg"
+            alt="logo"
+            width={320}
+            height={320}
+            className={styles.logoImage}
+          />
         </div>
-      </section>
-      <SupportCard />
-    </>
+        <div className={styles.right}>
+          <h1 className={styles.title}>
+            {titleLines.map((line, idx) => (
+              <span key={idx}>
+                {line}
+                {idx < titleLines.length - 1 && <br />}
+              </span>
+            ))}
+          </h1>
+          <p className={styles.subtitle}>{t.heroSubtitle}</p>
+          <div className={styles.actions}>
+            <button
+              className={styles.primary}
+              onClick={() => router.push("/inicio")}
+            >
+              {t.heroCTAPrimary || "Comece agora"}
+            </button>
+            <button
+              className={styles.secondary}
+              onClick={() => router.push("/entrar")}
+            >
+              {t.heroCTASecondary || "Já tenho uma conta"}
+            </button>
+          </div>
+          <p className={styles.note}>{t.heroNote}</p>
+        </div>
+      </div>
+    </section>
   );
 }

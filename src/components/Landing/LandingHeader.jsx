@@ -1,20 +1,22 @@
 "use client";
 import Image from "next/image";
 import styles from "./LandingHeader.module.css";
-
-const LANG_KEY = "nextpath_lang";
+import { useLang } from "../../i18n/useLang";
 
 export default function LandingHeader() {
+  const [lang, setLang] = useLang();
+
   const changeLang = (e) => {
     const v = e.target.value;
     if (typeof window !== "undefined") {
-      localStorage.setItem(LANG_KEY, v);
+      localStorage.setItem("nextpath_lang", v);
       document.documentElement.lang = v;
       try {
         window.dispatchEvent(
           new CustomEvent("nextpath:langChanged", { detail: { lang: v } })
         );
-      } catch (e) {}
+      } catch (err) {}
+      setLang(v);
     }
   };
 
@@ -37,11 +39,7 @@ export default function LandingHeader() {
           <label className={styles.langLabel}>IDIOMA:</label>
           <select
             aria-label="Idioma"
-            defaultValue={
-              typeof window !== "undefined"
-                ? localStorage.getItem(LANG_KEY) || "pt-BR"
-                : "pt-BR"
-            }
+            value={lang}
             onChange={changeLang}
             className={styles.langSelect}
           >

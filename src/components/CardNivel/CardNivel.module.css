@@ -321,9 +321,16 @@
 /* Responsividade */
 @media (max-width: 768px) {
   .card {
-    padding: 0.8rem 0.6rem 0.9rem;
-    width: 160px;
-    height: 160px;
+    /* make cards fluid on small screens to avoid overflow/overlap */
+    width: calc(100% - 2rem);
+    max-width: none;
+    height: auto;
+    aspect-ratio: auto;
+    padding: 0.8rem 0.9rem;
+    margin: 0.6rem auto; /* spacing between stacked cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .icon {
@@ -337,5 +344,21 @@
   .button {
     padding: 0.4rem 0.8rem;
     font-size: 0.8rem;
+  }
+
+  /* Disable lift animations and large shadows on small screens to prevent overlap */
+  .disponivel:hover,
+  .concluido:hover,
+  .bloqueado:hover,
+  .disponivel,
+  .concluido,
+  .bloqueado {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .button:hover::before {
+    width: 0 !important;
+    height: 0 !important;
   }
 }

@@ -3,19 +3,14 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 import translations from "../../i18n/translations";
-
-const LANG_KEY = "nextpath_lang";
+import { useLang } from "../../i18n/useLang";
 
 const Header = ({ userStats = { streak: 0, gems: 0 } }) => {
-  const [lang, setLang] = useState("pt-BR");
+  const [lang] = useLang();
   const [heat, setHeat] = useState(userStats.streak || 0);
   const [gems, setGems] = useState(userStats.gems || 0);
 
-  useEffect(() => {
-    const stored =
-      typeof window !== "undefined" ? localStorage.getItem(LANG_KEY) : null;
-    if (stored) setLang(stored);
-  }, []);
+  // useLang hook já sincroniza o idioma com localStorage e eventos globais.
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -36,25 +31,7 @@ const Header = ({ userStats = { streak: 0, gems: 0 } }) => {
       window.removeEventListener("nextpath:statsChanged", onStatsChange);
   }, []);
 
-  useEffect(() => {
-    // listen for global lang change dispatched by Footer
-    function onLangChange(e) {
-      const newLang =
-        e?.detail?.lang ||
-        (typeof window !== "undefined" && localStorage.getItem(LANG_KEY));
-      if (newLang) setLang(newLang);
-    }
-
-    if (typeof window !== "undefined") {
-      window.addEventListener("nextpath:langChanged", onLangChange);
-    }
-
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener("nextpath:langChanged", onLangChange);
-      }
-    };
-  }, []);
+  // lang is handled by useLang hook which listens/updates globally
 
   const t = translations[lang] || translations["pt-BR"];
 

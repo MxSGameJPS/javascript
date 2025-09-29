@@ -6,8 +6,11 @@ const translations = {
     progresso: "Progresso",
     perfil: "Perfil",
     idioma: "Idioma",
-    heroTitle: "Seu próximo nível",
-    heroSubtitle: "em Next começa aqui",
+    heroTitle: "O jeito grátis, divertido\ne eficaz de aprender\nNext.Js!",
+    heroSubtitle:
+      "Domine os conceitos de Next através de quizzes interativos e desafios práticos.",
+    heroNote:
+      "Aprenda Next do básico ao avançado com exercícios práticos, sistema de níveis e acompanhamento de progresso.",
     statusConcluido: "Concluído",
     statusDisponivel: "Disponível",
     statusBloqueado: "Bloqueado",
@@ -25,6 +28,8 @@ const translations = {
     gemas: "Gemas",
     nenhumDado: "Nenhum dado encontrado.",
     rankingTitulo: "Ranking dos 10 primeiros colocados",
+    heroCTAPrimary: "Comece agora",
+    heroCTASecondary: "Já tenho uma conta",
   },
   en: {
     entrar: "Sign in",
@@ -33,8 +38,11 @@ const translations = {
     progresso: "Progress",
     perfil: "Profile",
     idioma: "Language",
-    heroTitle: "Your next level",
-    heroSubtitle: "in Next starts here",
+    heroTitle: "The free, fun\nand effective way to\nlearn Next.js!",
+    heroSubtitle:
+      "Master Next concepts through interactive quizzes and practical challenges.",
+    heroNote:
+      "Learn Next from basics to advanced with practical exercises, levels system and progress tracking.",
     statusConcluido: "Completed",
     statusDisponivel: "Available",
     statusBloqueado: "Locked",
@@ -52,6 +60,8 @@ const translations = {
       avancado: "Advanced",
       especialista: "Expert",
     },
+    heroCTAPrimary: "Get started",
+    heroCTASecondary: "I already have an account",
   },
   es: {
     entrar: "Entrar",
@@ -60,8 +70,11 @@ const translations = {
     progresso: "Progreso",
     perfil: "Perfil",
     idioma: "Idioma",
-    heroTitle: "Tu próximo nivel",
-    heroSubtitle: "en Next comienza aquí",
+    heroTitle: "La forma gratuita, divertida\ny eficaz de aprender\nNext.js!",
+    heroSubtitle:
+      "Domina los conceptos de Next mediante cuestionarios interactivos y desafíos prácticos.",
+    heroNote:
+      "Aprende Next desde lo básico hasta avanzado con ejercicios prácticos, sistema de niveles y seguimiento de progreso.",
     statusConcluido: "Completado",
     statusDisponivel: "Disponible",
     statusBloqueado: "Bloqueado",
@@ -79,6 +92,8 @@ const translations = {
       avancado: "Avanzado",
       especialista: "Experto",
     },
+    heroCTAPrimary: "Comienza ahora",
+    heroCTASecondary: "Ya tengo una cuenta",
   },
 };
 
