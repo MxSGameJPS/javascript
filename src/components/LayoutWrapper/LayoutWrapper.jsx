@@ -9,12 +9,16 @@ export default function LayoutWrapper({ children }) {
 
   // Don't render header/footer on the root landing page
   const isHome = pathname === "/" || pathname === "" || pathname === undefined;
+  // also avoid rendering global header/footer on quiz routes which have their own
+  // header/footer (pages under /nivel)
+  const isQuizRoute =
+    typeof pathname === "string" && pathname.startsWith("/nivel");
 
   return (
     <div className={styles.root}>
-      {!isHome && <Header />}
+      {!isHome && !isQuizRoute && <Header />}
       <main className={styles.main}>{children}</main>
-      {!isHome && <Footer />}
+      {!isHome && !isQuizRoute && <Footer />}
     </div>
   );
 }

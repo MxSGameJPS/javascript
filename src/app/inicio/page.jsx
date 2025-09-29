@@ -4,9 +4,12 @@ import HeroHome from "../../components/HeroHome/HeroHome";
 import CardNivel from "../../components/CardNivel/CardNivel";
 import translations from "../../i18n/translations";
 import styles from "../page.module.css";
+import niveisData from "../../data/levels";
 
 export default function Inicio() {
   const [lang, setLang] = useState("pt-BR");
+  const [completed, setCompleted] = useState([]);
+  const [unlockedList, setUnlockedList] = useState([]);
 
   useEffect(() => {
     const stored =
@@ -15,18 +18,17 @@ export default function Inicio() {
         : null;
     if (stored) setLang(stored);
 
-    function onLangChange(e) {
+    const onLangChange = (e) => {
       const newLang =
         e?.detail?.lang ||
         (typeof window !== "undefined" &&
           localStorage.getItem("nextpath_lang"));
       if (newLang) setLang(newLang);
-    }
+    };
 
     if (typeof window !== "undefined") {
       window.addEventListener("nextpath:langChanged", onLangChange);
     }
-
     return () => {
       if (typeof window !== "undefined") {
         window.removeEventListener("nextpath:langChanged", onLangChange);
@@ -34,48 +36,103 @@ export default function Inicio() {
     };
   }, []);
 
+  useEffect(() => {
+    const load = () => {
+      try {
+        const raw = localStorage.getItem("nextpath_completed_levels");
+        const parsed = raw ? JSON.parse(raw) : [];
+
+        const rawUnlocked = localStorage.getItem("nextpath_unlocked_levels");
+        const unlocked = rawUnlocked ? JSON.parse(rawUnlocked) : [];
+
+        // backfill: mark iniciante completed if heat/gems meet simple threshold
+        try {
+          const heat = parseInt(
+            localStorage.getItem("nextpath_heat") || "0",
+            10
+          );
+          const gems = parseInt(
+            localStorage.getItem("nextpath_gems") || "0",
+            10
+          );
+          const inic = niveisData.iniciante;
+          const totalGems = inic.gemsTotal ?? inic.gems ?? 0;
+          const totalQs = inic.perguntas?.length ?? inic.questoes ?? 0;
+          const heatThreshold = Math.round(totalQs * 10 * 0.5);
+          const gemsThreshold = Math.round(totalGems * 0.5);
+          if (
+            !parsed.includes("iniciante") &&
+            (heat >= heatThreshold || gems >= gemsThreshold)
+          ) {
+            parsed.push("iniciante");
+            localStorage.setItem(
+              "nextpath_completed_levels",
+              JSON.stringify(parsed)
+            );
+            try {
+              window.dispatchEvent(
+                new CustomEvent("nextpath:levelsChanged", {})
+              );
+            } catch (e) {}
+          }
+        } catch (e) {
+          /* ignore */
+        }
+
+        // ensure first level unlocked
+        try {
+          if (!Array.isArray(unlocked) || unlocked.length === 0) {
+            const first = niveisData.iniciante?.slug || "iniciante";
+            localStorage.setItem(
+              "nextpath_unlocked_levels",
+              JSON.stringify([first])
+            );
+            unlocked.length = 0;
+            unlocked.push(first);
+          }
+        } catch (e) {}
+
+        setCompleted(parsed);
+        setUnlockedList(unlocked);
+      } catch (e) {
+        setCompleted([]);
+        setUnlockedList([]);
+      }
+    };
+
+    load();
+    const onLevelsChanged = () => load();
+    if (typeof window !== "undefined")
+      window.addEventListener("nextpath:levelsChanged", onLevelsChanged);
+    return () => {
+      if (typeof window !== "undefined")
+        window.removeEventListener("nextpath:levelsChanged", onLevelsChanged);
+    };
+  }, []);
+
   const t = translations[lang] || translations["pt-BR"];
 
-  const niveisData = [
-    {
-      id: 1,
-      slug: "iniciante",
-      titulo: "Iniciante",
-      questoes: 15,
-      gems: 150,
-      status: "disponivel",
-    },
-    {
-      id: 2,
-      slug: "intermediario",
-      titulo: "Intermediário",
-      questoes: 15,
-      gems: 150,
-      status: "bloqueado",
-    },
-    {
-      id: 3,
-      slug: "avancado",
-      titulo: "Avançado",
-      questoes: 20,
-      gems: 200,
-      status: "bloqueado",
-    },
-    {
-      id: 4,
-      slug: "especialista",
-      titulo: "Especialista",
-      questoes: 25,
-      gems: 300,
-      status: "bloqueado",
-    },
-  ];
-
-  const handleCardClick = (nivel) => {
-    if (nivel.status !== "bloqueado") {
-      console.log(`Iniciando nível: ${nivel.titulo}`);
-    }
-  };
+  const orderedLevels = Object.values(niveisData).sort((a, b) => a.id - b.id);
+  const allLevels = orderedLevels.map((lvl, idx) => {
+    const slug = lvl.slug;
+    const isCompleted = completed.includes(slug);
+    const prev = orderedLevels[idx - 1];
+    const prevCompleted = prev ? completed.includes(prev.slug) : false;
+    const isUnlocked =
+      unlockedList.includes(slug) || prevCompleted || lvl.id === 1;
+    let status = "bloqueado";
+    if (isCompleted) status = "concluido";
+    else if (isUnlocked) status = "disponivel";
+    return {
+      id: lvl.id,
+      slug,
+      titulo: lvl.titulo,
+      questoes: lvl.perguntas?.length ?? lvl.questoes,
+      gems: lvl.gemsTotal ?? lvl.gems,
+      descricao: lvl.descricao || "",
+      status,
+    };
+  });
 
   return (
     <div className={styles.page}>
@@ -88,16 +145,15 @@ export default function Inicio() {
             </span>
           </div>
           <div className={styles.niveisGrid}>
-            {niveisData.map((nivel) => (
+            {allLevels.map((nivel) => (
               <CardNivel
-                key={nivel.id}
+                key={nivel.slug}
                 nivel={nivel.titulo}
                 slug={nivel.slug}
                 titulo={nivel.titulo}
                 questoes={nivel.questoes}
                 gems={nivel.gems}
                 status={nivel.status}
-                onClick={() => handleCardClick(nivel)}
               />
             ))}
           </div>

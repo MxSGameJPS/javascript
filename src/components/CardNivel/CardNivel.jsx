@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import styles from "./CardNivel.module.css";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import translations from "../../i18n/translations";
 
 const LANG_KEY = "nextpath_lang";
@@ -104,22 +105,32 @@ const CardNivel = ({
         <span className={styles.gemValue}>{gems}</span>
       </div>
 
-      <button
-        className={styles.button}
-        onClick={() => {
-          if (status === "bloqueado") return;
-          // se onClick foi passado, chama, senão navega para a rota do nível
-          if (typeof onClick === "function") {
+      {status === "bloqueado" ? (
+        <button className={styles.button} disabled>
+          {getButtonText()}
+        </button>
+      ) : typeof onClick === "function" ? (
+        <button
+          className={styles.button}
+          onClick={() => {
             onClick();
-          } else if (slug) {
-            router.push(`/nivel/${slug}`);
-          }
-        }}
-        disabled={status === "bloqueado"}
-      >
-        {status === "disponivel" && <span className={styles.playIcon}>▶</span>}
-        {getButtonText()}
-      </button>
+          }}
+        >
+          {status === "disponivel" && (
+            <span className={styles.playIcon}>▶</span>
+          )}
+          {getButtonText()}
+        </button>
+      ) : slug ? (
+        <Link href={`/nivel/${slug}`} className={styles.linkButton}>
+          <span className={styles.playIcon}>
+            {status === "disponivel" ? "▶" : ""}
+          </span>
+          {getButtonText()}
+        </Link>
+      ) : (
+        <button className={styles.button}>{getButtonText()}</button>
+      )}
     </div>
   );
 };

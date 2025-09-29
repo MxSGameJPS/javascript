@@ -57,6 +57,19 @@ export default function Footer() {
 
   const t = translations[lang] || translations["pt-BR"];
 
+  // Lê nome do usuário logado do localStorage
+  const [userName, setUserName] = useState(null);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setUserName(localStorage.getItem("nextpath_user_name"));
+      // Atualiza ao receber evento de login/cadastro
+      const handler = () =>
+        setUserName(localStorage.getItem("nextpath_user_name"));
+      window.addEventListener("nextpath:userChanged", handler);
+      return () => window.removeEventListener("nextpath:userChanged", handler);
+    }
+  }, []);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
@@ -73,13 +86,24 @@ export default function Footer() {
         </div>
 
         <div className={styles.loginLinks}>
-          <a href="/entrar" className={styles.enterLink}>
-            {t.entrar}
-          </a>
-          <span style={{ color: "rgba(255,255,255,0.35)" }}>|</span>
-          <a href="/cadastrar" className={styles.signupLink}>
-            {t.cadastrar}
-          </a>
+          {userName ? (
+            <span
+              className={styles.userName}
+              style={{ fontWeight: 600, color: "#fff" }}
+            >
+              Olá, {userName}!
+            </span>
+          ) : (
+            <>
+              <a href="/entrar" className={styles.enterLink}>
+                {t.entrar}
+              </a>
+              <span style={{ color: "rgba(255,255,255,0.35)" }}>|</span>
+              <a href="/cadastrar" className={styles.signupLink}>
+                {t.cadastrar}
+              </a>
+            </>
+          )}
         </div>
 
         <div className={styles.links}>

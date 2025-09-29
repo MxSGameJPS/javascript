@@ -21,8 +21,14 @@ export default function Entrar() {
     setLoading(false);
     if (!res.ok) setError(data.error || "Erro");
     else {
-      // simples feedback
-      alert("Login successful: " + data.user.name);
+      // Salva nome do usuário no localStorage para uso no footer
+      if (data.user && data.user.name) {
+        localStorage.setItem("nextpath_user_name", data.user.name);
+        // dispara evento para atualizar footer
+        window.dispatchEvent(new Event("nextpath:userChanged"));
+      }
+      // Redireciona para /progresso
+      window.location.href = "/progresso";
     }
   }
 

@@ -61,6 +61,19 @@ export async function POST(req) {
 
     const user = res.rows[0];
 
+    // create initial pontos record if heat/gems provided
+    try {
+      const heat = Number.isFinite(Number(body.heat)) ? Number(body.heat) : 0;
+      const gems = Number.isFinite(Number(body.gems)) ? Number(body.gems) : 0;
+      await query(
+        `INSERT INTO pontos (user_id, heat, gems) VALUES ($1,$2,$3)`,
+        [user.id, heat, gems]
+      );
+    } catch (err) {
+      // log but do not fail the registration
+      console.error("pontos insert error", err);
+    }
+
     return NextResponse.json({ user }, { status: 201 });
   } catch (err) {
     console.error("register error", err);

@@ -211,6 +211,47 @@
   background-clip: padding-box;
 }
 
+/* estilo para links que funcionam como botões (quando usamos next/link) */
+.linkButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 40px;
+  padding: 0 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.12);
+  background-clip: padding-box;
+  text-decoration: none;
+  color: inherit;
+}
+
+.disponivel .linkButton {
+  background: linear-gradient(135deg, #1688ff, #0056b3);
+  color: #fff;
+}
+
+.concluido .linkButton {
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  color: white;
+}
+
+.bloqueado .linkButton {
+  background: #6c757d;
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .button::before {
   content: "";
   position: absolute;

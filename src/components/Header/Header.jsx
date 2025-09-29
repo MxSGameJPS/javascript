@@ -8,11 +8,32 @@ const LANG_KEY = "nextpath_lang";
 
 const Header = ({ userStats = { streak: 0, gems: 0 } }) => {
   const [lang, setLang] = useState("pt-BR");
+  const [heat, setHeat] = useState(userStats.streak || 0);
+  const [gems, setGems] = useState(userStats.gems || 0);
 
   useEffect(() => {
     const stored =
       typeof window !== "undefined" ? localStorage.getItem(LANG_KEY) : null;
     if (stored) setLang(stored);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const heatKey = "nextpath_heat";
+    const gemsKey = "nextpath_gems";
+    const storedHeat = parseInt(localStorage.getItem(heatKey) || "0", 10);
+    const storedGems = parseInt(localStorage.getItem(gemsKey) || "0", 10);
+    setHeat(storedHeat);
+    setGems(storedGems);
+    function onStatsChange(e) {
+      const newHeat = e?.detail?.heat ?? storedHeat;
+      const newGems = e?.detail?.gems ?? storedGems;
+      setHeat(newHeat);
+      setGems(newGems);
+    }
+    window.addEventListener("nextpath:statsChanged", onStatsChange);
+    return () =>
+      window.removeEventListener("nextpath:statsChanged", onStatsChange);
   }, []);
 
   useEffect(() => {
@@ -75,13 +96,13 @@ const Header = ({ userStats = { streak: 0, gems: 0 } }) => {
         </nav>
 
         <div className={styles.userSection}>
-          <div className={styles.streak}>
+          <div className={styles.streak} title="Pontos de calor">
             <span className={styles.fire}>🔥</span>
-            <span className={styles.streakNumber}>{userStats.streak}</span>
+            <span className={styles.streakNumber}>{heat}</span>
           </div>
-          <div className={styles.gems}>
+          <div className={styles.gems} title="Joias">
             <span className={styles.gem}>💎</span>
-            <span className={styles.gemNumber}>{userStats.gems}</span>
+            <span className={styles.gemNumber}>{gems}</span>
           </div>
         </div>
       </div>
