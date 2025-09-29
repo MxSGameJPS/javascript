@@ -75,7 +75,7 @@ const Header = ({ userStats = { streak: 0, gems: 0 } }) => {
           </h1>
         </div>
 
-        <nav className={styles.nav}>
+        {/* <nav className={styles.nav}>
           <ul className={styles.navList}>
             <li>
               <a href="#" className={styles.navLink}>
@@ -93,7 +93,7 @@ const Header = ({ userStats = { streak: 0, gems: 0 } }) => {
               </a>
             </li>
           </ul>
-        </nav>
+        </nav> */}
 
         <div className={styles.userSection}>
           <div className={styles.streak} title="Pontos de calor">
