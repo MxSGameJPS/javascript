@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useLang } from "../../i18n/useLang";
 import HeroHome from "../../components/HeroHome/HeroHome";
 import CardNivel from "../../components/CardNivel/CardNivel";
 import translations from "../../i18n/translations";
@@ -7,34 +8,9 @@ import styles from "../page.module.css";
 import niveisData from "../../data/levels";
 
 export default function Inicio() {
-  const [lang, setLang] = useState("pt-BR");
+  const [lang] = useLang();
   const [completed, setCompleted] = useState([]);
   const [unlockedList, setUnlockedList] = useState([]);
-
-  useEffect(() => {
-    const stored =
-      typeof window !== "undefined"
-        ? localStorage.getItem("nextpath_lang")
-        : null;
-    if (stored) setLang(stored);
-
-    const onLangChange = (e) => {
-      const newLang =
-        e?.detail?.lang ||
-        (typeof window !== "undefined" &&
-          localStorage.getItem("nextpath_lang"));
-      if (newLang) setLang(newLang);
-    };
-
-    if (typeof window !== "undefined") {
-      window.addEventListener("nextpath:langChanged", onLangChange);
-    }
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener("nextpath:langChanged", onLangChange);
-      }
-    };
-  }, []);
 
   useEffect(() => {
     const load = () => {

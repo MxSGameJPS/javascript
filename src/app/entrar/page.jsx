@@ -21,9 +21,17 @@ export default function Entrar() {
     setLoading(false);
     if (!res.ok) setError(data.error || "Erro");
     else {
-      // Salva nome do usuário no localStorage para uso no footer
-      if (data.user && data.user.name) {
-        localStorage.setItem("nextpath_user_name", data.user.name);
+      // Salva nome, id e email do usuário no localStorage para uso global
+      if (data.user) {
+        if (data.user.name) {
+          localStorage.setItem("nextpath_user_name", data.user.name);
+        }
+        if (data.user.id) {
+          localStorage.setItem("nextpath_user_id", data.user.id);
+        }
+        if (data.user.email) {
+          localStorage.setItem("nextpath_user_email", data.user.email);
+        }
         // dispara evento para atualizar footer
         window.dispatchEvent(new Event("nextpath:userChanged"));
       }

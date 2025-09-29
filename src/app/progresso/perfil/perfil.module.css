@@ -1,0 +1,92 @@
+/* Estilos para a página de perfil */
+.perfilContainer {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  padding: 2.5rem 2rem 2rem 2rem;
+}
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #222;
+  text-align: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.label {
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.input {
+  padding: 0.7rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f8f8f8;
+}
+.input:disabled {
+  background: #eaeaea;
+  color: #888;
+}
+.saveBtn {
+  padding: 0.9rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  background: #1db954;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.saveBtn:disabled {
+  background: #b2e5c2;
+  cursor: not-allowed;
+}
+.success {
+  color: #1db954;
+  font-weight: 600;
+  margin-top: 1rem;
+  text-align: center;
+}
+.pointsBox {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+}
+.pointItem {
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 1.2rem 2.2rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pointLabel {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+.pointValue {
+  font-size: 2.1rem;
+  font-weight: bold;
+  color: #eab308;
+}
+.loading {
+  text-align: center;
+  color: #888;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+}

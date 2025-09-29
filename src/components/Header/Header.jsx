@@ -83,7 +83,7 @@ const Header = ({ userStats = { streak: 0, gems: 0 } }) => {
               </a>
             </li>
             <li>
-              <a href="#" className={styles.navLink}>
+              <a href="/progresso" className={styles.navLink}>
                 {t.progresso}
               </a>
             </li>
