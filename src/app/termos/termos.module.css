@@ -1,0 +1,35 @@
+.page {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem 1.2rem;
+  background: linear-gradient(180deg, #0f1724, #071226);
+  border-radius: 10px;
+  color: #e5e7eb;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #cfe7ea;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 1rem 0.5rem;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+  .text {
+    font-size: 1rem;
+  }
+}
