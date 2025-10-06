@@ -24,15 +24,8 @@ export default function LandingHeader() {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.brand}>
-          <Image
-            src="/logos/LogoIcone.png"
-            alt="NextPath"
-            width={40}
-            height={40}
-          />
           <h1 className={styles.brandName}>
-            <span className={styles.next}>Next</span>
-            <span className={styles.path}>Path</span>
+            <span className={styles.brandGradient}>JavaScriptPath</span>
           </h1>
         </div>
         <div className={styles.langWrap}>

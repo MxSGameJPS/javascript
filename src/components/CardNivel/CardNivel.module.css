@@ -46,7 +46,7 @@
 
 /* Estados do card */
 .disponivel {
-  border-color: #007bff;
+  border-color: var(--accent);
   transform: translateY(0);
   cursor: pointer;
 }
@@ -237,7 +237,7 @@
 
 .disponivel .linkButton {
   background: linear-gradient(135deg, #1688ff, #0056b3);
-  color: #fff;
+  color: var(--text);
 }
 
 .concluido .linkButton {
@@ -247,7 +247,7 @@
 
 .bloqueado .linkButton {
   background: #6c757d;
-  color: #fff;
+  color: var(--text);
   cursor: not-allowed;
   opacity: 0.6;
 }
@@ -273,7 +273,7 @@
 
 .disponivel .button {
   background: linear-gradient(135deg, #1688ff, #0056b3);
-  color: #fff;
+  color: var(--text);
   box-shadow: 0 8px 30px rgba(6, 98, 255, 0.18);
 }
 
@@ -295,7 +295,7 @@
 
 .bloqueado .button {
   background: #6c757d;
-  color: #fff;
+  color: var(--text);
   cursor: not-allowed;
   opacity: 0.6;
 }

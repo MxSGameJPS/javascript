@@ -1,13 +1,13 @@
 /* Header.module.css */
 .header {
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-  border-bottom: 1px solid #333;
+  background: var(--surface);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .container {
@@ -35,14 +35,7 @@
   font-weight: 700;
   margin: 0;
   position: relative;
-  background: linear-gradient(
-    90deg,
-    #007bff,
-    #0056b3,
-    #007bff,
-    #0056b3,
-    #007bff
-  );
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
   background-size: 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -51,37 +44,29 @@
 }
 
 .next {
-  color: #ffffff;
-  background: linear-gradient(
-    45deg,
-    #ffffff,
-    #007bff,
-    #ffffff,
-    #007bff,
-    #ffffff
-  );
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: lightEffect 3s ease-in-out infinite;
+  color: var(--text);
 }
 
 .path {
-  color: #007bff;
-  background: linear-gradient(
-    45deg,
-    #007bff,
-    #ffffff,
-    #007bff,
-    #ffffff,
-    #007bff
-  );
-  background-size: 300% 100%;
+  color: var(--accent-dark);
+}
+
+/* New JavaScriptPath branding */
+.brandGradient {
+  font-weight: 900;
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #f7df1e 0%, #f0c000 40%, #e5a700 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: lightEffect 3s ease-in-out infinite 0.5s;
+  background-size: 200% 100%;
+  animation: jsShimmer 3s linear infinite;
+}
+
+.brandName {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
 }
 
 @keyframes lightEffect {
@@ -104,6 +89,18 @@
   }
 }
 
+@keyframes jsShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .nav {
   flex: 1;
   display: flex;
@@ -119,7 +116,7 @@
 }
 
 .navLink {
-  color: #ffffff;
+  color: var(--text);
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 1rem;
@@ -139,7 +136,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(0, 123, 255, 0.2),
+    rgba(247, 223, 30, 0.12),
     transparent
   );
   transition: left 0.5s ease;
@@ -150,10 +147,10 @@
 }
 
 .navLink:hover {
-  background: rgba(0, 123, 255, 0.1);
-  color: #007bff;
+  background: rgba(247, 223, 30, 0.06);
+  color: var(--accent-dark);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(230, 197, 15, 0.12);
 }
 
 .userSection {
@@ -219,7 +216,7 @@
 
 .streakNumber,
 .gemNumber {
-  color: #ffffff;
+  color: var(--text);
   font-weight: 600;
   font-size: 1rem;
 }
