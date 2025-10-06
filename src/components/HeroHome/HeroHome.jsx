@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./HeroHome.module.css";
 import translations from "../../i18n/translations";
 
-const LANG_KEY = "nextpath_lang";
+const LANG_KEY = "javascriptpath_lang";
 
 const HeroHome = () => {
   const [lang, setLang] = useState("pt-BR");
@@ -20,12 +20,12 @@ const HeroHome = () => {
     }
 
     if (typeof window !== "undefined") {
-      window.addEventListener("nextpath:langChanged", onLangChange);
+      window.addEventListener("javascriptpath:langChanged", onLangChange);
     }
 
     return () => {
       if (typeof window !== "undefined") {
-        window.removeEventListener("nextpath:langChanged", onLangChange);
+        window.removeEventListener("javascriptpath:langChanged", onLangChange);
       }
     };
   }, []);

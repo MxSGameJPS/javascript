@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import styles from "./Footer.module.css";
 import translations from "../../i18n/translations";
 
-const LANG_KEY = "nextpath_lang";
+const LANG_KEY = "javascriptpath_lang";
 
 export default function Footer() {
   const [lang, setLang] = useState("pt-BR");
@@ -31,7 +31,7 @@ export default function Footer() {
       // dispatch event so other components can react to language change
       try {
         window.dispatchEvent(
-          new CustomEvent("nextpath:langChanged", { detail: { lang } })
+          new CustomEvent("javascriptpath:langChanged", { detail: { lang } })
         );
       } catch (e) {
         // fallback no-op if CustomEvent is not supported
@@ -61,11 +61,11 @@ export default function Footer() {
   const [userName, setUserName] = useState(null);
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setUserName(localStorage.getItem("nextpath_user_name"));
+      setUserName(localStorage.getItem("javascriptpath_user_name"));
       // Atualiza ao receber evento de login/cadastro
       const handler = () =>
-        setUserName(localStorage.getItem("nextpath_user_name"));
-      window.addEventListener("nextpath:userChanged", handler);
+        setUserName(localStorage.getItem("javascriptpath_user_name"));
+      window.addEventListener("javascriptpath:userChanged", handler);
       return () => window.removeEventListener("nextpath:userChanged", handler);
     }
   }, []);
@@ -87,11 +87,7 @@ export default function Footer() {
 
         <div className={styles.loginLinks}>
           {userName ? (
-            <span
-              className={styles.userName}
-            >
-              Olá, {userName}!
-            </span>
+            <span className={styles.userName}>Olá, {userName}!</span>
           ) : (
             <>
               <a href="/entrar" className={styles.enterLink}>

@@ -5,22 +5,22 @@ export default function useLang() {
   useEffect(() => {
     const stored =
       typeof window !== "undefined"
-        ? localStorage.getItem("nextpath_lang")
+        ? localStorage.getItem("javascriptpath_lang")
         : null;
     if (stored) setLang(stored);
     function onLangChange(e) {
       const newLang =
         e?.detail?.lang ||
         (typeof window !== "undefined" &&
-          localStorage.getItem("nextpath_lang"));
+          localStorage.getItem("javascriptpath_lang"));
       if (newLang) setLang(newLang);
     }
     if (typeof window !== "undefined") {
-      window.addEventListener("nextpath:langChanged", onLangChange);
+      window.addEventListener("javascriptpath:langChanged", onLangChange);
     }
     return () => {
       if (typeof window !== "undefined") {
-        window.removeEventListener("nextpath:langChanged", onLangChange);
+        window.removeEventListener("javascriptpath:langChanged", onLangChange);
       }
     };
   }, []);

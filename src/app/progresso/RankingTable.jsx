@@ -10,7 +10,7 @@ export default function RankingTable({ ranking }) {
   const t = translations[lang] || translations["pt-BR"];
   React.useEffect(() => {
     if (typeof window !== "undefined") {
-      setUserName(localStorage.getItem("nextpath_user_name") || "");
+      setUserName(localStorage.getItem("javascriptpath_user_name") || "");
     }
   }, []);
   return (

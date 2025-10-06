@@ -15,20 +15,22 @@ export default function Inicio() {
   useEffect(() => {
     const load = () => {
       try {
-        const raw = localStorage.getItem("nextpath_completed_levels");
+        const raw = localStorage.getItem("javascriptpath_completed_levels");
         const parsed = raw ? JSON.parse(raw) : [];
 
-        const rawUnlocked = localStorage.getItem("nextpath_unlocked_levels");
+        const rawUnlocked = localStorage.getItem(
+          "javascriptpath_unlocked_levels"
+        );
         const unlocked = rawUnlocked ? JSON.parse(rawUnlocked) : [];
 
         // backfill: mark iniciante completed if heat/gems meet simple threshold
         try {
           const heat = parseInt(
-            localStorage.getItem("nextpath_heat") || "0",
+            localStorage.getItem("javascriptpath_heat") || "0",
             10
           );
           const gems = parseInt(
-            localStorage.getItem("nextpath_gems") || "0",
+            localStorage.getItem("javascriptpath_gems") || "0",
             10
           );
           const inic = niveisData.iniciante;
@@ -42,12 +44,12 @@ export default function Inicio() {
           ) {
             parsed.push("iniciante");
             localStorage.setItem(
-              "nextpath_completed_levels",
+              "javascriptpath_completed_levels",
               JSON.stringify(parsed)
             );
             try {
               window.dispatchEvent(
-                new CustomEvent("nextpath:levelsChanged", {})
+                new CustomEvent("javascriptpath:levelsChanged", {})
               );
             } catch (e) {}
           }
@@ -60,7 +62,7 @@ export default function Inicio() {
           if (!Array.isArray(unlocked) || unlocked.length === 0) {
             const first = niveisData.iniciante?.slug || "iniciante";
             localStorage.setItem(
-              "nextpath_unlocked_levels",
+              "javascriptpath_unlocked_levels",
               JSON.stringify([first])
             );
             unlocked.length = 0;
@@ -79,10 +81,13 @@ export default function Inicio() {
     load();
     const onLevelsChanged = () => load();
     if (typeof window !== "undefined")
-      window.addEventListener("nextpath:levelsChanged", onLevelsChanged);
+      window.addEventListener("javascriptpath:levelsChanged", onLevelsChanged);
     return () => {
       if (typeof window !== "undefined")
-        window.removeEventListener("nextpath:levelsChanged", onLevelsChanged);
+        window.removeEventListener(
+          "javascriptpath:levelsChanged",
+          onLevelsChanged
+        );
     };
   }, []);
 

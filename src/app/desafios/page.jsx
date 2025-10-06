@@ -15,6 +15,11 @@ export default function DesafiosPage() {
 
   return (
     <main className={styles.page}>
+      <div style={{ marginBottom: "1rem" }}>
+        <Link href="/progresso" className={styles.backBtn}>
+          ← Voltar
+        </Link>
+      </div>
       <h1 className={styles.title}>Desafios</h1>
       <Link href="/desafios/tutorial" className={styles.tutorialButton}>
         Veja o Tutorial

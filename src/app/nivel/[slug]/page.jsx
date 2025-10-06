@@ -16,6 +16,7 @@ export default function NivelPage() {
 
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState(null);
+  const [questions, setQuestions] = useState(null);
   const [life, setLife] = useState(10);
   const [score, setScore] = useState(0);
   const [gems, setGems] = useState(0);
@@ -34,7 +35,7 @@ export default function NivelPage() {
     // initialize lives from storage (persist across levels)
     try {
       const storedLives = parseInt(
-        localStorage.getItem("nextpath_lives") || "",
+        localStorage.getItem("javascriptpath_lives") || "",
         10
       );
       setLife(Number.isFinite(storedLives) ? storedLives : 10);
@@ -46,11 +47,11 @@ export default function NivelPage() {
     // load base heat/gems so header can show cumulative values
     try {
       const storedHeat = parseInt(
-        localStorage.getItem("nextpath_heat") || "0",
+        localStorage.getItem("javascriptpath_heat") || "0",
         10
       );
       const storedGems = parseInt(
-        localStorage.getItem("nextpath_gems") || "0",
+        localStorage.getItem("javascriptpath_gems") || "0",
         10
       );
       setBaseHeat(Number.isFinite(storedHeat) ? storedHeat : 0);
@@ -67,7 +68,7 @@ export default function NivelPage() {
     if (showModal) {
       // create overlay element with inline styles so it's always on top
       const overlayEl = document.createElement("div");
-      overlayEl.setAttribute("id", "nextpath-modal-overlay");
+      overlayEl.setAttribute("id", "javascriptpath-modal-overlay");
       overlayEl.style.position = "fixed";
       overlayEl.style.inset = "0";
       overlayEl.style.display = "flex";
@@ -107,11 +108,57 @@ export default function NivelPage() {
     };
   }, [showModal]);
 
+  // questions may come from public JSON or fallback to data/levels.js
+  useEffect(() => {
+    let mounted = true;
+    async function loadJson() {
+      try {
+        const res = await fetch("/Json/quizinicial.json", {
+          cache: "no-store",
+        });
+        if (!res.ok) throw new Error("failed to fetch quiz json");
+        const data = await res.json();
+        const key = slug || "iniciante";
+        const raw = data[key];
+        if (mounted && Array.isArray(raw)) {
+          // normalize into expected format: {id, pergunta, alternativas, correta, explicacao?}
+          const normalized = raw.map((r) => ({
+            id: r.id,
+            pergunta: r.pergunta,
+            alternativas: r.opcoes?.map((o) => o.texto) || r.alternativas || [],
+            correta:
+              // if JSON used 'opcoes' with 'correta' boolean, find index
+              typeof r.correta === "number"
+                ? r.correta
+                : r.opcoes
+                ? r.opcoes.findIndex((o) => o.correta)
+                : r.correta,
+            explicacao: r.explicacao || null,
+          }));
+          setQuestions(normalized);
+          return;
+        }
+      } catch (e) {
+        // ignore and fallback
+      }
+      // fallback
+      if (mounted && level && Array.isArray(level.perguntas)) {
+        setQuestions(level.perguntas);
+      }
+    }
+    loadJson();
+    return () => {
+      mounted = false;
+    };
+  }, [slug, level]);
+
   if (!level) return <div>Level not found</div>;
 
-  const perguntaObj = level.perguntas[index];
+  const perguntaObj = (questions && questions[index]) || level.perguntas[index];
 
-  const progress = Math.round((index / level.perguntas.length) * 100);
+  const progress = Math.round(
+    (index / (questions ? questions.length : level.perguntas.length)) * 100
+  );
 
   const handleSelect = (i) => setSelected(i);
 
@@ -143,17 +190,19 @@ export default function NivelPage() {
             const next = all[pos + 1];
             if (next) {
               try {
-                const raw = localStorage.getItem("nextpath_unlocked_levels");
+                const raw = localStorage.getItem(
+                  "javascriptpath_unlocked_levels"
+                );
                 const arr = raw ? JSON.parse(raw) : [];
                 if (!arr.includes(next.slug)) {
                   arr.push(next.slug);
                   localStorage.setItem(
-                    "nextpath_unlocked_levels",
+                    "javascriptpath_unlocked_levels",
                     JSON.stringify(arr)
                   );
                   try {
                     window.dispatchEvent(
-                      new CustomEvent("nextpath:levelsChanged", {})
+                      new CustomEvent("javascriptpath:levelsChanged", {})
                     );
                   } catch (e) {}
                 }
@@ -174,7 +223,7 @@ export default function NivelPage() {
       const newLife = Math.max(0, (life || 0) - 1);
       setLife(newLife);
       try {
-        localStorage.setItem("nextpath_lives", String(newLife));
+        localStorage.setItem("javascriptpath_lives", String(newLife));
       } catch (e) {}
       setModalContent({
         ok: false,
@@ -198,8 +247,8 @@ export default function NivelPage() {
       // aqui você poderia chamar API para persistir o resultado
       try {
         // persistir pontos (heat) e gems no localStorage para o header ler
-        const heatKey = "nextpath_heat";
-        const gemsKey = "nextpath_gems";
+        const heatKey = "javascriptpath_heat";
+        const gemsKey = "javascriptpath_gems";
         const prevHeat = parseInt(localStorage.getItem(heatKey) || "0", 10);
         const prevGems = parseInt(localStorage.getItem(gemsKey) || "0", 10);
         const newHeat = prevHeat + (score || 0);
@@ -210,14 +259,14 @@ export default function NivelPage() {
         // persist completed levels
         try {
           const completedRaw = localStorage.getItem(
-            "nextpath_completed_levels"
+            "javascriptpath_completed_levels"
           );
           const completed = completedRaw ? JSON.parse(completedRaw) : [];
           const slug = params.slug || "";
           if (!completed.includes(slug)) {
             completed.push(slug);
             localStorage.setItem(
-              "nextpath_completed_levels",
+              "javascriptpath_completed_levels",
               JSON.stringify(completed)
             );
           }
@@ -226,7 +275,7 @@ export default function NivelPage() {
         }
         // persist remaining lives
         try {
-          localStorage.setItem("nextpath_lives", String(life || 0));
+          localStorage.setItem("javascriptpath_lives", String(life || 0));
         } catch (e) {}
         // also ensure next level unlocked if user reached correct threshold
         try {
@@ -237,17 +286,19 @@ export default function NivelPage() {
             const next = all[pos + 1];
             if (next) {
               try {
-                const raw = localStorage.getItem("nextpath_unlocked_levels");
+                const raw = localStorage.getItem(
+                  "javascriptpath_unlocked_levels"
+                );
                 const arr = raw ? JSON.parse(raw) : [];
                 if (!arr.includes(next.slug)) {
                   arr.push(next.slug);
                   localStorage.setItem(
-                    "nextpath_unlocked_levels",
+                    "javascriptpath_unlocked_levels",
                     JSON.stringify(arr)
                   );
                   try {
                     window.dispatchEvent(
-                      new CustomEvent("nextpath:levelsChanged", {})
+                      new CustomEvent("javascriptpath:levelsChanged", {})
                     );
                   } catch (e) {}
                 }
@@ -258,7 +309,7 @@ export default function NivelPage() {
         // dispatch event so Header updates immediately
         try {
           window.dispatchEvent(
-            new CustomEvent("nextpath:statsChanged", {
+            new CustomEvent("javascriptpath:statsChanged", {
               detail: { heat: newHeat, gems: newGems },
             })
           );
@@ -267,13 +318,13 @@ export default function NivelPage() {
         }
 
         // also notify levels changed so inicio can update
-        const lvlEvent = new CustomEvent("nextpath:levelsChanged", {});
+        const lvlEvent = new CustomEvent("javascriptpath:levelsChanged", {});
         window.dispatchEvent(lvlEvent);
 
         // if user completed all levels, redirect to cadastro with celebration
         try {
           const completedRaw = localStorage.getItem(
-            "nextpath_completed_levels"
+            "javascriptpath_completed_levels"
           );
           const completed = completedRaw ? JSON.parse(completedRaw) : [];
           const all = Object.values(levels).map((l) => l.slug);

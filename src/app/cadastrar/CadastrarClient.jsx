@@ -32,8 +32,8 @@ export default function CadastrarClient() {
     if (!acceptedTerms) return setError("Você deve aceitar os termos");
 
     setLoading(true);
-    const heat = Number(localStorage.getItem("nextpath_heat") || "0");
-    const gems = Number(localStorage.getItem("nextpath_gems") || "0");
+    const heat = Number(localStorage.getItem("javascriptpath_heat") || "0");
+    const gems = Number(localStorage.getItem("javascriptpath_gems") || "0");
     const res = await fetch("/api/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -54,8 +54,38 @@ export default function CadastrarClient() {
     else {
       // Salva nome do usuário no localStorage para uso no footer
       if (data.user && data.user.name) {
-        localStorage.setItem("nextpath_user_name", data.user.name);
+        localStorage.setItem("javascriptpath_user_name", data.user.name);
+        try {
+          localStorage.setItem("nextpath_user_name", data.user.name);
+        } catch (e) {}
       }
+      if (data.user && data.user.email) {
+        localStorage.setItem("javascriptpath_user_email", data.user.email);
+        try {
+          localStorage.setItem("nextpath_user_email", data.user.email);
+        } catch (e) {}
+      }
+      // try to sync id with DB by fetching profile by email
+      try {
+        if (data.user && data.user.email) {
+          (async () => {
+            try {
+              const r = await fetch(
+                `/api/user/profile?email=${encodeURIComponent(data.user.email)}`
+              );
+              if (r.ok) {
+                const profile = await r.json();
+                if (profile.id) {
+                  localStorage.setItem("javascriptpath_user_id", profile.id);
+                  try {
+                    localStorage.setItem("nextpath_user_id", profile.id);
+                  } catch (e) {}
+                }
+              }
+            } catch (e) {}
+          })();
+        }
+      } catch (e) {}
       router.push("/progresso");
     }
   }

@@ -1,0 +1,410 @@
+{
+  "iniciante": [
+    {
+      "id": 1,
+      "pergunta": "Qual palavra-chave é usada para declarar uma variável em JavaScript que não pode ser reatribuída?",
+      "opcoes": [
+        {"texto": "var", "correta": false},
+        {"texto": "let", "correta": false},
+        {"texto": "const", "correta": true},
+        {"texto": "static", "correta": false}
+      ]
+    },
+    {
+      "id": 2,
+      "pergunta": "Qual dos seguintes é um tipo de dado de texto em JavaScript?",
+      "opcoes": [
+        {"texto": "Number", "correta": false},
+        {"texto": "Boolean", "correta": false},
+        {"texto": "Object", "correta": false},
+        {"texto": "String", "correta": true}
+      ]
+    },
+    {
+      "id": 3,
+      "pergunta": "Qual operador é usado para verificar se dois valores são iguais em valor E em tipo?",
+      "opcoes": [
+        {"texto": "==", "correta": false},
+        {"texto": "=", "correta": false},
+        {"texto": "===", "correta": true},
+        {"texto": "!=", "correta": false}
+      ]
+    },
+    {
+      "id": 4,
+      "pergunta": "Como você escreve um comentário de uma única linha em JavaScript?",
+      "opcoes": [
+        {"texto": "", "correta": false},
+        {"texto": "/* Comentário */", "correta": false},
+        {"texto": "// Comentário", "correta": true},
+        {"texto": "# Comentário", "correta": false}
+      ]
+    },
+    {
+      "id": 5,
+      "pergunta": "Qual função é usada para exibir uma mensagem na aba 'Console' do navegador?",
+      "opcoes": [
+        {"texto": "alert()", "correta": false},
+        {"texto": "document.write()", "correta": false},
+        {"texto": "console.log()", "correta": true},
+        {"texto": "print()", "correta": false}
+      ]
+    },
+    {
+      "id": 6,
+      "pergunta": "Qual é o resultado da expressão `10 + '5'` em JavaScript?",
+      "opcoes": [
+        {"texto": "15", "correta": false},
+        {"texto": "'105'", "correta": true},
+        {"texto": "105", "correta": false},
+        {"texto": "Erro", "correta": false}
+      ]
+    },
+    {
+      "id": 7,
+      "pergunta": "Qual estrutura é usada para tomar decisões com base em uma condição?",
+      "opcoes": [
+        {"texto": "for", "correta": false},
+        {"texto": "function", "correta": false},
+        {"texto": "if / else", "correta": true},
+        {"texto": "switch", "correta": false}
+      ]
+    },
+    {
+      "id": 8,
+      "pergunta": "Qual é o tipo de dado de `true`?",
+      "opcoes": [
+        {"texto": "String", "correta": false},
+        {"texto": "Number", "correta": false},
+        {"texto": "Boolean", "correta": true},
+        {"texto": "Undefined", "correta": false}
+      ]
+    },
+    {
+      "id": 9,
+      "pergunta": "Qual operador é usado para atribuição de valor?",
+      "opcoes": [
+        {"texto": "=", "correta": true},
+        {"texto": "==", "correta": false},
+        {"texto": "===", "correta": false},
+        {"texto": ":=", "correta": false}
+      ]
+    },
+    {
+      "id": 10,
+      "pergunta": "O que a expressão `5 % 2` retorna?",
+      "opcoes": [
+        {"texto": "2.5", "correta": false},
+        {"texto": "2", "correta": false},
+        {"texto": "1", "correta": true},
+        {"texto": "0", "correta": false}
+      ]
+    }
+  ],
+  "intermediario": [
+    {
+      "id": 11,
+      "pergunta": "Qual é a sintaxe correta para declarar uma função em JavaScript?",
+      "opcoes": [
+        {"texto": "function: minhaFuncao() {}", "correta": false},
+        {"texto": "function minhaFuncao() {}", "correta": true},
+        {"texto": "def minhaFuncao() {}", "correta": false},
+        {"texto": "funcao = () => {}", "correta": false}
+      ]
+    },
+    {
+      "id": 12,
+      "pergunta": "Como você acessa o primeiro elemento de um array chamado `frutas`?",
+      "opcoes": [
+        {"texto": "frutas(0)", "correta": false},
+        {"texto": "frutas[0]", "correta": true},
+        {"texto": "frutas.get(0)", "correta": false},
+        {"texto": "frutas.first", "correta": false}
+      ]
+    },
+    {
+      "id": 13,
+      "pergunta": "Qual estrutura de repetição é mais adequada para iterar sobre os elementos de um array?",
+      "opcoes": [
+        {"texto": "while", "correta": false},
+        {"texto": "do...while", "correta": false},
+        {"texto": "for", "correta": true},
+        {"texto": "if", "correta": false}
+      ]
+    },
+    {
+      "id": 14,
+      "pergunta": "Como você acessa o valor da propriedade `nome` de um objeto chamado `usuario`?",
+      "opcoes": [
+        {"texto": "usuario('nome')", "correta": false},
+        {"texto": "usuario['nome']", "correta": false},
+        {"texto": "usuario.nome", "correta": true},
+        {"texto": "As opções B e C estão corretas", "correta": false}
+      ]
+    },
+    {
+      "id": 15,
+      "pergunta": "Qual método adiciona um ou mais elementos ao final de um array?",
+      "opcoes": [
+        {"texto": "pop()", "correta": false},
+        {"texto": "shift()", "correta": false},
+        {"texto": "push()", "correta": true},
+        {"texto": "unshift()", "correta": false}
+      ]
+    },
+    {
+      "id": 16,
+      "pergunta": "O que é o DOM (Document Object Model)?",
+      "opcoes": [
+        {"texto": "Um estilo de programação.", "correta": false},
+        {"texto": "Uma representação em árvore do documento HTML, que permite ao JavaScript interagir com a página.", "correta": true},
+        {"texto": "Uma linguagem de servidor.", "correta": false},
+        {"texto": "Um banco de dados do navegador.", "correta": false}
+      ]
+    },
+    {
+      "id": 17,
+      "pergunta": "Qual método é usado para selecionar um elemento HTML pelo seu `id`?",
+      "opcoes": [
+        {"texto": "document.querySelector()", "correta": false},
+        {"texto": "document.getElementsByClassName()", "correta": false},
+        {"texto": "document.getElementById()", "correta": true},
+        {"texto": "document.getElement()", "correta": false}
+      ]
+    },
+    {
+      "id": 18,
+      "pergunta": "O que é um 'evento' em JavaScript?",
+      "opcoes": [
+        {"texto": "Um erro no código.", "correta": false},
+        {"texto": "Uma ação que acontece no navegador, como um clique de mouse ou o pressionar de uma tecla, à qual o código pode reagir.", "correta": true},
+        {"texto": "Uma variável que muda de valor.", "correta": false},
+        {"texto": "Uma função que é executada automaticamente.", "correta": false}
+      ]
+    },
+    {
+      "id": 19,
+      "pergunta": "Qual é a sintaxe de uma Arrow Function?",
+      "opcoes": [
+        {"texto": "function = () => {}", "correta": false},
+        {"texto": "() => {}", "correta": true},
+        {"texto": "=> {}", "correta": false},
+        {"texto": "() -> {}", "correta": false}
+      ]
+    },
+    {
+      "id": 20,
+      "pergunta": "Como você obtém o número de elementos em um array chamado `items`?",
+      "opcoes": [
+        {"texto": "items.count", "correta": false},
+        {"texto": "items.size", "correta": false},
+        {"texto": "items.length", "correta": true},
+        {"texto": "items.length()", "correta": false}
+      ]
+    }
+  ],
+  "avancado": [
+    {
+      "id": 21,
+      "pergunta": "Qual método de array cria um novo array com todos os elementos que passaram no teste implementado pela função fornecida?",
+      "opcoes": [
+        {"texto": "forEach()", "correta": false},
+        {"texto": "map()", "correta": false},
+        {"texto": "filter()", "correta": true},
+        {"texto": "reduce()", "correta": false}
+      ]
+    },
+    {
+      "id": 22,
+      "pergunta": "Qual método de array cria um novo array com os resultados da chamada de uma função para cada elemento do array?",
+      "opcoes": [
+        {"texto": "map()", "correta": true},
+        {"texto": "filter()", "correta": false},
+        {"texto": "forEach()", "correta": false},
+        {"texto": "some()", "correta": false}
+      ]
+    },
+    {
+      "id": 23,
+      "pergunta": "O que a desestruturação (destructuring) de objetos permite fazer?",
+      "opcoes": [
+        {"texto": "Deletar propriedades de um objeto.", "correta": false},
+        {"texto": "Extrair propriedades de um objeto e atribuí-las a variáveis com o mesmo nome.", "correta": true},
+        {"texto": "Combinar dois objetos em um.", "correta": false},
+        {"texto": "Criar um objeto a partir de um array.", "correta": false}
+      ]
+    },
+    {
+      "id": 24,
+      "pergunta": "O que é uma 'Promise' em JavaScript?",
+      "opcoes": [
+        {"texto": "Uma função que sempre retorna um valor.", "correta": false},
+        {"texto": "Um objeto que representa a eventual conclusão (ou falha) de uma operação assíncrona.", "correta": true},
+        {"texto": "Uma variável que não pode ser alterada.", "correta": false},
+        {"texto": "Um tipo especial de loop.", "correta": false}
+      ]
+    },
+    {
+      "id": 25,
+      "pergunta": "Qual é a principal diferença entre `let` e `var`?",
+      "opcoes": [
+        {"texto": "Não há diferença.", "correta": false},
+        {"texto": "`let` tem escopo de bloco, enquanto `var` tem escopo de função.", "correta": true},
+        {"texto": "`let` é para números e `var` é para strings.", "correta": false},
+        {"texto": "`var` pode ser reatribuído e `let` não pode.", "correta": false}
+      ]
+    },
+    {
+      "id": 26,
+      "pergunta": "Para que serve a palavra-chave `this`?",
+      "opcoes": [
+        {"texto": "Refere-se ao arquivo atual.", "correta": false},
+        {"texto": "Refere-se ao objeto ao qual a função pertence (o contexto de execução).", "correta": true},
+        {"texto": "É um alias para a janela do navegador (`window`).", "correta": false},
+        {"texto": "Refere-se à função anterior na pilha de chamadas.", "correta": false}
+      ]
+    },
+    {
+      "id": 27,
+      "pergunta": "O que o operador 'spread' (`...`) faz com um array?",
+      "opcoes": [
+        {"texto": "Seleciona o último elemento do array.", "correta": false},
+        {"texto": "Expande os elementos do array em um novo array ou em argumentos de uma função.", "correta": true},
+        {"texto": "Calcula a soma de todos os elementos.", "correta": false},
+        {"texto": "Cria um loop sobre o array.", "correta": false}
+      ]
+    },
+    {
+      "id": 28,
+      "pergunta": "O que é JSON?",
+      "opcoes": [
+        {"texto": "Uma biblioteca JavaScript.", "correta": false},
+        {"texto": "Um formato leve de troca de dados, fácil para humanos lerem e para máquinas analisarem.", "correta": true},
+        {"texto": "Um método para criar objetos em JavaScript.", "correta": false},
+        {"texto": "Um tipo de servidor web.", "correta": false}
+      ]
+    },
+    {
+      "id": 29,
+      "pergunta": "Qual método converte uma string JSON em um objeto JavaScript?",
+      "opcoes": [
+        {"texto": "JSON.stringify()", "correta": false},
+        {"texto": "JSON.parse()", "correta": true},
+        {"texto": "JSON.object()", "correta": false},
+        {"texto": "JSON.convert()", "correta": false}
+      ]
+    },
+    {
+      "id": 30,
+      "pergunta": "O que é uma 'callback function'?",
+      "opcoes": [
+        {"texto": "Uma função que é chamada no início do script.", "correta": false},
+        {"texto": "Uma função que é passada como argumento para outra função, para ser executada mais tarde.", "correta": true},
+        {"texto": "Uma função que chama a si mesma.", "correta": false},
+        {"texto": "Uma função que só pode ser chamada uma vez.", "correta": false}
+      ]
+    }
+  ],
+  "especialista": [
+    {
+      "id": 31,
+      "pergunta": "Qual é o propósito da sintaxe `async/await`?",
+      "opcoes": [
+        {"texto": "Tornar o código síncrono.", "correta": false},
+        {"texto": "Fornecer uma sintaxe mais limpa e legível para trabalhar com Promises, fazendo o código assíncrono parecer síncrono.", "correta": true},
+        {"texto": "Substituir completamente o uso de funções.", "correta": false},
+        {"texto": "Executar múltiplas funções em paralelo.", "correta": false}
+      ]
+    },
+    {
+      "id": 32,
+      "pergunta": "O que é uma 'Closure' (fechamento) em JavaScript?",
+      "opcoes": [
+        {"texto": "O fim da execução de um script.", "correta": false},
+        {"texto": "A combinação de uma função com seu escopo léxico, permitindo que a função acesse variáveis de sua função externa mesmo após a externa ter retornado.", "correta": true},
+        {"texto": "Um erro que impede o fechamento do programa.", "correta": false},
+        {"texto": "Uma forma de proteger variáveis para que não possam ser acessadas.", "correta": false}
+      ]
+    },
+    {
+      "id": 33,
+      "pergunta": "Qual é a diferença entre `null` e `undefined`?",
+      "opcoes": [
+        {"texto": "São exatamente a mesma coisa.", "correta": false},
+        {"texto": "`undefined` significa que uma variável foi declarada mas não teve valor atribuído, enquanto `null` é um valor de atribuição que representa a ausência intencional de um objeto.", "correta": true},
+        {"texto": "`null` é um erro e `undefined` é um valor válido.", "correta": false},
+        {"texto": "`null` é para objetos e `undefined` para tipos primitivos.", "correta": false}
+      ]
+    },
+    {
+      "id": 34,
+      "pergunta": "O que é 'prototypal inheritance' (herança prototípica)?",
+      "opcoes": [
+        {"texto": "Um padrão de design para copiar objetos.", "correta": false},
+        {"texto": "O mecanismo pelo qual objetos em JavaScript herdam características uns dos outros, através de uma cadeia de protótipos.", "correta": true},
+        {"texto": "Uma forma de criar classes, como em Java ou C++.", "correta": false},
+        {"texto": "Uma biblioteca para gerenciamento de estado.", "correta": false}
+      ]
+    },
+    {
+      "id": 35,
+      "pergunta": "O que faz o método `Promise.all()`?",
+      "opcoes": [
+        {"texto": "Executa uma Promise após a outra, em sequência.", "correta": false},
+        {"texto": "Recebe um array de Promises e retorna uma única Promise que resolve quando todas as Promises do array resolverem.", "correta": true},
+        {"texto": "Retorna a primeira Promise que resolver ou rejeitar.", "correta": false},
+        {"texto": "Verifica se todas as Promises em um array foram bem-sucedidas.", "correta": false}
+      ]
+    },
+    {
+      "id": 36,
+      "pergunta": "O que é o 'Event Loop' (laço de eventos)?",
+      "opcoes": [
+        {"texto": "Um tipo de estrutura de repetição `for` ou `while`.", "correta": false},
+        {"texto": "O mecanismo que permite ao JavaScript (single-threaded) realizar operações de I/O não bloqueantes, movendo operações para a pilha de eventos e executando-as quando a pilha de chamadas está vazia.", "correta": true},
+        {"texto": "Uma função para lidar com todos os eventos de clique da página.", "correta": false},
+        {"texto": "Um debugger para código assíncrono.", "correta": false}
+      ]
+    },
+    {
+      "id": 37,
+      "pergunta": "Qual é a principal diferença de `this` em uma arrow function em comparação com uma função normal?",
+      "opcoes": [
+        {"texto": "Não há diferença.", "correta": false},
+        {"texto": "Arrow functions não possuem seu próprio `this`; elas herdam o `this` do escopo pai (escopo léxico).", "correta": true},
+        {"texto": "`this` em uma arrow function sempre se refere ao objeto `window`.", "correta": false},
+        {"texto": "`this` em uma função normal sempre se refere ao objeto global.", "correta": false}
+      ]
+    },
+    {
+      "id": 38,
+      "pergunta": "Para que servem os Módulos ES6 (`import`/`export`)?",
+      "opcoes": [
+        {"texto": "Para criar comentários no código.", "correta": false},
+        {"texto": "Para permitir a organização do código em arquivos separados e reutilizáveis, importando e exportando funcionalidades entre eles.", "correta": true},
+        {"texto": "Para importar bibliotecas CSS.", "correta": false},
+        {"texto": "Para otimizar o tamanho final do arquivo JavaScript.", "correta": false}
+      ]
+    },
+    {
+      "id": 39,
+      "pergunta": "O que `Symbol` representa em JavaScript?",
+      "opcoes": [
+        {"texto": "Um atalho para um caractere especial.", "correta": false},
+        {"texto": "Um tipo de dado primitivo cujo valor é único e imutável, frequentemente usado como chave de propriedade de objeto.", "correta": true},
+        {"texto": "Uma variável global para símbolos matemáticos.", "correta": false},
+        {"texto": "Um tipo de erro de sintaxe.", "correta": false}
+      ]
+    },
+    {
+      "id": 40,
+      "pergunta": "O que são 'Web Workers'?",
+      "opcoes": [
+        {"texto": "Plugins do navegador para automação.", "correta": false},
+        {"texto": "Uma forma de executar scripts em segundo plano (em uma thread separada), permitindo que tarefas computacionalmente intensivas não bloqueiem a interface do usuário.", "correta": true},
+        {"texto": "Componentes de UI pré-construídos para formulários.", "correta": false},
+        {"texto": "Servidores locais para desenvolvimento JavaScript.", "correta": false}
+      ]
+    }
+  ]
+}

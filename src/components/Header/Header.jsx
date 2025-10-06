@@ -14,8 +14,8 @@ const Header = ({ userStats = { streak: 0, gems: 0 } }) => {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const heatKey = "nextpath_heat";
-    const gemsKey = "nextpath_gems";
+    const heatKey = "javascriptpath_heat";
+    const gemsKey = "javascriptpath_gems";
     const storedHeat = parseInt(localStorage.getItem(heatKey) || "0", 10);
     const storedGems = parseInt(localStorage.getItem(gemsKey) || "0", 10);
     setHeat(storedHeat);
@@ -26,9 +26,9 @@ const Header = ({ userStats = { streak: 0, gems: 0 } }) => {
       setHeat(newHeat);
       setGems(newGems);
     }
-    window.addEventListener("nextpath:statsChanged", onStatsChange);
+    window.addEventListener("javascriptpath:statsChanged", onStatsChange);
     return () =>
-      window.removeEventListener("nextpath:statsChanged", onStatsChange);
+      window.removeEventListener("javascriptpath:statsChanged", onStatsChange);
   }, []);
 
   // lang is handled by useLang hook which listens/updates globally

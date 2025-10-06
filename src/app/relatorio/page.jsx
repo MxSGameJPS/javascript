@@ -11,7 +11,7 @@ export default function RelatorioPage() {
 
   useEffect(() => {
     // Simula fetch das respostas do usuário (deveria vir do backend futuramente)
-    const raw = localStorage.getItem("nextpath_respostas");
+    const raw = localStorage.getItem("javascriptpath_respostas");
     const data = raw ? JSON.parse(raw) : [];
     setRespostas(data);
     setLoading(false);

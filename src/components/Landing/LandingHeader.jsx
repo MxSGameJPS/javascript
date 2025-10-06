@@ -9,11 +9,11 @@ export default function LandingHeader() {
   const changeLang = (e) => {
     const v = e.target.value;
     if (typeof window !== "undefined") {
-      localStorage.setItem("nextpath_lang", v);
+      localStorage.setItem("javascriptpath_lang", v);
       document.documentElement.lang = v;
       try {
         window.dispatchEvent(
-          new CustomEvent("nextpath:langChanged", { detail: { lang: v } })
+          new CustomEvent("javascriptpath:langChanged", { detail: { lang: v } })
         );
       } catch (err) {}
       setLang(v);

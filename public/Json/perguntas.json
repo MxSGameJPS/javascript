@@ -1,1050 +1,810 @@
 {
   "iniciante": [
     {
-      "id": 1,
-      "pergunta": "O que é o Next.js?",
+      "id": 41,
+      "pergunta": "Qual a principal diferença entre `let` e `const`?",
       "opcoes": [
-        {"texto": "Uma linguagem de programação completamente nova.", "correta": false},
-        {"texto": "Um framework React para desenvolvimento de aplicações web.", "correta": true},
-        {"texto": "Um banco de dados para aplicações React.", "correta": false},
-        {"texto": "Uma biblioteca para estilização de componentes, como o CSS.", "correta": false}
-      ],
-      "dica": "Pense na relação entre Next.js e uma biblioteca muito popular para criar interfaces de usuário.",
-      "explicacao": "Next.js é um framework construído sobre o React. Ele adiciona muitas funcionalidades e otimizações para produção, como pré-renderização e roteamento, sem que você precise configurar tudo do zero.",
-      "referencia": "https://nextjs.org/docs/getting-started/introduction"
+        {"texto": "`let` é para texto e `const` é para números.", "correta": false},
+        {"texto": "Uma variável `let` pode ter seu valor reatribuído, enquanto uma `const` não pode.", "correta": true},
+        {"texto": "`const` é para variáveis globais e `let` para locais.", "correta": false},
+        {"texto": "Não há diferença, são apenas nomes diferentes.", "correta": false}
+      ]
     },
     {
-      "id": 2,
-      "pergunta": "Qual é a principal vantagem do Next.js em relação a uma aplicação React padrão (criada com Create React App)?",
+      "id": 42,
+      "pergunta": "O que o valor `undefined` representa?",
       "opcoes": [
-        {"texto": "A capacidade de escrever código HTML de forma mais fácil.", "correta": false},
-        {"texto": "Possui mais componentes de interface prontos para usar.", "correta": false},
-        {"texto": "A otimização para SEO e performance através da pré-renderização (SSR e SSG).", "correta": true},
-        {"texto": "É a única forma de usar TypeScript com React.", "correta": false}
-      ],
-      "dica": "Pense em como os motores de busca, como o Google, 'leem' o seu site.",
-      "explicacao": "A capacidade de pré-renderizar páginas no servidor (SSR/SSG) significa que o HTML chega pronto ao navegador. Isso melhora drasticamente o tempo de carregamento e permite que buscadores indexem o conteúdo facilmente, otimizando o SEO.",
-      "referencia": "https://nextjs.org/docs/basic-features/pages"
+        {"texto": "Um erro no código.", "correta": false},
+        {"texto": "Que uma variável foi declarada, mas ainda não teve um valor atribuído.", "correta": true},
+        {"texto": "Um valor nulo ou vazio intencional.", "correta": false},
+        {"texto": "O número zero.", "correta": false}
+      ]
     },
     {
-      "id": 3,
-      "pergunta": "Como você cria uma nova página com a rota '/sobre' em um projeto Next.js (Pages Router)?",
+      "id": 43,
+      "pergunta": "Como você cria um array vazio chamado `lista`?",
       "opcoes": [
-        {"texto": "Criando um arquivo chamado 'sobre.js' dentro da pasta 'pages'.", "correta": true},
-        {"texto": "Adicionando uma nova rota em um arquivo de configuração central.", "correta": false},
-        {"texto": "Executando o comando 'npx next create-page sobre'.", "correta": false},
-        {"texto": "Criando um componente chamado 'Sobre' e importando na página principal.", "correta": false}
-      ],
-      "dica": "O Next.js tem um sistema de roteamento que utiliza a estrutura de pastas do seu projeto.",
-      "explicacao": "O Next.js utiliza um sistema de roteamento baseado em arquivos (file-system based routing). Qualquer arquivo `.js`, `.jsx`, `.ts`, ou `.tsx` dentro do diretório 'pages' se torna automaticamente uma rota.",
-      "referencia": "https://nextjs.org/docs/routing/introduction"
+        {"texto": "let lista = {};", "correta": false},
+        {"texto": "let lista = [];", "correta": true},
+        {"texto": "let lista = ();", "correta": false},
+        {"texto": "let lista = new Array;", "correta": false}
+      ]
     },
     {
-      "id": 4,
-      "pergunta": "Qual comando é usado para iniciar um novo projeto Next.js?",
+      "id": 44,
+      "pergunta": "Qual operador representa a lógica 'E' (ambas as condições devem ser verdadeiras)?",
       "opcoes": [
-        {"texto": "npm init next-app", "correta": false},
-        {"texto": "npx start-next-project", "correta": false},
-        {"texto": "npx create-react-app", "correta": false},
-        {"texto": "npx create-next-app@latest", "correta": true}
-      ],
-      "dica": "O comando é similar ao do Create React App, mas específico para o 'Next'.",
-      "explicacao": "Este é o comando oficial e recomendado para criar um novo projeto Next.js, garantindo que você use a versão mais recente e siga as melhores práticas de instalação.",
-      "referencia": "https://nextjs.org/docs/getting-started/installation"
+        {"texto": "||", "correta": false},
+        {"texto": "&&", "correta": true},
+        {"texto": "!", "correta": false},
+        {"texto": "&", "correta": false}
+      ]
     },
     {
-      "id": 5,
-      "pergunta": "Depois de criar seu projeto, qual comando você usa para iniciar o servidor de desenvolvimento?",
+      "id": 45,
+      "pergunta": "Qual operador representa a lógica 'OU' (pelo menos uma condição deve ser verdadeira)?",
       "opcoes": [
-        {"texto": "npm start", "correta": false},
-        {"texto": "npm run dev", "correta": true},
-        {"texto": "npm run serve", "correta": false},
-        {"texto": "npx next start", "correta": false}
-      ],
-      "dica": "Procure pelo script que remete à palavra 'desenvolvimento' no arquivo 'package.json'.",
-      "explicacao": "O comando `npm run dev` executa o script 'dev' definido no `package.json`, que por sua vez chama `next dev` para iniciar o servidor com funcionalidades como Hot Module Replacement (HMR).",
-      "referencia": "https://nextjs.org/docs/getting-started/installation"
+        {"texto": "&&", "correta": false},
+        {"texto": "||", "correta": true},
+        {"texto": "|", "correta": false},
+        {"texto": "OR", "correta": false}
+      ]
     },
     {
-      "id": 6,
-      "pergunta": "Para que serve o componente `<Link>` importado de 'next/link'?",
+      "id": 46,
+      "pergunta": "Como você concatena as strings 'Olá' e 'Mundo'?",
       "opcoes": [
-        {"texto": "Para criar links externos que abrem em uma nova aba.", "correta": false},
-        {"texto": "Para estilizar links, funcionando como uma tag `<a>` com superpoderes de CSS.", "correta": false},
-        {"texto": "Para habilitar a navegação entre páginas do lado do cliente (client-side), sem recarregar a página.", "correta": true},
-        {"texto": "Para conectar a aplicação a APIs externas.", "correta": false}
-      ],
-      "dica": "Pense na diferença entre clicar em um link em um site tradicional (que recarrega tudo) e em uma aplicação moderna (SPA).",
-      "explicacao": "O componente `<Link>` permite uma transição rápida e suave entre as páginas da aplicação (client-side navigation). Ele pré-carrega o conteúdo da página de destino, melhorando muito a experiência do usuário.",
-      "referencia": "https://nextjs.org/docs/api-reference/next/link"
+        {"texto": "'Olá' - 'Mundo'", "correta": false},
+        {"texto": "'Olá' + 'Mundo'", "correta": true},
+        {"texto": "'Olá' & 'Mundo'", "correta": false},
+        {"texto": "concat('Olá', 'Mundo')", "correta": false}
+      ]
     },
     {
-      "id": 7,
-      "pergunta": "Qual é a finalidade principal do diretório `pages/api`?",
+      "id": 47,
+      "pergunta": "Qual é a propriedade que retorna o número de caracteres de uma string `str`?",
       "opcoes": [
-        {"texto": "Para armazenar a documentação da API do projeto.", "correta": false},
-        {"texto": "Para criar endpoints de API (backend) que podem ser acessados pela aplicação.", "correta": true},
-        {"texto": "Para configurar as chaves de API de serviços externos.", "correta": false},
-        {"texto": "Para guardar os componentes React que consomem APIs.", "correta": false}
-      ],
-      "dica": "Este diretório permite que seu projeto Next.js funcione como uma aplicação 'full-stack'.",
-      "explicacao": "Qualquer arquivo dentro de `pages/api` se torna um endpoint de API. Isso permite que você crie um backend junto com seu frontend, sem precisar de um servidor separado para lógicas de negócio simples.",
-      "referencia": "https://nextjs.org/docs/api-routes/introduction"
+        {"texto": "str.size", "correta": false},
+        {"texto": "str.length", "correta": true},
+        {"texto": "str.count", "correta": false},
+        {"texto": "str.index", "correta": false}
+      ]
     },
     {
-      "id": 8,
-      "pergunta": "O que é 'Pré-renderização' (Pre-rendering) no contexto do Next.js?",
+      "id": 48,
+      "pergunta": "Como você define um objeto literal com uma propriedade `nome` e valor 'Ana'?",
       "opcoes": [
-        {"texto": "É o processo de carregar todos os arquivos JavaScript no navegador antes do usuário interagir.", "correta": false},
-        {"texto": "Uma técnica para prever qual página o usuário vai visitar e já carregá-la.", "correta": false},
-        {"texto": "O Next.js gera o HTML para cada página com antecedência, em vez de fazer tudo no navegador do cliente.", "correta": true},
-        {"texto": "É o nome dado ao processo de compilação do código TypeScript para JavaScript.", "correta": false}
-      ],
-      "dica": "Pense no que o servidor envia para o navegador. Ele envia uma página em branco que será preenchida ou uma página já com conteúdo?",
-      "explicacao": "Pré-renderização significa que o HTML é gerado no servidor antes de ser enviado ao navegador. Isso resulta em melhor performance e SEO, pois o conteúdo é imediatamente visível para o usuário e para os robôs de busca.",
-      "referencia": "https://nextjs.org/docs/basic-features/data-fetching/overview#pre-rendering"
+        {"texto": "let user = ('nome': 'Ana');", "correta": false},
+        {"texto": "let user = {'nome': 'Ana'};", "correta": true},
+        {"texto": "let user = ['nome': 'Ana'];", "correta": false},
+        {"texto": "let user = <nome='Ana'>;", "correta": false}
+      ]
     },
     {
-      "id": 9,
-      "pergunta": "Qual é a função do arquivo `_app.js` (ou `_app.tsx`) no Pages Router?",
+      "id": 49,
+      "pergunta": "Qual o resultado de `!true`?",
       "opcoes": [
-        {"texto": "É a página principal (homepage) da aplicação.", "correta": false},
-        {"texto": "Serve para definir todas as rotas da aplicação manualmente.", "correta": false},
-        {"texto": "É um componente de ordem superior que envolve todas as páginas, útil para layouts e estados globais.", "correta": true},
-        {"texto": "É o arquivo de configuração principal do Next.js.", "correta": false}
-      ],
-      "dica": "Pense em como você aplicaria um menu de navegação ou um rodapé que precisa aparecer em todas as páginas.",
-      "explicacao": "O `_app.js` atua como o componente raiz da sua aplicação. Ele permite que você mantenha estado, adicione layouts, injete CSS global e passe props para todas as páginas.",
-      "referencia": "https://nextjs.org/docs/advanced-features/custom-app"
+        {"texto": "true", "correta": false},
+        {"texto": "false", "correta": true},
+        {"texto": "undefined", "correta": false},
+        {"texto": "Erro", "correta": false}
+      ]
     },
     {
-      "id": 10,
-      "pergunta": "Qual dos seguintes métodos de renderização gera a página em tempo de build (build time)?",
+      "id": 50,
+      "pergunta": "Como você chama/invoca uma função chamada `saudacao`?",
       "opcoes": [
-        {"texto": "Server-side Rendering (SSR)", "correta": false},
-        {"texto": "Client-side Rendering (CSR)", "correta": false},
-        {"texto": "Static Site Generation (SSG)", "correta": true},
-        {"texto": "Incremental Static Regeneration (ISR)", "correta": false}
-      ],
-      "dica": "Qual método é ideal para páginas que não mudam com frequência, como posts de um blog ou páginas de marketing?",
-      "explicacao": "SSG, habilitado pela função `getStaticProps`, gera todas as páginas como arquivos HTML estáticos no momento do build. Isso as torna extremamente rápidas para servir a partir de um CDN.",
-      "referencia": "https://nextjs.org/docs/basic-features/data-fetching/get-static-props"
+        {"texto": "chamar saudacao;", "correta": false},
+        {"texto": "saudacao();", "correta": true},
+        {"texto": "saudacao;", "correta": false},
+        {"texto": "go saudacao();", "correta": false}
+      ]
     },
     {
-      "id": 11,
-      "pergunta": "O que é JSX?",
+      "id": 51,
+      "pergunta": "Qual a finalidade de usar 'template literals' (ex: `` `Olá, ${nome}` ``)?",
       "opcoes": [
-        {"texto": "Uma nova versão do JavaScript.", "correta": false},
-        {"texto": "Uma extensão de sintaxe para JavaScript que permite escrever HTML no código.", "correta": true},
-        {"texto": "Uma forma de escrever CSS dentro do JavaScript.", "correta": false},
-        {"texto": "Um gerenciador de pacotes para projetos React.", "correta": false}
-      ],
-      "dica": "É a sintaxe que mistura tags HTML com lógica JavaScript para criar componentes.",
-      "explicacao": "JSX (JavaScript XML) permite que você escreva código que se parece com HTML dentro de seus arquivos JavaScript. O React então converte esse código em elementos do DOM para renderizar a interface.",
-      "referencia": "https://react.dev/learn/writing-markup-with-jsx"
+        {"texto": "Para criar comentários de múltiplas linhas.", "correta": false},
+        {"texto": "Para permitir a interpolação de variáveis e expressões dentro de strings de forma mais fácil.", "correta": true},
+        {"texto": "Para definir o tipo de uma variável como string.", "correta": false},
+        {"texto": "Para comparar duas strings.", "correta": false}
+      ]
     },
     {
-      "id": 12,
-      "pergunta": "Para que serve a pasta `public` em um projeto Next.js?",
+      "id": 52,
+      "pergunta": "Qual o resultado da expressão `let x = 10; x++;`?",
       "opcoes": [
-        {"texto": "Para colocar todos os componentes React da aplicação.", "correta": false},
-        {"texto": "Para colocar arquivos estáticos como imagens, fontes e `robots.txt`.", "correta": true},
-        {"texto": "Para guardar as páginas que não devem ser acessadas publicamente.", "correta": false},
-        {"texto": "Para definir as variáveis de ambiente públicas.", "correta": false}
-      ],
-      "dica": "Onde você colocaria o favicon do seu site ou um arquivo `ads.txt`?",
-      "explicacao": "A pasta `public` é servida na raiz do projeto. É o local ideal para arquivos estáticos que precisam ser acessados diretamente pela URL, como `favicon.ico` ou imagens referenciadas no seu código.",
-      "referencia": "https://nextjs.org/docs/basic-features/static-file-serving"
+        {"texto": "10", "correta": false},
+        {"texto": "11", "correta": true},
+        {"texto": "9", "correta": false},
+        {"texto": "x1", "correta": false}
+      ]
     },
     {
-      "id": 13,
-      "pergunta": "O que são 'props' em React?",
+      "id": 53,
+      "pergunta": "Qual função nativa exibe uma caixa de diálogo com uma mensagem para o usuário?",
       "opcoes": [
-        {"texto": "São os estados internos de um componente.", "correta": false},
-        {"texto": "São argumentos passados para um componente para customizar seu comportamento e aparência.", "correta": true},
-        {"texto": "São eventos do navegador, como cliques e digitação.", "correta": false},
-        {"texto": "São funções que definem a estrutura de um componente.", "correta": false}
-      ],
-      "dica": "É a forma de um componente 'pai' se comunicar com um componente 'filho'.",
-      "explicacao": "'Props' (abreviação de 'properties') são objetos que permitem passar dados de um componente pai para um filho, tornando os componentes reutilizáveis e dinâmicos. Elas são somente leitura.",
-      "referencia": "https://react.dev/learn/passing-props-to-a-component"
+        {"texto": "console.log()", "correta": false},
+        {"texto": "alert()", "correta": true},
+        {"texto": "prompt()", "correta": false},
+        {"texto": "confirm()", "correta": false}
+      ]
     },
     {
-      "id": 14,
-      "pergunta": "Como o Next.js lida com a estilização de componentes?",
+      "id": 54,
+      "pergunta": "Qual é a sintaxe para um parâmetro `nome` em uma função `saudacao`?",
       "opcoes": [
-        {"texto": "Ele exige o uso de uma biblioteca específica como o Bootstrap.", "correta": false},
-        {"texto": "Ele oferece suporte integrado a várias abordagens, como CSS Modules, Sass e CSS-in-JS.", "correta": true},
-        {"texto": "Ele não permite o uso de arquivos CSS, apenas estilos inline.", "correta": false},
-        {"texto": "Ele converte automaticamente classes CSS em componentes React.", "correta": false}
-      ],
-      "dica": "Next.js é conhecido por sua flexibilidade. Como isso se aplica ao CSS?",
-      "explicacao": "Next.js é muito flexível com estilização. Ele suporta CSS global, CSS Modules (para estilos com escopo local), Sass, e bibliotecas populares de CSS-in-JS como Styled Components e Emotion.",
-      "referencia": "https://nextjs.org/docs/basic-features/built-in-css-support"
+        {"texto": "function saudacao(var nome) {}", "correta": false},
+        {"texto": "function saudacao(nome) {}", "correta": true},
+        {"texto": "function(nome) saudacao {}", "correta": false},
+        {"texto": "function saudacao() { let nome; }", "correta": false}
+      ]
     },
     {
-      "id": 15,
-      "pergunta": "Qual a função do arquivo `_document.js` (ou `_document.tsx`) no Pages Router?",
+      "id": 55,
+      "pergunta": "Como se chama a conversão automática de tipos que o JavaScript faz (ex: `5 == '5'`)?",
       "opcoes": [
-        {"texto": "Substituir o `_app.js` para controlar o layout das páginas.", "correta": false},
-        {"texto": "Customizar a estrutura do HTML que envolve a aplicação, como as tags `<html>` e `<body>`.", "correta": true},
-        {"texto": "Guardar a documentação do projeto.", "correta": false},
-        {"texto": "Controlar as rotas da API.", "correta": false}
-      ],
-      "dica": "Pense em onde você adicionaria atributos globais, como `lang='pt-BR'` na tag `<html>`.",
-      "explicacao": "Enquanto `_app.js` customiza o conteúdo da página, `_document.js` customiza o 'esqueleto' HTML que é servido. É usado principalmente para adicionar fontes, metatags estáticas e modificar a estrutura do documento.",
-      "referencia": "https://nextjs.org/docs/advanced-features/custom-document"
+        {"texto": "Tipagem Estática", "correta": false},
+        {"texto": "Coerção de Tipo", "correta": true},
+        {"texto": "Herança", "correta": false},
+        {"texto": "Compilação", "correta": false}
+      ]
     },
     {
-      "id": 16,
-      "pergunta": "O que o comando `next build` faz?",
+      "id": 56,
+      "pergunta": "Qual operador é usado para comparar se um número é 'maior ou igual' a outro?",
       "opcoes": [
-        {"texto": "Inicia o servidor de desenvolvimento.", "correta": false},
-        {"texto": "Cria uma versão otimizada da sua aplicação para produção.", "correta": true},
-        {"texto": "Instala todas as dependências do projeto.", "correta": false},
-        {"texto": "Executa os testes automatizados da aplicação.", "correta": false}
-      ],
-      "dica": "É o passo que você executa antes de colocar seu site no ar (deploy).",
-      "explicacao": "O comando `next build` compila e otimiza sua aplicação, gerando os arquivos estáticos, as funções serverless e os bundles de JavaScript que serão usados em produção. O resultado fica na pasta `.next`.",
-      "referencia": "https://nextjs.org/docs/api-reference/cli#build"
+        {"texto": ">", "correta": false},
+        {"texto": ">=", "correta": true},
+        {"texto": "=>", "correta": false},
+        {"texto": "=<", "correta": false}
+      ]
     },
     {
-      "id": 17,
-      "pergunta": "O que é um componente em React?",
+      "id": 57,
+      "pergunta": "O que a função `prompt()` faz?",
       "opcoes": [
-        {"texto": "Uma variável que armazena código HTML.", "correta": false},
-        {"texto": "Um pedaço de código reutilizável que descreve uma parte da interface do usuário (UI).", "correta": true},
-        {"texto": "Um arquivo CSS.", "correta": false},
-        {"texto": "Uma rota da aplicação.", "correta": false}
-      ],
-      "dica": "Pense nos 'blocos de montar' de uma aplicação React.",
-      "explicacao": "Componentes são como funções JavaScript que aceitam entradas (props) e retornam elementos React que descrevem o que deve aparecer na tela. Eles permitem dividir a UI em partes independentes e reutilizáveis.",
-      "referencia": "https://react.dev/learn"
+        {"texto": "Imprime um valor no console.", "correta": false},
+        {"texto": "Exibe uma caixa de diálogo que solicita uma entrada do usuário.", "correta": true},
+        {"texto": "Confirma uma ação com o usuário.", "correta": false},
+        {"texto": "Exibe uma mensagem de alerta.", "correta": false}
+      ]
     },
     {
-      "id": 18,
-      "pergunta": "Qual a diferença entre uma página e um componente no Next.js?",
+      "id": 58,
+      "pergunta": "Qual método de string a transforma em letras maiúsculas?",
       "opcoes": [
-        {"texto": "Não há diferença, são a mesma coisa.", "correta": false},
-        {"texto": "Páginas são componentes que ficam no diretório `pages` e se tornam rotas, enquanto componentes são blocos reutilizáveis que compõem as páginas.", "correta": true},
-        {"texto": "Páginas não podem ter estado, enquanto componentes podem.", "correta": false},
-        {"texto": "Componentes são escritos em TypeScript e páginas em JavaScript.", "correta": false}
-      ],
-      "dica": "Todo arquivo em `pages` é um componente, mas nem todo componente é uma página.",
-      "explicacao": "Uma página é um componente React que está associado a uma rota por causa de sua localização no diretório `pages`. Um componente 'comum' é qualquer outro bloco de UI que você cria para ser reutilizado dentro das páginas ou de outros componentes.",
-      "referencia": "https://nextjs.org/docs/basic-features/pages"
+        {"texto": ".upperCase()", "correta": false},
+        {"texto": ".toUpperCase()", "correta": true},
+        {"texto": ".toUpper()", "correta": false},
+        {"texto": ".makeUpper()", "correta": false}
+      ]
     },
     {
-      "id": 19,
-      "pergunta": "O que significa 'Hot Module Replacement' (HMR)?",
+      "id": 59,
+      "pergunta": "Qual o valor de `idade` após a execução de `let idade = 20; idade = 21;`?",
       "opcoes": [
-        {"texto": "Um sistema que reinicia o servidor a cada alteração no código.", "correta": false},
-        {"texto": "Uma funcionalidade que atualiza a aplicação no navegador em tempo real sem precisar recarregar a página inteira.", "correta": true},
-        {"texto": "Um método para otimizar o tamanho dos módulos JavaScript.", "correta": false},
-        {"texto": "Uma técnica de segurança para proteger os módulos da aplicação.", "correta": false}
-      ],
-      "dica": "É o que permite que você veja suas alterações de código refletidas instantaneamente no navegador durante o desenvolvimento.",
-      "explicacao": "HMR é uma das funcionalidades do servidor de desenvolvimento (`next dev`) que melhora muito a produtividade. Ele troca, adiciona ou remove módulos enquanto a aplicação está rodando, sem um reload completo da página, mantendo o estado da aplicação.",
-      "referencia": "https://webpack.js.org/concepts/hot-module-replacement/"
+        {"texto": "20", "correta": false},
+        {"texto": "21", "correta": true},
+        {"texto": "41", "correta": false},
+        {"texto": "Erro", "correta": false}
+      ]
     },
     {
-      "id": 20,
-      "pergunta": "Para que serve o arquivo `next.config.js`?",
+      "id": 60,
+      "pergunta": "Para que serve a palavra-chave `return` dentro de uma função?",
       "opcoes": [
-        {"texto": "Para escrever o código principal da aplicação.", "correta": false},
-        {"texto": "Para configurar o comportamento avançado do Next.js, como variáveis de ambiente e redirecionamentos.", "correta": true},
-        {"texto": "Para listar as dependências do projeto, como o `package.json`.", "correta": false},
-        {"texto": "Para definir os estilos globais da aplicação.", "correta": false}
-      ],
-      "dica": "É o lugar onde você customiza o funcionamento do próprio framework Next.js.",
-      "explicacao": "O `next.config.js` é um arquivo opcional que permite customizar configurações do servidor, do processo de build e do cliente. Nele você pode configurar redirecionamentos, rewrites, adicionar variáveis de ambiente e muito mais.",
-      "referencia": "https://nextjs.org/docs/api-reference/next.config.js/introduction"
+        {"texto": "Para imprimir um valor no console.", "correta": false},
+        {"texto": "Para especificar o valor que a função deve produzir ou 'enviar de volta'.", "correta": true},
+        {"texto": "Para reiniciar a função.", "correta": false},
+        {"texto": "Para declarar uma variável.", "correta": false}
+      ]
     }
   ],
   "intermediario": [
     {
-      "id": 21,
-      "pergunta": "Quando a função `getStaticProps` é executada?",
+      "id": 61,
+      "pergunta": "Qual método remove o último elemento de um array e retorna esse elemento?",
       "opcoes": [
-        {"texto": "A cada requisição do usuário, no lado do servidor.", "correta": false},
-        {"texto": "Apenas uma vez, em tempo de build (construção), no lado do servidor.", "correta": true},
-        {"texto": "No lado do cliente (browser), depois que a página é carregada.", "correta": false},
-        {"texto": "Quando o usuário clica em um link para navegar para a página.", "correta": false}
-      ],
-      "dica": "Pense no 'S' de 'Static'. A página é gerada antes mesmo do usuário acessá-la pela primeira vez.",
-      "explicacao": "`getStaticProps` busca os dados e gera a página HTML durante o processo de build. O resultado é um conjunto de arquivos estáticos que podem ser servidos por um CDN, resultando em um site ultrarrápido.",
-      "referencia": "https://nextjs.org/docs/basic-features/data-fetching/get-static-props"
+        {"texto": "shift()", "correta": false},
+        {"texto": "pop()", "correta": true},
+        {"texto": "slice()", "correta": false},
+        {"texto": "splice()", "correta": false}
+      ]
     },
     {
-      "id": 22,
-      "pergunta": "Em que situação você deve escolher `getServerSideProps` em vez de `getStaticProps`?",
+      "id": 62,
+      "pergunta": "Qual estrutura de repetição é ideal para iterar sobre as propriedades de um objeto?",
       "opcoes": [
-        {"texto": "Para uma página de blog que raramente é atualizada.", "correta": false},
-        {"texto": "Para uma página cujo conteúdo precisa estar sempre atualizado e muda a cada requisição.", "correta": true},
-        {"texto": "Quando a página não precisa de dados externos para ser renderizada.", "correta": false},
-        {"texto": "Quando você quer que a página carregue o mais rápido possível para todos os usuários.", "correta": false}
-      ],
-      "dica": "Pense em uma página que exibe informações personalizadas para cada usuário ou dados que mudam a todo segundo.",
-      "explicacao": "`getServerSideProps` (SSR) é ideal para páginas com dados altamente dinâmicos, como um painel de usuário, um feed de notícias ou uma página de e-commerce com estoque em tempo real. A página é gerada no servidor a cada nova requisição.",
-      "referencia": "https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props"
+        {"texto": "for...of", "correta": false},
+        {"texto": "for...in", "correta": true},
+        {"texto": "forEach", "correta": false},
+        {"texto": "while", "correta": false}
+      ]
     },
     {
-      "id": 23,
-      "pergunta": "Como você cria uma rota dinâmica para exibir posts de um blog, como `/blog/[slug]`?",
+      "id": 63,
+      "pergunta": "Para que serve a estrutura `switch`?",
       "opcoes": [
-        {"texto": "Criando um arquivo chamado `[slug].js` dentro da pasta `pages/blog`.", "correta": true},
-        {"texto": "Criando um arquivo chamado `blog.js` e usando o hook `useRouter` para pegar o slug.", "correta": false},
-        {"texto": "Configurando a rota manualmente no arquivo `next.config.js`.", "correta": false},
-        {"texto": "Criando uma pasta chamada `[slug]` dentro de `pages/blog`.", "correta": false}
-      ],
-      "dica": "O Next.js usa uma sintaxe especial com colchetes nos nomes dos arquivos para identificar segmentos dinâmicos de uma URL.",
-      "explicacao": "O uso de colchetes `[]` no nome do arquivo indica ao Next.js que esta é uma rota dinâmica. O valor do `slug` (ou qualquer outro nome) fica disponível no componente através do hook `useRouter` ou como parâmetro em `getStaticProps`/`getServerSideProps`.",
-      "referencia": "https://nextjs.org/docs/routing/dynamic-routes"
+        {"texto": "Para iterar sobre arrays.", "correta": false},
+        {"texto": "Para selecionar um dos muitos blocos de código a serem executados, com base em uma única variável ou expressão.", "correta": true},
+        {"texto": "Para definir o escopo de uma variável.", "correta": false},
+        {"texto": "Para trocar os valores de duas variáveis.", "correta": false}
+      ]
     },
     {
-      "id": 24,
-      "pergunta": "Qual é a principal função da `getStaticPaths` em uma página dinâmica?",
+      "id": 64,
+      "pergunta": "Como se define uma função como um método dentro de um objeto literal?",
       "opcoes": [
-        {"texto": "Buscar os dados (props) para a página, como o conteúdo de um post.", "correta": false},
-        {"texto": "Especificar quais caminhos (rotas) dinâmicos devem ser pré-renderizados em tempo de build.", "correta": true},
-        {"texto": "Redirecionar o usuário para uma nova página caso o caminho não seja encontrado.", "correta": false},
-        {"texto": "Criar os endpoints de API para as rotas dinâmicas.", "correta": false}
-      ],
-      "dica": "Para gerar páginas estáticas dinâmicas, o Next.js precisa saber *quais* páginas gerar durante o build. Como você informa isso a ele?",
-      "explicacao": "`getStaticPaths` deve ser usada em conjunto com `getStaticProps` em páginas dinâmicas. Ela retorna uma lista de todos os `slugs` ou `ids` possíveis para que o Next.js possa gerar cada uma dessas páginas estaticamente durante o build.",
-      "referencia": "https://nextjs.org/docs/basic-features/data-fetching/get-static-paths"
+        {"texto": "{ saudacao: function() { ... } }", "correta": true},
+        {"texto": "{ function saudacao() { ... } }", "correta": false},
+        {"texto": "{ saudacao = () => { ... } }", "correta": false},
+        {"texto": "{ saudacao: saudacao() }", "correta": false}
+      ]
     },
     {
-      "id": 25,
-      "pergunta": "Qual é o principal benefício de usar o componente `<Image>` de `next/image` em vez da tag `<img>` do HTML?",
+      "id": 65,
+      "pergunta": "O que o operador ternário (`condicao ? valor1 : valor2`) faz?",
       "opcoes": [
-        {"texto": "Ele aplica filtros de cor automaticamente, como sépia ou preto e branco.", "correta": false},
-        {"texto": "Ele centraliza a imagem na página por padrão.", "correta": false},
-        {"texto": "Otimização automática de imagens, como lazy loading, redimensionamento e conversão para formatos modernos (WebP).", "correta": true},
-        {"texto": "Ele permite usar apenas imagens no formato SVG.", "correta": false}
-      ],
-      "dica": "Pense em como otimizar o carregamento de imagens pesadas em um site para melhorar o LCP (Largest Contentful Paint).",
-      "explicacao": "O componente `<Image>` é uma ferramenta poderosa para garantir a performance visual. Ele automaticamente implementa lazy loading, serve imagens no tamanho correto para cada dispositivo e as converte para formatos mais eficientes como WebP, melhorando os Core Web Vitals.",
-      "referencia": "https://nextjs.org/docs/basic-features/image-optimization"
+        {"texto": "Declara três variáveis.", "correta": false},
+        {"texto": "É um atalho para uma declaração `if...else`.", "correta": true},
+        {"texto": "Define uma função.", "correta": false},
+        {"texto": "Cria um loop.", "correta": false}
+      ]
     },
     {
-      "id": 26,
-      "pergunta": "Como você adiciona uma tag `<title>` diferente para cada página em um projeto Next.js?",
+      "id": 66,
+      "pergunta": "Como você cria um novo elemento HTML (ex: `<p>`) via JavaScript?",
       "opcoes": [
-        {"texto": "Editando diretamente o arquivo `index.html` na pasta `public`.", "correta": false},
-        {"texto": "Usando o componente `<Head>` importado de `next/head` dentro de cada página.", "correta": true},
-        {"texto": "Configurando um objeto `titles` no arquivo `next.config.js`.", "correta": false},
-        {"texto": "Passando uma prop `title` para o componente no arquivo `_app.js`.", "correta": false}
-      ],
-      "dica": "O Next.js fornece um componente especial para injetar elementos na seção `<head>` de suas páginas.",
-      "explicacao": "O componente `<Head>` permite que você adicione ou modifique os elementos do cabeçalho HTML de uma página de forma declarativa. O que for colocado dentro dele será injetado na tag `<head>` da página renderizada, ideal para SEO.",
-      "referencia": "https://nextjs.org/docs/api-reference/next/head"
+        {"texto": "document.newElement('p')", "correta": false},
+        {"texto": "document.createElement('p')", "correta": true},
+        {"texto": "document.create('p')", "correta": false},
+        {"texto": "new HTMLParagraphElement()", "correta": false}
+      ]
     },
     {
-      "id": 27,
-      "pergunta": "Como você define uma variável de ambiente que só pode ser acessada no lado do servidor (ex: em `getServerSideProps`)?",
+      "id": 67,
+      "pergunta": "Qual propriedade do objeto de evento (`event`) informa qual elemento acionou o evento?",
       "opcoes": [
-        {"texto": "Criando um arquivo `.env.local` e nomeando a variável como `REACT_APP_SECRET_KEY`.", "correta": false},
-        {"texto": "Criando um arquivo `.env.local` e nomeando a variável como `MY_SECRET_KEY`.", "correta": true},
-        {"texto": "Criando um arquivo `.env.local` e nomeando a variável como `NEXT_PUBLIC_SECRET_KEY`.", "correta": false},
-        {"texto": "Adicionando a variável diretamente no arquivo `next.config.js`.", "correta": false}
-      ],
-      "dica": "O Next.js tem um prefixo especial para variáveis de ambiente que precisam ser expostas ao navegador. Para torná-las exclusivas do servidor, basta *não* usar esse prefixo.",
-      "explicacao": "Por padrão, todas as variáveis de ambiente em um arquivo `.env.local` são acessíveis apenas no ambiente Node.js (servidor). Para expor uma variável ao cliente, ela precisa ser prefixada com `NEXT_PUBLIC_`.",
-      "referencia": "https://nextjs.org/docs/basic-features/environment-variables"
+        {"texto": "event.source", "correta": false},
+        {"texto": "event.target", "correta": true},
+        {"texto": "event.element", "correta": false},
+        {"texto": "event.origin", "correta": false}
+      ]
     },
     {
-      "id": 28,
-      "pergunta": "Qual é a principal finalidade de um Middleware no Next.js?",
+      "id": 68,
+      "pergunta": "O que a função `setTimeout(funcao, 1000)` faz?",
       "opcoes": [
-        {"texto": "Executar código no servidor antes de uma requisição ser completada.", "correta": true},
-        {"texto": "Gerenciar o estado global da aplicação, como o Redux.", "correta": false},
-        {"texto": "Buscar dados para uma página específica, de forma similar a `getStaticProps`.", "correta": false},
-        {"texto": "Otimizar imagens e fontes para melhorar a performance.", "correta": false}
-      ],
-      "dica": "Pense em uma camada de verificação ou modificação que fica entre a requisição do usuário e a sua página.",
-      "explicacao": "Middleware permite que você intercepte requisições para reescrever URLs, redirecionar, adicionar headers ou realizar autenticação. Ele é executado no servidor (geralmente na Edge) antes que a requisição chegue à camada de cache ou à página.",
-      "referencia": "https://nextjs.org/docs/advanced-features/middleware"
+        {"texto": "Executa `funcao` 1000 vezes.", "correta": false},
+        {"texto": "Executa `funcao` após um atraso de 1000 milissegundos (1 segundo).", "correta": true},
+        {"texto": "Executa `funcao` a cada 1000 milissegundos.", "correta": false},
+        {"texto": "Pausa todo o script por 1 segundo.", "correta": false}
+      ]
     },
     {
-      "id": 29,
-      "pergunta": "Em uma API Route (`pages/api/user.js`), como você pode lidar com diferentes métodos HTTP (como GET e POST) no mesmo arquivo?",
+      "id": 69,
+      "pergunta": "Para que serve um bloco `try...catch`?",
       "opcoes": [
-        {"texto": "Criando duas funções separadas no mesmo arquivo, uma chamada `handleGet` e outra `handlePost`.", "correta": false},
-        {"texto": "Verificando o valor de `req.method` e usando uma estrutura `if/else` ou `switch`.", "correta": true},
-        {"texto": "O Next.js cria automaticamente endpoints separados, como `/api/user/get` e `/api/user/post`.", "correta": false},
-        {"texto": "É preciso criar arquivos diferentes, como `user_get.js` e `user_post.js`.", "correta": false}
-      ],
-      "dica": "O objeto da requisição (`req`) que chega na sua função de API contém todas as informações sobre a chamada, incluindo o tipo de verbo HTTP utilizado.",
-      "explicacao": "O objeto `req` (requisição) contém a propriedade `method`. Dentro da sua função de handler, você pode verificar se `req.method` é 'GET', 'POST', 'PUT', etc., e executar lógicas diferentes para cada caso.",
-      "referencia": "https://nextjs.org/docs/api-routes/introduction"
+        {"texto": "Para testar se uma condição é verdadeira.", "correta": false},
+        {"texto": "Para lidar com erros de forma controlada, permitindo que o código continue a execução mesmo que um erro ocorra.", "correta": true},
+        {"texto": "Para criar um loop condicional.", "correta": false},
+        {"texto": "Para definir variáveis temporárias.", "correta": false}
+      ]
     },
     {
-      "id": 30,
-      "pergunta": "O que é 'Shallow Routing'?",
+      "id": 70,
+      "pergunta": "Qual dos seguintes valores é considerado 'falsy' em JavaScript?",
       "opcoes": [
-        {"texto": "Uma forma de navegar para a mesma página sem executar novamente `getStaticProps` ou `getServerSideProps`.", "correta": true},
-        {"texto": "Um método para renderizar apenas a parte visível da página, economizando recursos.", "correta": false},
-        {"texto": "Uma técnica de segurança para evitar que rotas profundas sejam acessadas sem permissão.", "correta": false},
-        {"texto": "O roteamento padrão do Next.js, que é considerado mais 'raso' que o de outros frameworks.", "correta": false}
-      ],
-      "dica": "Pense em como atualizar a URL de uma página de filtros (`/produtos?cor=azul`) sem precisar recarregar todos os produtos do servidor.",
-      "explicacao": "Shallow routing permite que você altere a URL da página (geralmente query params) sem refazer a busca de dados no servidor. Isso é útil para atualizações de estado que são refletidas na URL mas não requerem novos dados.",
-      "referencia": "https://nextjs.org/docs/routing/shallow-routing"
+        {"texto": "'0'", "correta": false},
+        {"texto": "0", "correta": true},
+        {"texto": "{}", "correta": false},
+        {"texto": "[]", "correta": false}
+      ]
     },
     {
-      "id": 31,
-      "pergunta": "Qual a melhor forma de buscar dados no lado do cliente (Client-Side) em uma página Next.js?",
+      "id": 71,
+      "pergunta": "Qual método de array remove o primeiro elemento e o retorna?",
       "opcoes": [
-        {"texto": "Usando `getStaticProps` com uma configuração especial.", "correta": false},
-        {"texto": "Usando uma combinação de `useEffect` e `fetch`, ou uma biblioteca como SWR/React Query.", "correta": true},
-        {"texto": "Colocando a lógica de busca de dados dentro do arquivo `_app.js`.", "correta": false},
-        {"texto": "Usando a função `getServerSideProps`.", "correta": false}
-      ],
-      "dica": "Considere um dashboard que precisa se atualizar em tempo real. Onde essa lógica de busca de dados deve viver?",
-      "explicacao": "Para dados que mudam frequentemente e são específicos do usuário (client-side data), a abordagem padrão é usar o hook `useEffect` do React para buscar os dados após a montagem do componente. Bibliotecas como SWR (criada pela Vercel) simplificam esse processo com caching, revalidação e mais.",
-      "referencia": "https://nextjs.org/docs/basic-features/data-fetching/client-side"
+        {"texto": "pop()", "correta": false},
+        {"texto": "shift()", "correta": true},
+        {"texto": "splice()", "correta": false},
+        {"texto": "first()", "correta": false}
+      ]
     },
     {
-      "id": 32,
-      "pergunta": "O que a propriedade `priority` faz no componente `<Image>` de `next/image`?",
+      "id": 72,
+      "pergunta": "Como adicionar uma classe 'ativo' a um elemento DOM `el`?",
       "opcoes": [
-        {"texto": "Aplica uma borda dourada na imagem para destacá-la.", "correta": false},
-        {"texto": "Faz com que a imagem seja considerada de alta prioridade para o carregamento, desabilitando o lazy loading e pré-carregando-a.", "correta": true},
-        {"texto": "Aumenta a qualidade de compressão da imagem para 100%.", "correta": false},
-        {"texto": "Move a imagem para o topo da página, independentemente de sua posição no código.", "correta": false}
-      ],
-      "dica": "Pense na imagem principal da sua página, a que aparece 'acima da dobra' (Above the Fold).",
-      "explicacao": "A propriedade `priority={true}` deve ser usada na imagem LCP (Largest Contentful Paint) de uma página. Ela instrui o Next.js a pré-carregar a imagem e a não aplicar lazy loading, melhorando significativamente a performance percebida e os Core Web Vitals.",
-      "referencia": "https://nextjs.org/docs/api-reference/next/image#priority"
+        {"texto": "el.className = 'ativo';", "correta": false},
+        {"texto": "el.classList.add('ativo');", "correta": true},
+        {"texto": "el.class = 'ativo';", "correta": false},
+        {"texto": "el.style.class = 'ativo';", "correta": false}
+      ]
     },
     {
-      "id": 33,
-      "pergunta": "Como você pode criar uma página 404 customizada?",
+      "id": 73,
+      "pergunta": "Qual a diferença entre `slice()` e `splice()` em um array?",
       "opcoes": [
-        {"texto": "Configurando a página no `next.config.js`.", "correta": false},
-        {"texto": "Criando um arquivo chamado `404.js` (ou `.tsx`) dentro da pasta `pages`.", "correta": true},
-        {"texto": "Adicionando uma lógica com `useRouter` no `_app.js` para detectar rotas inexistentes.", "correta": false},
-        {"texto": "Criando um arquivo chamado `error.js` na raiz do projeto.", "correta": false}
-      ],
-      "dica": "O mecanismo é similar à criação de outras páginas, mas com um nome de arquivo específico.",
-      "explicacao": "Para criar uma página de erro 404 customizada e estática, basta criar o arquivo `pages/404.js`. O Next.js irá automaticamente servir este arquivo quando uma rota não for encontrada. Ele é gerado estaticamente no build.",
-      "referencia": "https://nextjs.org/docs/advanced-features/custom-error-page#404-page"
+        {"texto": "Não há diferença.", "correta": false},
+        {"texto": "`slice()` retorna uma cópia de parte do array sem modificar o original, enquanto `splice()` remove ou substitui elementos modificando o array original.", "correta": true},
+        {"texto": "`splice()` é para strings e `slice()` para arrays.", "correta": false},
+        {"texto": "`slice()` adiciona elementos e `splice()` remove.", "correta": false}
+      ]
     },
     {
-      "id": 34,
-      "pergunta": "O que são 'API Routes' dinâmicas?",
+      "id": 74,
+      "pergunta": "O que a função `setInterval(funcao, 1000)` faz?",
       "opcoes": [
-        {"texto": "Endpoints de API que mudam de endereço a cada deploy.", "correta": false},
-        {"texto": "Endpoints que usam a mesma sintaxe de colchetes (`[param]`) das páginas para criar rotas de API com parâmetros dinâmicos.", "correta": true},
-        {"texto": "APIs que só podem ser acessadas por usuários autenticados.", "correta": false},
-        {"texto": "APIs que buscam dados de múltiplas fontes ao mesmo tempo.", "correta": false}
-      ],
-      "dica": "Como você criaria um endpoint para buscar um usuário específico por ID, como `/api/users/[id]`?",
-      "explicacao": "Assim como as páginas, as API Routes podem ser dinâmicas. Ao criar um arquivo como `pages/api/posts/[pid].js`, você pode acessar o valor de `pid` através de `req.query.pid` para buscar e retornar dados específicos.",
-      "referencia": "https://nextjs.org/docs/api-routes/dynamic-api-routes"
+        {"texto": "Executa `funcao` uma vez após 1 segundo.", "correta": false},
+        {"texto": "Executa `funcao` repetidamente, com um intervalo de 1 segundo entre cada chamada.", "correta": true},
+        {"texto": "Executa `funcao` 1000 vezes o mais rápido possível.", "correta": false},
+        {"texto": "Define a duração de uma animação para 1 segundo.", "correta": false}
+      ]
     },
     {
-      "id": 35,
-      "pergunta": "Qual a diferença principal entre o App Router e o Pages Router?",
+      "id": 75,
+      "pergunta": "Como você anexa um elemento filho `novoEl` a um elemento pai `elPai`?",
       "opcoes": [
-        {"texto": "App Router usa JavaScript e Pages Router usa TypeScript.", "correta": false},
-        {"texto": "App Router introduz Server Components e layouts aninhados, enquanto o Pages Router é baseado em um componente por rota.", "correta": true},
-        {"texto": "App Router não suporta API Routes.", "correta": false},
-        {"texto": "Pages Router é mais rápido para o desenvolvimento inicial.", "correta": false}
-      ],
-      "dica": "Pense na principal mudança arquitetural introduzida no Next.js 13.",
-      "explicacao": "O App Router é uma nova paradigma no Next.js. Sua principal inovação é o suporte a React Server Components, que rodam apenas no servidor. Ele também introduz um sistema de layouts aninhados e roteamento baseado em arquivos com convenções específicas (`page.js`, `layout.js`).",
-      "referencia": "https://nextjs.org/docs/getting-started/react-essentials"
+        {"texto": "elPai.add(novoEl);", "correta": false},
+        {"texto": "elPai.appendChild(novoEl);", "correta": true},
+        {"texto": "elPai.attach(novoEl);", "correta": false},
+        {"texto": "elPai.insert(novoEl);", "correta": false}
+      ]
     },
     {
-      "id": 36,
-      "pergunta": "O que faz a propriedade `placeholder='blur'` no componente `<Image>`?",
+      "id": 76,
+      "pergunta": "Qual método de string retorna o caractere em um índice específico?",
       "opcoes": [
-        {"texto": "Adiciona um contorno borrado na imagem usando CSS.", "correta": false},
-        {"texto": "Gera uma versão minúscula e de baixa qualidade da imagem para ser exibida como placeholder enquanto a imagem original carrega.", "correta": true},
-        {"texto": "Aplica um filtro de desfoque na imagem final.", "correta": false},
-        {"texto": "Mostra um ícone de carregamento sobre a imagem.", "correta": false}
-      ],
-      "dica": "É uma técnica para melhorar a experiência visual do usuário durante o carregamento de imagens.",
-      "explicacao": "Quando você usa `placeholder='blur'`, o Next.js gera uma pequena imagem base64 (blurDataURL) no momento do build. Essa imagem borrada é exibida instantaneamente, ocupando o espaço da imagem final, e é substituída pela imagem de alta qualidade quando o carregamento termina, evitando o 'layout shift'.",
-      "referencia": "https://nextjs.org/docs/api-reference/next/image#placeholder"
+        {"texto": ".index(i)", "correta": false},
+        {"texto": ".charAt(i)", "correta": true},
+        {"texto": ".get(i)", "correta": false},
+        {"texto": ".character(i)", "correta": false}
+      ]
     },
     {
-      "id": 37,
-      "pergunta": "Para que serve um 'Layout Component' em Next.js?",
+      "id": 77,
+      "pergunta": "Qual a finalidade da palavra-chave `break` em um loop ou switch?",
       "opcoes": [
-        {"texto": "Para definir a lógica de API da página.", "correta": false},
-        {"texto": "Para compartilhar uma estrutura de UI (como cabeçalho, menu e rodapé) entre múltiplas páginas.", "correta": true},
-        {"texto": "Um componente que só pode ser usado no `_document.js`.", "correta": false},
-        {"texto": "Para configurar o layout do grid CSS da aplicação.", "correta": false}
-      ],
-      "dica": "Como você evita repetir o mesmo código de `Navbar` e `Footer` em todas as páginas?",
-      "explicacao": "O padrão de layout consiste em criar um componente (ex: `Layout.js`) que contém os elementos comuns da UI. No Pages Router, você envolve o componente da página com o Layout no `_app.js`. No App Router, o conceito é nativo através dos arquivos `layout.js`.",
-      "referencia": "https://nextjs.org/docs/basic-features/layouts"
+        {"texto": "Pular a iteração atual e ir para a próxima.", "correta": false},
+        {"texto": "Interromper a execução do loop ou switch imediatamente.", "correta": true},
+        {"texto": "Pausar a execução por um tempo.", "correta": false},
+        {"texto": "Causar um erro proposital.", "correta": false}
+      ]
     },
     {
-      "id": 38,
-      "pergunta": "Como o Next.js gerencia os 'scripts' de terceiros de forma otimizada?",
+      "id": 78,
+      "pergunta": "Como você adiciona um ouvinte de evento de clique a um botão `btn`?",
       "opcoes": [
-        {"texto": "Exigindo que todos os scripts sejam colocados na pasta `public`.", "correta": false},
-        {"texto": "Através do componente `<Script>` de `next/script`, que oferece diferentes estratégias de carregamento.", "correta": true},
-        {"texto": "Ele não oferece nenhuma otimização, os scripts devem ser adicionados manualmente no `_document.js`.", "correta": false},
-        {"texto": "Convertendo todos os scripts em módulos JavaScript nativos.", "correta": false}
-      ],
-      "dica": "Pense em como você adicionaria o Google Analytics a uma página sem impactar negativamente a performance inicial.",
-      "explicacao": "O componente `<Script>` permite um controle fino sobre quando um script de terceiro deve ser carregado e executado. A estratégia `lazyOnload` espera a página ficar inativa, e `afterInteractive` (padrão) carrega após a hidratação, evitando que scripts bloqueiem a renderização.",
-      "referencia": "https://nextjs.org/docs/basic-features/script"
+        {"texto": "btn.onClick = function() {};", "correta": false},
+        {"texto": "btn.addEventListener('click', function() {});", "correta": true},
+        {"texto": "btn.listen('click', function() {});", "correta": false},
+        {"texto": "btn.attachEvent('click', function() {});", "correta": false}
+      ]
     },
     {
-      "id": 39,
-      "pergunta": "O que é 'code splitting' (divisão de código) no Next.js?",
+      "id": 79,
+      "pergunta": "O que é um 'truthy value'?",
       "opcoes": [
-        {"texto": "Uma técnica para dividir o código entre múltiplos desenvolvedores.", "correta": false},
-        {"texto": "O processo automático de dividir o código da aplicação em 'chunks' (pedaços) menores, que são carregados sob demanda.", "correta": true},
-        {"texto": "Uma convenção de nomenclatura para organizar o código em pastas.", "correta": false},
-        {"texto": "Um recurso de segurança que isola o código do servidor do código do cliente.", "correta": false}
-      ],
-      "dica": "Por que o navegador não precisa baixar o código de toda a aplicação para renderizar apenas a página inicial?",
-      "explicacao": "Por padrão, o Next.js analisa seu código e divide-o em pacotes menores. Cada página carrega apenas o JavaScript necessário para ela. Isso resulta em um tempo de carregamento inicial muito mais rápido, pois o usuário não baixa código de páginas que ele talvez nunca visite.",
-      "referencia": "https://nextjs.org/docs/basic-features/code-splitting"
+        {"texto": "Apenas o valor booleano `true`.", "correta": false},
+        {"texto": "Qualquer valor que é considerado `true` em um contexto booleano (ex: um número diferente de zero, uma string não vazia).", "correta": true},
+        {"texto": "Uma string que contém a palavra 'true'.", "correta": false},
+        {"texto": "Uma variável que foi declarada com `const`.", "correta": false}
+      ]
     },
     {
-      "id": 40,
-      "pergunta": "Qual hook do Next.js permite acessar o objeto do roteador, incluindo parâmetros de rota e métodos de navegação?",
+      "id": 80,
+      "pergunta": "Qual laço é mais moderno e recomendado para iterar sobre os VALORES de iteráveis como arrays e strings?",
       "opcoes": [
-        {"texto": "`useState`", "correta": false},
-        {"texto": "`useRouter`", "correta": true},
-        {"texto": "`useContext`", "correta": false},
-        {"texto": "`useEffect`", "correta": false}
-      ],
-      "dica": "É o principal hook para interagir com o sistema de roteamento do lado do cliente.",
-      "explicacao": "O hook `useRouter` importado de `next/router` (no Pages Router) ou `next/navigation` (no App Router) dá acesso programático ao roteador. Você pode usá-lo para navegar (`router.push('/rota')`), ler parâmetros da URL (`router.query`) e acessar o caminho atual (`router.pathname`).",
-      "referencia": "https://nextjs.org/docs/api-reference/next/router"
+        {"texto": "for...in", "correta": false},
+        {"texto": "for...of", "correta": true},
+        {"texto": "for (i=0; i<arr.length; i++)", "correta": false},
+        {"texto": "while", "correta": false}
+      ]
     }
   ],
   "avancado": [
     {
-      "id": 41,
-      "pergunta": "Em uma página com `getStaticProps`, como funciona a propriedade `revalidate` no objeto retornado?",
+      "id": 81,
+      "pergunta": "O que o método de array `reduce()` faz?",
       "opcoes": [
-        {"texto": "Ela define um intervalo em segundos para o cliente (browser) buscar uma nova versão da página.", "correta": false},
-        {"texto": "Ela define um tempo em segundos para o Next.js tentar regenerar a página no servidor em segundo plano após uma requisição.", "correta": true},
-        {"texto": "Ela força a página a usar Server-side Rendering (SSR) se o tempo definido tiver passado.", "correta": false},
-        {"texto": "Ela define o `Cache-Control` header da resposta para o navegador.", "correta": false}
-      ],
-      "dica": "Pense no conceito de 'stale-while-revalidate'. O que acontece no servidor quando um usuário acessa uma página estática 'vencida'?",
-      "explicacao": "Isso habilita o Incremental Static Regeneration (ISR). A primeira requisição após o tempo de `revalidate` recebe a página antiga (stale), enquanto o Next.js regenera a nova versão em background. As requisições seguintes receberão a página atualizada.",
-      "referencia": "https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration"
+        {"texto": "Reduz o número de elementos no array.", "correta": false},
+        {"texto": "Executa uma função 'redutora' para cada elemento do array, resultando em um único valor de retorno (acumulador).", "correta": true},
+        {"texto": "Cria um novo array com menos elementos.", "correta": false},
+        {"texto": "Filtra o array para remover valores duplicados.", "correta": false}
+      ]
     },
     {
-      "id": 42,
-      "pergunta": "Na função `getStaticPaths`, qual é o comportamento da opção `fallback: 'blocking'`?",
+      "id": 82,
+      "pergunta": "O que acontece quando você usa a sintaxe de classe `extends`?",
       "opcoes": [
-        {"texto": "Retorna uma página 404 imediatamente se o caminho não foi pré-renderizado no build.", "correta": false},
-        {"texto": "Serve a página para o usuário com um estado de 'carregando' (loading) e gera a página no cliente.", "correta": false},
-        {"texto": "A requisição do usuário fica 'bloqueada' no servidor enquanto o HTML é gerado (SSR) e só então é enviada completa ao navegador.", "correta": true},
-        {"texto": "Redireciona o usuário para uma página de fallback definida no `next.config.js`.", "correta": false}
-      ],
-      "dica": "Pense na diferença da experiência do usuário entre `fallback: true` e `fallback: 'blocking'` na primeira visita a uma página não gerada previamente.",
-      "explicacao": "Com `fallback: 'blocking'`, a experiência do usuário na primeira visita a uma página não gerada é similar ao SSR: o navegador aguarda o HTML completo. Isso é melhor para SEO do que `fallback: true`, que serve um estado de carregamento e gera a página no cliente.",
-      "referencia": "https://nextjs.org/docs/api-reference/data-fetching/get-static-paths#fallback-blocking"
+        {"texto": "Adiciona novos métodos a uma classe existente.", "correta": false},
+        {"texto": "Cria uma 'subclasse' que herda propriedades e métodos de uma 'superclasse'.", "correta": true},
+        {"texto": "Exporta a classe para ser usada em outro arquivo.", "correta": false},
+        {"texto": "Torna a classe privada.", "correta": false}
+      ]
     },
     {
-      "id": 43,
-      "pergunta": "Qual é a principal diferença entre React Server Components (RSC) e Server-side Rendering (SSR) tradicional?",
+      "id": 83,
+      "pergunta": "O que a API `fetch` retorna?",
       "opcoes": [
-        {"texto": "RSC são renderizados em um ambiente Edge, enquanto SSR é renderizado em um ambiente Node.js.", "correta": false},
-        {"texto": "RSC não enviam seu JavaScript para o cliente, resultando em um bundle zero-JS, enquanto componentes SSR 'hidratam' e se tornam interativos no cliente.", "correta": true},
-        {"texto": "SSR não permite acesso direto a bancos de dados, enquanto RSC permite.", "correta": false},
-        {"texto": "RSC são renderizados apenas uma vez durante o build, enquanto SSR é renderizado a cada requisição.", "correta": false}
-      ],
-      "dica": "Pense no conceito de 'hidratação' (hydration) e no que é necessário para que um componente se torne interativo no navegador.",
-      "explicacao": "Server Components executam no servidor e enviam um resultado renderizado não interativo, reduzindo drasticamente o JS no cliente. SSR tradicional também executa no servidor, mas envia o HTML e o JS necessário para 'hidratar' o componente e torná-lo interativo no cliente.",
-      "referencia": "https://nextjs.org/docs/getting-started/react-essentials#server-components"
+        {"texto": "Os dados JSON diretamente.", "correta": false},
+        {"texto": "Uma Promise que resolve com o objeto Response.", "correta": true},
+        {"texto": "Uma callback function.", "correta": false},
+        {"texto": "Uma string com o conteúdo da resposta.", "correta": false}
+      ]
     },
     {
-      "id": 44,
-      "pergunta": "Qual é uma limitação fundamental do Edge Runtime (usado em Middleware e Edge Functions)?",
+      "id": 84,
+      "pergunta": "O que é 'hoisting' em JavaScript?",
       "opcoes": [
-        {"texto": "Ele não permite o uso de `async/await` para operações assíncronas.", "correta": false},
-        {"texto": "O tamanho total do bundle de código é limitado a 100kb.", "correta": false},
-        {"texto": "Ele não tem acesso a APIs nativas do Node.js, como `fs` (File System) ou `path`.", "correta": true},
-        {"texto": "Ele não consegue modificar os cabeçalhos (headers) de uma requisição.", "correta": false}
-      ],
-      "dica": "Pense no ambiente onde o código executa. É um servidor Node.js completo ou um ambiente mais restrito e distribuído?",
-      "explicacao": "O Edge Runtime é um ambiente mais leve e seguro, baseado em APIs web padrão (`fetch`, `Request`, `Response`). Ele não inclui o conjunto completo de APIs do Node.js, o que o torna mais rápido para iniciar, mas limita seu uso com bibliotecas que dependem dessas APIs.",
-      "referencia": "https://nextjs.org/docs/app/building-your-application/rendering/edge-and-nodejs-runtimes"
+        {"texto": "Uma técnica de otimização de performance.", "correta": false},
+        {"texto": "O comportamento padrão do JavaScript de mover declarações (de `var` e `function`) para o topo de seu escopo antes da execução do código.", "correta": true},
+        {"texto": "Um erro que ocorre quando uma variável é usada antes de ser declarada.", "correta": false},
+        {"texto": "Uma forma de elevar o nível de um evento no DOM.", "correta": false}
+      ]
     },
     {
-      "id": 45,
-      "pergunta": "Ao usar a importação dinâmica com `next/dynamic`, o que a opção `{ ssr: false }` faz?",
+      "id": 85,
+      "pergunta": "Qual a finalidade do `localStorage`?",
       "opcoes": [
-        {"texto": "Impede que o componente seja renderizado no lado do servidor, carregando-o apenas no cliente.", "correta": true},
-        {"texto": "Faz com que o componente seja renderizado no servidor, mas não seja 'hidratado' no cliente.", "correta": false},
-        {"texto": "Carrega o componente de forma síncrona em vez de assíncrona.", "correta": false},
-        {"texto": "Renderiza o componente em uma Edge Function em vez de uma Lambda Function.", "correta": false}
-      ],
-      "dica": "Considere um componente que usa uma biblioteca de gráficos que manipula o DOM diretamente. O que aconteceria se você tentasse renderizá-lo no servidor?",
-      "explicacao": "A opção `{ ssr: false }` é crucial para componentes que dependem exclusivamente de APIs do navegador (como `window`). Ela garante que o componente seja completamente ignorado durante a renderização no servidor e seja carregado e renderizado apenas no cliente.",
-      "referencia": "https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr"
+        {"texto": "Para armazenar dados no servidor.", "correta": false},
+        {"texto": "Para armazenar dados chave-valor no navegador que persistem mesmo após o navegador ser fechado.", "correta": true},
+        {"texto": "Para armazenar dados apenas durante uma sessão do navegador.", "correta": false},
+        {"texto": "Para compartilhar dados entre diferentes usuários.", "correta": false}
+      ]
     },
     {
-      "id": 46,
-      "pergunta": "No `next.config.js`, qual a diferença entre `rewrites` e `redirects`?",
+      "id": 86,
+      "pergunta": "O que é uma 'Higher-Order Function' (Função de Ordem Superior)?",
       "opcoes": [
-        {"texto": "`rewrites` são permanentes (código 308) e `redirects` são temporários (código 307).", "correta": false},
-        {"texto": "`rewrites` mudam a URL na barra de endereço do navegador, enquanto `redirects` não.", "correta": false},
-        {"texto": "`redirects` mudam a URL na barra de endereço (resposta 3xx), enquanto `rewrites` servem o conteúdo de outra rota sem mudar a URL.", "correta": true},
-        {"texto": "`rewrites` só funcionam em ambiente de desenvolvimento e `redirects` só em produção.", "correta": false}
-      ],
-      "dica": "Pense no que o usuário vê na barra de endereço do navegador. A URL muda ou permanece a mesma?",
-      "explicacao": "Um `redirect` envia o usuário para um novo local (ex: de `/antigo` para `/novo`). Um `rewrite` atua como um proxy, mostrando o conteúdo de um destino (`/api/dados`) em uma rota diferente (`/dados`) sem que o usuário perceba a mudança na URL.",
-      "referencia": "https://nextjs.org/docs/api-reference/next.config.js/redirects"
+        {"texto": "Uma função que é mais performática que as outras.", "correta": false},
+        {"texto": "Uma função que recebe outra função como argumento, ou retorna uma função.", "correta": true},
+        {"texto": "Uma função declarada com a palavra-chave `class`.", "correta": false},
+        {"texto": "Uma função que só pode ser chamada uma vez.", "correta": false}
+      ]
     },
     {
-      "id": 47,
-      "pergunta": "No App Router, qual é o comportamento de cache padrão da função `fetch` em um Server Component?",
+      "id": 87,
+      "pergunta": "Para que serve o método `.catch()` em uma Promise?",
       "opcoes": [
-        {"texto": "Ela nunca faz cache, se comportando como `getServerSideProps` a cada requisição.", "correta": false},
-        {"texto": "Ela faz um cache agressivo e permanente de todas as requisições, se comportando como `getStaticProps`.", "correta": true},
-        {"texto": "Ela usa o cache do navegador para armazenar os resultados.", "correta": false},
-        {"texto": "Ela só faz cache de requisições do tipo GET, ignorando todas as outras.", "correta": false}
-      ],
-      "dica": "O App Router foi projetado para ser o mais estático possível por padrão. Como isso se reflete na forma como ele lida com a busca de dados?",
-      "explicacao": "O Next.js estende a API `fetch` e, por padrão, faz o cache do resultado de cada requisição (`force-cache`). Este é um pilar do novo modelo de data fetching, incentivando a geração estática sempre que possível. O comportamento pode ser alterado com `{ cache: 'no-store' }` ou `{ next: { revalidate: 10 } }`.",
-      "referencia": "https://nextjs.org/docs/app/building-your-application/data-fetching/caching"
+        {"texto": "Para executar um código após a Promise ser resolvida.", "correta": false},
+        {"texto": "Para lidar com erros (quando a Promise é rejeitada).", "correta": true},
+        {"texto": "Para encadear múltiplas Promises.", "correta": false},
+        {"texto": "Para cancelar a execução de uma Promise.", "correta": false}
+      ]
     },
     {
-      "id": 48,
-      "pergunta": "Quando é obrigatório usar a diretiva `'use client'` no topo de um arquivo no App Router?",
+      "id": 88,
+      "pergunta": "O que são 'rest parameters' (`...args`)?",
       "opcoes": [
-        {"texto": "Sempre que o componente precisar buscar dados de uma API externa.", "correta": false},
-        {"texto": "Quando o componente precisa usar hooks de interatividade (`useState`, `useEffect`) ou APIs do navegador.", "correta": true},
-        {"texto": "Para todos os componentes que recebem `props` de um componente pai.", "correta": false},
-        {"texto": "Quando o componente precisa ser renderizado no servidor (SSR).", "correta": false}
-      ],
-      "dica": "Pense na principal diferença entre o ambiente do servidor e o ambiente do navegador. O que existe em um que não existe no outro?",
-      "explicacao": "A diretiva `'use client'` marca a 'fronteira' entre o servidor e o cliente. Qualquer componente que precise de estado, interatividade (event handlers como `onClick`), ou acesso a APIs do navegador (`window`) deve ser um Client Component.",
-      "referencia": "https://nextjs.org/docs/getting-started/react-essentials#the-use-client-directive"
+        {"texto": "Uma forma de definir valores padrão para os parâmetros.", "correta": false},
+        {"texto": "Permitem que uma função aceite um número indefinido de argumentos como um array.", "correta": true},
+        {"texto": "Uma lista de todos os parâmetros restantes que não foram definidos.", "correta": false},
+        {"texto": "Expandem um array em parâmetros individuais.", "correta": false}
+      ]
     },
     {
-      "id": 49,
-      "pergunta": "Como o Preview Mode (Modo de Visualização) do Next.js funciona tecnicamente para exibir conteúdo de um CMS que ainda não foi publicado?",
+      "id": 89,
+      "pergunta": "Qual a principal diferença entre `localStorage` e `sessionStorage`?",
       "opcoes": [
-        {"texto": "Ele passa um parâmetro de busca na URL (query param) que instrui o Next.js a buscar o rascunho.", "correta": false},
-        {"texto": "Ele usa cookies específicos que, quando presentes, fazem o Next.js ignorar a versão estática e renderizar a página sob demanda (SSR).", "correta": true},
-        {"texto": "Ele armazena os dados de rascunho no `localStorage` do navegador.", "correta": false},
-        {"texto": "Ele aponta o DNS para um 'servidor de staging' diferente onde o conteúdo de rascunho está disponível.", "correta": false}
-      ],
-      "dica": "Como o servidor do Next.js consegue 'lembrar' que um usuário específico deve ver o conteúdo de rascunho em vez do conteúdo público já em cache?",
-      "explicacao": "Ao entrar no Preview Mode (geralmente através de uma API Route), o Next.js define cookies no navegador. Em requisições subsequentes com esses cookies, ele pula o cache estático e executa `getStaticProps` ou `getServerSideProps` novamente, buscando os dados de rascunho.",
-      "referencia": "https://nextjs.org/docs/advanced-features/preview-mode"
+        {"texto": "`localStorage` é mais rápido.", "correta": false},
+        {"texto": "`localStorage` persiste os dados indefinidamente, enquanto `sessionStorage` limpa os dados quando a sessão da página termina (ex: ao fechar a aba).", "correta": true},
+        {"texto": "`sessionStorage` tem um limite de armazenamento maior.", "correta": false},
+        {"texto": "Não há diferença funcional.", "correta": false}
+      ]
     },
     {
-      "id": 50,
-      "pergunta": "No App Router, qual é o propósito principal dos Server Actions?",
+      "id": 90,
+      "pergunta": "O que o método `Promise.race()` faz?",
       "opcoes": [
-        {"texto": "Substituir completamente a necessidade de usar o hook `useEffect` para mutações de dados.", "correta": true},
-        {"texto": "Realizar a busca inicial de dados para Server Components, funcionando como um `getStaticProps` moderno.", "correta": false},
-        {"texto": "Apenas para executar lógica de servidor em resposta a webhooks de serviços externos.", "correta": false},
-        {"texto": "Gerenciar o estado de componentes do lado do cliente de forma mais eficiente.", "correta": false}
-      ],
-      "dica": "Pense no processo tradicional de enviar um formulário: criar um estado no cliente, uma função `onSubmit`, fazer uma chamada `fetch` para um endpoint de API... Como isso poderia ser simplificado?",
-      "explicacao": "Server Actions permitem que você execute mutações de dados (POST, PUT, DELETE) diretamente no servidor, como se fossem uma chamada de função assíncrona, sem precisar criar endpoints de API manualmente. Isso simplifica drasticamente o código no cliente.",
-      "referencia": "https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations"
+        {"texto": "Resolve quando todas as Promises resolvem.", "correta": false},
+        {"texto": "Retorna a primeira Promise que resolver OU rejeitar.", "correta": true},
+        {"texto": "Executa as Promises na ordem mais rápida possível.", "correta": false},
+        {"texto": "Compara os resultados de duas Promises.", "correta": false}
+      ]
     },
     {
-      "id": 51,
-      "pergunta": "Qual é a principal diferença de comportamento entre `layout.js` e `template.js` no App Router?",
+      "id": 91,
+      "pergunta": "Qual a principal característica do escopo de uma variável declarada com `var`?",
       "opcoes": [
-        {"texto": "`layout.js` é para o layout principal e `template.js` para layouts de página.", "correta": false},
-        {"texto": "`layout.js` preserva o estado e não é re-renderizado na navegação, enquanto `template.js` cria uma nova instância e re-renderiza a cada navegação.", "correta": true},
-        {"texto": "`layout.js` é um Server Component e `template.js` é um Client Component.", "correta": false},
-        {"texto": "`template.js` foi descontinuado em favor de `layout.js`.", "correta": false}
-      ],
-      "dica": "Pense em um componente que precisa executar um `useEffect` com uma animação de entrada toda vez que uma rota filha é acessada.",
-      "explicacao": "O `layout.js` persiste entre as mudanças de rota, mantendo seu estado. Já o `template.js` é remontado a cada navegação. Isso o torna ideal para lógicas que precisam ser re-executadas a cada mudança de página, como animações de entrada ou `useEffect`s de rastreamento.",
-      "referencia": "https://nextjs.org/docs/app/building-your-application/routing/layouts-and-templates#templates"
+        {"texto": "Escopo de bloco (block scope).", "correta": false},
+        {"texto": "Escopo de função (function scope).", "correta": true},
+        {"texto": "Escopo global apenas.", "correta": false},
+        {"texto": "Escopo léxico.", "correta": false}
+      ]
     },
     {
-      "id": 52,
-      "pergunta": "Para que serve o arquivo `next.config.js` com a configuração `experimental: { ppr: true }`?",
+      "id": 92,
+      "pergunta": "O que o `constructor` faz dentro de uma `class`?",
       "opcoes": [
-        {"texto": "Habilita o pré-carregamento de páginas privadas.", "correta": false},
-        {"texto": "Habilita a 'Partial Prerendering' (Pré-renderização Parcial), uma técnica de renderização híbrida.", "correta": true},
-        {"texto": "Permite o uso de 'Props' privadas que não são passadas ao cliente.", "correta": false},
-        {"texto": "Ativa um modo de performance para o servidor de desenvolvimento.", "correta": false}
-      ],
-      "dica": "Pense em uma página que é majoritariamente estática, mas com alguns componentes altamente dinâmicos.",
-      "explicacao": "PPR é uma otimização poderosa que permite que uma página tenha um 'shell' estático, servido instantaneamente, enquanto 'buracos' dinâmicos na página são transmitidos (streamed) de forma assíncrona. Combina a velocidade do SSG com o dinamismo do SSR na mesma página.",
-      "referencia": "https://nextjs.org/docs/app/building-your-application/rendering/partial-prerendering"
+        {"texto": "Destrói o objeto quando ele não é mais necessário.", "correta": false},
+        {"texto": "É um método especial para criar e inicializar um objeto criado com uma classe.", "correta": true},
+        {"texto": "Constrói a herança com outra classe.", "correta": false},
+        {"texto": "Conecta a classe ao DOM.", "correta": false}
+      ]
     },
     {
-      "id": 53,
-      "pergunta": "Como você pode customizar o comportamento do `fetch` do Next.js para desabilitar o cache para todas as chamadas em uma rota específica?",
+      "id": 93,
+      "pergunta": "Para que servem os 'default parameters' em uma função?",
       "opcoes": [
-        {"texto": "Envolvendo a página com um `CacheProvider` com a opção `no-store`.", "correta": false},
-        {"texto": "Exportando uma variável `export const dynamic = 'force-dynamic'` no arquivo da página.", "correta": true},
-        {"texto": "Passando `{ cache: 'no-store' }` para cada chamada `fetch` individualmente.", "correta": false},
-        {"texto": "Configurando uma regra no `next.config.js`.", "correta": false}
-      ],
-      "dica": "Existe uma forma de configurar o comportamento de cache de uma rota inteira, sem precisar modificar cada chamada de API.",
-      "explicacao": "Exportar `export const dynamic = 'force-dynamic'` em uma página do App Router força a renderização dinâmica de toda a rota. Isso equivale a usar `getServerSideProps` no Pages Router e faz com que as chamadas `fetch` dentro dela não sejam cacheadas por padrão.",
-      "referencia": "https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic"
+        {"texto": "Para definir valores padrão para os parâmetros, caso nenhum valor ou `undefined` seja passado.", "correta": true},
+        {"texto": "Para indicar os parâmetros obrigatórios.", "correta": false},
+        {"texto": "Para limitar o número de parâmetros que uma função pode receber.", "correta": false},
+        {"texto": "Para definir os tipos de dados dos parâmetros.", "correta": false}
+      ]
     },
     {
-      "id": 54,
-      "pergunta": "O que são 'Route Groups' (Grupos de Rotas) no App Router e qual o seu propósito?",
+      "id": 94,
+      "pergunta": "O que o método `Object.keys()` retorna?",
       "opcoes": [
-        {"texto": "Agrupar rotas de API para aplicar um middleware em comum.", "correta": false},
-        {"texto": "Criar seções da aplicação com um layout compartilhado, sem afetar a estrutura da URL.", "correta": true},
-        {"texto": "Dividir rotas dinâmicas em múltiplos arquivos para melhor organização.", "correta": false},
-        {"texto": "Uma forma de criar rotas privadas que exigem autenticação.", "correta": false}
-      ],
-      "dica": "Como você aplicaria um layout específico para todas as rotas de um painel de controle (`/dashboard/settings`, `/dashboard/analytics`), sem que a palavra 'dashboard' precise fazer parte de um layout superior?",
-      "explicacao": "Um grupo de rotas é criado envolvendo uma pasta em parênteses, ex: `(marketing)`. A pasta `(marketing)` não afeta a URL, mas permite que você crie um `layout.js` específico para todas as rotas dentro dela, como `/about` e `/contact`.",
-      "referencia": "https://nextjs.org/docs/app/building-your-application/routing/route-groups"
+        {"texto": "Um array com os valores das propriedades de um objeto.", "correta": false},
+        {"texto": "Um array com os nomes (chaves) das propriedades enumeráveis de um objeto.", "correta": true},
+        {"texto": "Um booleano indicando se o objeto tem chaves.", "correta": false},
+        {"texto": "O número de propriedades do objeto.", "correta": false}
+      ]
     },
     {
-      "id": 55,
-      "pergunta": "Qual a principal vantagem de usar o `next-auth` (ou Auth.js) em uma aplicação Next.js?",
+      "id": 95,
+      "pergunta": "Qual o propósito da cláusula `finally` em um bloco `try...catch...finally`?",
       "opcoes": [
-        {"texto": "É a única biblioteca de autenticação compatível com o framework.", "correta": false},
-        {"texto": "Oferece uma solução completa e segura para autenticação, integrando-se facilmente com Server Components, API Routes e Middleware.", "correta": true},
-        {"texto": "Fornece componentes de UI prontos para formulários de login e cadastro.", "correta": false},
-        {"texto": "Armazena automaticamente as senhas dos usuários em um banco de dados seguro.", "correta": false}
-      ],
-      "dica": "Pense na complexidade de gerenciar sessões, tokens JWT, e provedores OAuth (Google, GitHub) em um ambiente com SSR e RSC.",
-      "explicacao": "Auth.js abstrai a complexidade da autenticação em aplicações web modernas. Ele lida com sessões, tokens, callbacks de OAuth e fornece hooks e helpers para proteger páginas e API routes, integrando-se perfeitamente com a arquitetura do Next.js.",
-      "referencia": "https://next-auth.js.org/"
+        {"texto": "Executar um código apenas se um erro ocorrer.", "correta": false},
+        {"texto": "Executar um código que sempre será executado, independentemente de ter ocorrido um erro ou não.", "correta": true},
+        {"texto": "Definir o erro final a ser lançado.", "correta": false},
+        {"texto": "Executar um código apenas se não houver erro.", "correta": false}
+      ]
     },
     {
-      "id": 56,
-      "pergunta": "Para que serve a convenção de arquivo `loading.js` no App Router?",
+      "id": 96,
+      "pergunta": "Como você lida com erros em chamadas `fetch` que retornam status como 404 ou 500?",
       "opcoes": [
-        {"texto": "Para exibir um indicador de carregamento global para toda a aplicação.", "correta": false},
-        {"texto": "Para criar um estado de carregamento instantâneo (UI de fallback) que é exibido enquanto os dados de uma rota estão sendo carregados.", "correta": true},
-        {"texto": "Um arquivo para otimizar o carregamento de fontes e scripts.", "correta": false},
-        {"texto": "Para simular uma conexão de internet lenta em ambiente de desenvolvimento.", "correta": false}
-      ],
-      "dica": "Como você pode mostrar um 'esqueleto' (skeleton) de UI para o usuário imediatamente, enquanto o conteúdo real da página ainda está sendo buscado no servidor?",
-      "explicacao": "Ao colocar um arquivo `loading.js` em uma pasta de rota, o Next.js automaticamente o envolverá em um `React.Suspense`. Ele será renderizado no servidor e exibido imediatamente enquanto o componente `page.js` e seus filhos terminam de carregar os dados.",
-      "referencia": "https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming"
+        {"texto": "O `.catch()` da Promise será acionado automaticamente.", "correta": false},
+        {"texto": "Verificando a propriedade `ok` (ex: `if (!response.ok)`) na resposta da Promise.", "correta": true},
+        {"texto": "A Promise `fetch` sempre rejeita em caso de status de erro.", "correta": false},
+        {"texto": "Usando um bloco `try...catch` em volta do `fetch`.", "correta": false}
+      ]
     },
     {
-      "id": 57,
-      "pergunta": "O que a função `notFound()` faz quando chamada dentro de um componente no App Router?",
+      "id": 97,
+      "pergunta": "O que o método `.find()` faz em um array?",
       "opcoes": [
-        {"texto": "Redireciona o usuário para a página inicial.", "correta": false},
-        {"texto": "Renderiza a interface de erro 404 mais próxima na árvore de componentes.", "correta": true},
-        {"texto": "Lança uma exceção que derruba o servidor.", "correta": false},
-        {"texto": "Exibe uma mensagem de 'Não encontrado' no console do servidor.", "correta": false}
-      ],
-      "dica": "É o equivalente programático de acessar uma URL que não existe.",
-      "explicacao": "Se dentro de um componente de página (ex: buscando um post por slug) você descobre que o recurso não existe, chamar `notFound()` interrompe a renderização da página e exibe o `not-found.js` mais próximo, tratando o caso de forma elegante.",
-      "referencia": "https://nextjs.org/docs/app/api-reference/functions/not-found"
+        {"texto": "Retorna um array com todos os elementos que satisfazem a condição.", "correta": false},
+        {"texto": "Retorna o primeiro elemento do array que satisfaz a condição da função de teste.", "correta": true},
+        {"texto": "Retorna o índice do primeiro elemento que satisfaz a condição.", "correta": false},
+        {"texto": "Retorna um booleano indicando se algum elemento satisfaz a condição.", "correta": false}
+      ]
     },
     {
-      "id": 58,
-      "pergunta": "Qual é um dos principais benefícios de usar Server Actions para mutações de dados em formulários?",
+      "id": 98,
+      "pergunta": "Qual a diferença entre parâmetros e argumentos de uma função?",
       "opcoes": [
-        {"texto": "Elas funcionam mesmo se o JavaScript estiver desabilitado no navegador.", "correta": true},
-        {"texto": "Elas validam automaticamente todos os campos do formulário.", "correta": false},
-        {"texto": "Elas são executadas exclusivamente no Edge Runtime para menor latência.", "correta": false},
-        {"texto": "Elas não precisam de uma conexão com a internet para funcionar.", "correta": false}
-      ],
-      "dica": "Pense no conceito de 'Progressive Enhancement'.",
-      "explicacao": "Como as Server Actions são construídas sobre as primitivas do HTML `<form>`, elas funcionam com o comportamento padrão do navegador. Isso significa que a mutação de dados funciona mesmo antes do JavaScript do lado do cliente carregar, proporcionando uma experiência mais robusta.",
-      "referencia": "https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations#progressive-enhancement"
+        {"texto": "São a mesma coisa.", "correta": false},
+        {"texto": "Parâmetros são as variáveis listadas na definição da função, enquanto argumentos são os valores reais passados para a função quando ela é chamada.", "correta": true},
+        {"texto": "Argumentos são usados em arrow functions e parâmetros em funções normais.", "correta": false},
+        {"texto": "Parâmetros são opcionais e argumentos são obrigatórios.", "correta": false}
+      ]
     },
     {
-      "id": 59,
-      "pergunta": "Para que serve a convenção de arquivo `default.js` no App Router?",
+      "id": 99,
+      "pergunta": "O que o método `Object.freeze()` faz?",
       "opcoes": [
-        {"texto": "Para definir o conteúdo padrão de todas as páginas da aplicação.", "correta": false},
-        {"texto": "Para renderizar uma UI de fallback em Rotas Paralelas quando o Next.js não consegue recuperar o estado ativo de uma rota.", "correta": true},
-        {"texto": "Para definir os valores padrão das props de um layout.", "correta": false},
-        {"texto": "Para exportar a configuração padrão do servidor Next.js.", "correta": false}
-      ],
-      "dica": "Considere um cenário de Rotas Paralelas: o que acontece se você recarregar a página em uma rota que não corresponde ao conteúdo inicial do slot?",
-      "explicacao": "O `default.js` é uma salvaguarda para Rotas Paralelas. Se, ao carregar a página, o Next.js não souber qual componente renderizar em um dos slots (porque a URL não corresponde), ele renderizará o `default.js`, evitando um erro 404 na aplicação inteira.",
-      "referencia": "https://nextjs.org/docs/app/api-reference/file-conventions/default.js"
+        {"texto": "Deleta um objeto.", "correta": false},
+        {"texto": "Torna um objeto imutável, impedindo que novas propriedades sejam adicionadas, que propriedades existentes sejam removidas ou que valores sejam alterados.", "correta": true},
+        {"texto": "Cria uma cópia 'congelada' de um objeto.", "correta": false},
+        {"texto": "Pausa a execução do script.", "correta": false}
+      ]
     },
     {
-      "id": 60,
-      "pergunta": "Qual a finalidade do hook `useOptimistic` do React, frequentemente usado com Server Actions?",
+      "id": 100,
+      "pergunta": "O que `Set` representa em JavaScript?",
       "opcoes": [
-        {"texto": "Otimizar o código da Server Action para executar mais rápido.", "correta": false},
-        {"texto": "Atualizar a UI instantaneamente com o resultado esperado de uma ação, antes mesmo da resposta do servidor chegar.", "correta": true},
-        {"texto": "Prever qual ação o usuário irá tomar e pré-carregar os dados necessários.", "correta": false},
-        {"texto": "Garantir que a Server Action seja executada apenas uma vez, mesmo com múltiplos cliques.", "correta": false}
-      ],
-      "dica": "Pense em como o Instagram mostra seu 'like' em uma foto instantaneamente, mesmo que a confirmação do servidor ainda não tenha chegado.",
-      "explicacao": "O `useOptimistic` melhora a experiência do usuário ao permitir que a UI seja atualizada com um estado 'otimista' (o resultado esperado da ação). Se a ação no servidor falhar, a UI reverte para o estado original. Se for bem-sucedida, a UI se atualiza com os dados reais.",
-      "referencia": "https://react.dev/reference/react/useOptimistic"
+        {"texto": "Uma função para definir o valor de uma variável.", "correta": false},
+        {"texto": "Uma coleção de valores únicos, onde cada valor pode ocorrer apenas uma vez.", "correta": true},
+        {"texto": "Um tipo especial de array ordenado.", "correta": false},
+        {"texto": "Um objeto para configurar o ambiente de execução.", "correta": false}
+      ]
     }
   ],
   "especialista": [
     {
-      "id": 61,
-      "pergunta": "Qual é a causa raiz mais comum para um 'hydration error' no React/Next.js?",
+      "id": 101,
+      "pergunta": "Na Event Loop, qual a diferença de prioridade entre a 'Microtask Queue' (ex: .then) e a 'Macrotask Queue' (ex: setTimeout)?",
       "opcoes": [
-        {"texto": "Uma versão do Node.js incompatível com a versão do Next.js.", "correta": false},
-        {"texto": "Uma inconsistência entre o HTML renderizado no servidor e o HTML renderizado na primeira passagem no cliente.", "correta": true},
-        {"texto": "Uma chamada de API no servidor que retorna um erro 500.", "correta": false},
-        {"texto": "A falta da diretiva `'use client'` em um componente que usa `useState`.", "correta": false}
-      ],
-      "dica": "Pense no processo de 'hidratação' como o React 'anexando' interatividade a um HTML que já existe. O que aconteceria se o HTML que ele encontra for diferente do que ele esperava construir?",
-      "explicacao": "A hidratação falha quando o DOM inicial do servidor é diferente do que o React espera encontrar no cliente. Causas comuns incluem o uso de APIs do navegador (`window`), datas (`new Date()`) ou IDs aleatórios no HTML inicial renderizado no servidor.",
-      "referencia": "https://nextjs.org/docs/messages/react-hydration-error"
+        {"texto": "Macrotasks sempre executam antes de Microtasks.", "correta": false},
+        {"texto": "Microtasks são executadas ao final de cada Macrotask, antes da próxima renderização, tendo maior prioridade.", "correta": true},
+        {"texto": "Elas têm a mesma prioridade e executam na ordem em que foram adicionadas.", "correta": false},
+        {"texto": "A prioridade depende do navegador.", "correta": false}
+      ]
     },
     {
-      "id": 62,
-      "pergunta": "No App Router, existem várias camadas de cache. Qual das seguintes opções descreve corretamente o 'Router Cache'?",
+      "id": 102,
+      "pergunta": "O que o método `Promise.allSettled()` faz?",
       "opcoes": [
-        {"texto": "Um cache no servidor que armazena o resultado de chamadas `fetch` para evitar requisições duplicadas.", "correta": false},
-        {"texto": "Um cache no navegador, no lado do cliente, que armazena o payload dos React Server Components por segmento de rota.", "correta": true},
-        {"texto": "Um cache de página inteira em um CDN, similar ao comportamento de páginas SSG.", "correta": false},
-        {"texto": "Um cache do navegador que armazena a resposta HTML de uma página, controlado pelo header `Cache-Control`.", "correta": false}
-      ],
-      "dica": "Pense em qual cache é responsável por fazer a navegação de 'voltar' e 'avançar' ser instantânea, sem mostrar um estado de carregamento.",
-      "explicacao": "O Router Cache é um cache in-memory no cliente que armazena o payload dos RSCs. Ele torna a navegação entre rotas já visitadas instantânea, evitando uma nova requisição ao servidor e melhorando drasticamente a experiência do usuário.",
-      "referencia": "https://nextjs.org/docs/app/building-your-application/caching#router-cache"
+        {"texto": "Rejeita assim que uma das Promises rejeita.", "correta": false},
+        {"texto": "Retorna uma Promise que resolve depois que todas as Promises dadas foram resolvidas ou rejeitadas, com um array de objetos que descrevem o resultado de cada uma.", "correta": true},
+        {"texto": "Resolve com o valor da primeira Promise que resolver.", "correta": false},
+        {"texto": "Aguarda todas as Promises resolverem, ignorando as que foram rejeitadas.", "correta": false}
+      ]
     },
     {
-      "id": 63,
-      "pergunta": "Como o streaming com Suspense e React Server Components melhora a performance percebida pelo usuário?",
+      "id": 103,
+      "pergunta": "Para que serve uma 'Generator Function' (`function*`)?",
       "opcoes": [
-        {"texto": "Diminuindo o tamanho final do bundle JavaScript que é enviado ao cliente.", "correta": false},
-        {"texto": "Permitindo que o servidor envie o HTML da UI imediatamente (com placeholders), enquanto as operações de dados mais lentas são resolvidas em paralelo.", "correta": true},
-        {"texto": "Fazendo o cache de todo o site na memória do servidor para acesso instantâneo.", "correta": false},
-        {"texto": "Eliminando completamente a necessidade de JavaScript no lado do cliente.", "correta": false}
-      ],
-      "dica": "Pense em uma página com vários componentes que dependem de APIs diferentes. O que é melhor: esperar todos terminarem para mostrar a página, ou mostrar a estrutura imediatamente e preencher os dados conforme chegam?",
-      "explicacao": "Streaming resulta em um Time to First Byte (TTFB) muito rápido. O usuário vê a estrutura da página instantaneamente (o 'shell' da rota), enquanto os 'buracos' de conteúdo definidos por `<Suspense>` são preenchidos conforme os dados chegam, sem bloquear a renderização inicial.",
-      "referencia": "https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming"
+        {"texto": "Para gerar números aleatórios.", "correta": false},
+        {"texto": "Para criar uma função que pode ter sua execução pausada e retomada, permitindo a produção de uma sequência de valores ao longo do tempo.", "correta": true},
+        {"texto": "Para gerar automaticamente outras funções.", "correta": false},
+        {"texto": "Uma sintaxe alternativa para `async/await`.", "correta": false}
+      ]
     },
     {
-      "id": 64,
-      "pergunta": "No App Router, qual o comportamento padrão de uma rota dinâmica se um parâmetro (`slug`, `id`) for acessado mas não tiver sido gerado previamente pela função `generateStaticParams`?",
+      "id": 104,
+      "pergunta": "O que são `Proxy` objects em JavaScript?",
       "opcoes": [
-        {"texto": "A página retornará um erro 404.", "correta": false},
-        {"texto": "A página será gerada sob demanda na primeira requisição e depois ficará em cache (comportamento de ISR).", "correta": true},
-        {"texto": "O Next.js retornará uma versão de fallback da página enquanto gera a versão correta no cliente.", "correta": false},
-        {"texto": "O build do projeto falhará, exigindo que todos os parâmetros possíveis sejam definidos.", "correta": false}
-      ],
-      "dica": "O App Router prioriza a flexibilidade. Pense em qual seria o comportamento mais flexível por padrão: negar rotas desconhecidas ou tentar gerá-las?",
-      "explicacao": "O comportamento padrão é `dynamicParams: true`. Isso significa que o Next.js tentará gerar a página dinamicamente na primeira vez que ela for requisitada. Este comportamento pode ser alterado para `false` para retornar um 404 em rotas não geradas.",
-      "referencia": "https://nextjs.org/docs/app/api-reference/functions/generate-static-params"
+        {"texto": "Uma forma de se conectar a servidores proxy de rede.", "correta": false},
+        {"texto": "Um objeto que envolve outro objeto e intercepta operações fundamentais (como leitura ou atribuição de propriedades), permitindo um controle customizado.", "correta": true},
+        {"texto": "Um cache para objetos usados com frequência.", "correta": false},
+        {"texto": "Um tipo de objeto que não pode ser modificado.", "correta": false}
+      ]
     },
     {
-      "id": 65,
-      "pergunta": "Qual caso de uso específico as Parallel Routes (Rotas Paralelas) no App Router foram projetadas para resolver?",
+      "id": 105,
+      "pergunta": "Qual a principal característica de um `WeakMap`?",
       "opcoes": [
-        {"texto": "Realizar testes A/B, renderizando duas versões de uma mesma página para usuários diferentes.", "correta": false},
-        {"texto": "Renderizar seções independentes e com seus próprios estados de navegação dentro de um mesmo layout, como um painel com um feed e uma lista de chats.", "correta": true},
-        {"texto": "Dividir o carregamento de uma página em múltiplas requisições paralelas para melhorar a performance.", "correta": false},
-        {"texto": "Garantir que rotas de autenticação (login, cadastro) sejam renderizadas em um layout diferente do resto da aplicação.", "correta": false}
-      ],
-      "dica": "Pense em uma interface complexa como um dashboard. Como você poderia exibir e navegar em uma lista de times e em um feed de atividades ao mesmo tempo, na mesma URL?",
-      "explicacao": "Rotas Paralelas (slots, definidos com a sintaxe `@folder`) permitem renderizar condicionalmente múltiplas 'sub-páginas' em um único layout, onde cada uma pode ser navegada de forma independente sem afetar as outras. É ideal para dashboards e feeds complexos.",
-      "referencia": "https://nextjs.org/docs/app/building-your-application/routing/parallel-routes"
+        {"texto": "Ele só aceita strings como chaves.", "correta": false},
+        {"texto": "As chaves são 'fracamente' referenciadas, permitindo que o garbage collector remova as entradas se não houver outra referência ao objeto chave.", "correta": true},
+        {"texto": "É um mapa que só pode ser acessado por uma única parte do código.", "correta": false},
+        {"texto": "Ele tem performance inferior ao `Map` padrão.", "correta": false}
+      ]
     },
     {
-      "id": 66,
-      "pergunta": "O que é Turbopack e em qual linguagem ele é escrito?",
+      "id": 106,
+      "pergunta": "O que é 'memoization'?",
       "opcoes": [
-        {"texto": "É um compilador de TypeScript para JavaScript, escrito em Go.", "correta": false},
-        {"texto": "É um bundler incremental sucessor do Webpack, escrito em Rust.", "correta": true},
-        {"texto": "É uma ferramenta de cache para monorepos, escrita em C++.", "correta": false},
-        {"texto": "É um servidor de desenvolvimento local otimizado, escrito em TypeScript.", "correta": false}
-      ],
-      "dica": "Esta ferramenta está sendo posicionada como a sucessora de uma das ferramentas mais famosas do ecossistema JavaScript e foi construída com foco em performance de baixo nível.",
-      "explicacao": "Turbopack é o novo bundler da Vercel, projetado para ser ordens de magnitude mais rápido que o Webpack. Sua arquitetura incremental e o fato de ser escrito em Rust (uma linguagem de baixo nível) são as chaves para sua performance.",
-      "referencia": "https://turbo.build/pack"
+        {"texto": "O processo de converter um objeto em uma string.", "correta": false},
+        {"texto": "Uma técnica de otimização que armazena os resultados de chamadas de função custosas e retorna o resultado em cache quando as mesmas entradas ocorrem novamente.", "correta": true},
+        {"texto": "A alocação de memória para variáveis.", "correta": false},
+        {"texto": "O processo de garbage collection.", "correta": false}
+      ]
     },
     {
-      "id": 67,
-      "pergunta": "Dentro de uma Server Action, qual função você usaria para invalidar o cache de dados de forma granular e sob demanda, sem depender de revalidação baseada em tempo?",
+      "id": 107,
+      "pergunta": "Qual é a função do método `.bind()`?",
       "opcoes": [
-        {"texto": "`revalidatePath` ou `revalidateTag`", "correta": true},
-        {"texto": "`router.refresh()`", "correta": false},
-        {"texto": "`cache.invalidate()`", "correta": false},
-        {"texto": "`res.revalidate()`", "correta": false}
-      ],
-      "dica": "Pense em um cenário onde atualizar um produto deve limpar o cache da página do produto, da listagem de produtos e talvez da home page. Como você faria isso de uma só vez?",
-      "explicacao": "`revalidatePath` invalida o cache de uma rota específica. `revalidateTag` é ainda mais poderoso, permitindo invalidar múltiplas chamadas `fetch` que compartilham a mesma tag, oferecendo um controle extremamente granular sobre o cache de dados.",
-      "referencia": "https://nextjs.org/docs/app/api-reference/functions/revalidate-tag"
+        {"texto": "Executar uma função imediatamente.", "correta": false},
+        {"texto": "Criar uma nova função que, quando chamada, tem seu `this` definido com o valor fornecido, com uma sequência de argumentos pré-definida.", "correta": true},
+        {"texto": "Conectar dois objetos.", "correta": false},
+        {"texto": "Ligar um evento a um elemento do DOM.", "correta": false}
+      ]
     },
     {
-      "id": 68,
-      "pergunta": "Qual é a finalidade principal do arquivo `build-manifest.json` dentro da pasta `.next`?",
+      "id": 108,
+      "pergunta": "Qual a diferença entre CommonJS (`require`/`module.exports`) e ES Modules (`import`/`export`)?",
       "opcoes": [
-        {"texto": "Mapear todas as rotas estáticas e dinâmicas da aplicação para seus respectivos arquivos de entrada.", "correta": false},
-        {"texto": "Listar todas as dependências de `node_modules` que foram incluídas no bundle final.", "correta": false},
-        {"texto": "Mapear cada página da aplicação aos seus arquivos de bundle JavaScript correspondentes (chunks).", "correta": true},
-        {"texto": "Armazenar o HTML pré-renderizado de todas as páginas geradas estaticamente.", "correta": false}
-      ],
-      "dica": "Quando você navega para uma nova página, como o Next.js sabe quais 'pedaços' de JavaScript ele precisa buscar do servidor para renderizar aquela rota?",
-      "explicacao": "O `build-manifest.json` é um mapa que diz ao servidor e ao cliente quais arquivos .js (chunks) são necessários para cada rota. Isso é essencial para o code splitting, garantindo que apenas o código necessário para uma página seja carregado.",
-      "referencia": "https://nextjs.org/docs/app/building-your-application/deploying#build-output"
+        {"texto": "Não há diferença funcional.", "correta": false},
+        {"texto": "CommonJS é síncrono e foi projetado para o servidor (Node.js), enquanto ES Modules é assíncrono e é o padrão nativo do JavaScript e dos navegadores.", "correta": true},
+        {"texto": "CommonJS é para React e ES Modules para Vue.", "correta": false},
+        {"texto": "ES Modules são mais antigos que CommonJS.", "correta": false}
+      ]
     },
     {
-      "id": 69,
-      "pergunta": "Ao configurar `output: 'standalone'` no `next.config.js`, qual problema principal esta opção resolve em um ambiente de contêineres (Docker)?",
+      "id": 109,
+      "pergunta": "O que é 'tree shaking'?",
       "opcoes": [
-        {"texto": "Reduz drasticamente o tamanho da imagem Docker ao copiar apenas os arquivos necessários para produção, em vez de toda a pasta `node_modules`.", "correta": true},
-        {"texto": "Permite que a aplicação Next.js seja executada em um ambiente sem Node.js, como Deno ou Bun.", "correta": false},
-        {"texto": "Habilita a execução da aplicação em múltiplos contêineres para balanceamento de carga.", "correta": false},
-        {"texto": "Melhora o tempo de Hot Reloading (HMR) dentro do contêiner em ambiente de desenvolvimento.", "correta": false}
-      ],
-      "dica": "Pense no processo de `COPY . .` em um Dockerfile. Como você poderia evitar copiar toda a `node_modules` (incluindo dependências de desenvolvimento) para a imagem final de produção?",
-      "explicacao": "Esta opção cria uma pasta `.next/standalone` com uma cópia do servidor Next.js e apenas as dependências de produção estritamente necessárias. Isso é ideal para criar imagens Docker enxutas, seguras e otimizadas para deploy.",
-      "referencia": "https://nextjs.org/docs/app/api-reference/next-config-js/output"
+        {"texto": "Uma animação de CSS.", "correta": false},
+        {"texto": "Um processo de eliminação de código morto (dead-code elimination) usado por bundlers como Webpack, que remove exportações não utilizadas para reduzir o tamanho do bundle final.", "correta": true},
+        {"texto": "Uma forma de reorganizar a árvore do DOM.", "correta": false},
+        {"texto": "Um padrão de design para estruturas de dados em árvore.", "correta": false}
+      ]
     },
     {
-      "id": 70,
-      "pergunta": "O que são 'tainted objects' (objetos 'contaminados'), um conceito de segurança introduzido no React e usado pelo Next.js?",
+      "id": 110,
+      "pergunta": "Para que serve o Optional Chaining Operator (`?.`)?",
       "opcoes": [
-        {"texto": "Objetos que causam memory leaks e precisam ser explicitamente limpos para evitar sobrecarga do servidor.", "correta": false},
-        {"texto": "Um mecanismo para impedir que dados do cliente sejam passados para o servidor sem validação.", "correta": false},
-        {"texto": "Uma função experimental para marcar componentes que devem ser renderizados apenas no servidor.", "correta": false},
-        {"texto": "Uma proteção para evitar que dados sensíveis (validados no servidor) sejam acidentalmente expostos ao cliente.", "correta": true}
-      ],
-      "dica": "Pense em uma Server Action que valida um formulário. Como você pode garantir que, ao retornar o resultado para o cliente, você não exponha acidentalmente a hash da senha do usuário que veio do banco de dados?",
-      "explicacao": "É uma camada de segurança que previne o vazamento acidental de dados do servidor para o cliente. Se uma Server Action retorna um objeto de banco de dados, ele pode ser 'contaminado' para garantir que apenas os campos seguros sejam acessíveis em Client Components.",
-      "referencia": "https://react.dev/reference/react/experimental_taintObjectReference"
+        {"texto": "Para criar um loop opcional.", "correta": false},
+        {"texto": "Para permitir a leitura de valores de propriedades aninhadas em objetos sem ter que validar explicitamente se cada referência na cadeia é válida.", "correta": true},
+        {"texto": "Para definir um parâmetro de função como opcional.", "correta": false},
+        {"texto": "Para conectar duas Promises.", "correta": false}
+      ]
     },
     {
-      "id": 71,
-      "pergunta": "Qual a diferença fundamental na estratégia de caching entre `revalidatePath` e `revalidateTag`?",
+      "id": 111,
+      "pergunta": "O que o Nullish Coalescing Operator (`??`) faz?",
       "opcoes": [
-        {"texto": "`revalidatePath` funciona para o Pages Router e `revalidateTag` para o App Router.", "correta": false},
-        {"texto": "`revalidatePath` invalida o cache de uma única URL, enquanto `revalidateTag` pode invalidar múltiplas URLs que compartilham a mesma tag de dados.", "correta": true},
-        {"texto": "`revalidateTag` é mais rápido, pois opera na Edge, enquanto `revalidatePath` opera no servidor de origem.", "correta": false},
-        {"texto": "`revalidatePath` só funciona para páginas estáticas e `revalidateTag` para páginas dinâmicas.", "correta": false}
-      ],
-      "dica": "Imagine um site de notícias. Como você invalidaria o cache da homepage, da página da categoria 'Esportes' e de todas as notícias relacionadas com uma única ação?",
-      "explicacao": "`revalidateTag` permite uma invalidação de cache baseada em dados, e não em rotas. Você pode 'taguear' diferentes chamadas `fetch` (ex: `fetch(..., { next: { tags: ['posts'] } })`) e depois invalidar todas elas de uma só vez, o que é muito mais escalável e preciso.",
-      "referencia": "https://nextjs.org/docs/app/building-your-application/caching#on-demand-revalidation"
+        {"texto": "Funciona como o operador OU (`||`).", "correta": false},
+        {"texto": "Retorna o operando do lado direito quando o do lado esquerdo é `null` ou `undefined`, e o do lado esquerdo nos outros casos.", "correta": true},
+        {"texto": "Verifica se um valor é estritamente nulo.", "correta": false},
+        {"texto": "Converte um valor para `null`.", "correta": false}
+      ]
     },
     {
-      "id": 72,
-      "pergunta": "O que são 'Intercepting Routes' (Rotas de Interceptação) no App Router?",
+      "id": 112,
+      "pergunta": "O que é 'currying'?",
       "opcoes": [
-        {"texto": "Um tipo de middleware para interceptar e modificar requisições de API.", "correta": false},
-        {"texto": "Uma forma de mostrar o conteúdo de uma rota dentro do layout da rota atual, sem uma transição de contexto completa.", "correta": true},
-        {"texto": "Uma técnica de segurança para interceptar ataques de XSS (Cross-Site Scripting).", "correta": false},
-        {"texto": "Um método para redirecionar o usuário para uma página de login se ele tentar acessar uma rota protegida.", "correta": false}
-      ],
-      "dica": "Pense em como o Instagram ou o Twitter mostram uma foto em um modal sobre o feed. A URL muda, mas você ainda vê o feed por trás.",
-      "explicacao": "Rotas de Interceptação permitem carregar uma rota (ex: `/foto/123`) no contexto de outra (ex: `/feed`). É ideal para modais, galerias de imagens e edições rápidas, pois mantém o contexto da página anterior visível e ativo.",
-      "referencia": "https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes"
+        {"texto": "Um tempero para código.", "correta": false},
+        {"texto": "A técnica de transformar uma função que aceita múltiplos argumentos em uma sequência de funções que aceitam um único argumento cada.", "correta": true},
+        {"texto": "O processo de armazenar em cache o resultado de uma função.", "correta": false},
+        {"texto": "Uma forma de escrever código assíncrono.", "correta": false}
+      ]
     },
     {
-      "id": 73,
-      "pergunta": "Qual é o propósito do hook `useFormStatus` do React, usado em conjunto com Server Actions?",
+      "id": 113,
+      "pergunta": "Qual a diferença entre os métodos `.call()` e `.apply()`?",
       "opcoes": [
-        {"texto": "Para validar os dados de um formulário antes de enviá-los.", "correta": false},
-        {"texto": "Para acessar o status de um formulário (`pending`, `data`, `method`) de um componente filho, sem precisar passar props.", "correta": true},
-        {"texto": "Para gerenciar o estado dos campos do formulário, como um substituto para `useState`.", "correta": false},
-        {"texto": "Para resetar o formulário para seu estado inicial após o envio.", "correta": false}
-      ],
-      "dica": "Como um componente `<BotaoDeSubmit />` dentro de um formulário pode saber que o formulário está em processo de envio para desabilitar a si mesmo?",
-      "explicacao": "O hook `useFormStatus` fornece o estado de um `<form>` pai. É extremamente útil para criar componentes reutilizáveis (como um botão de submit) que podem reagir ao estado de pendência do formulário, exibindo um spinner ou se desabilitando, sem prop drilling.",
-      "referencia": "https://react.dev/reference/react-dom/hooks/useFormStatus"
+        {"texto": "São idênticos.", "correta": false},
+        {"texto": "Ambos invocam uma função com um `this` específico, mas `.call()` aceita uma lista de argumentos, enquanto `.apply()` aceita um array de argumentos.", "correta": true},
+        {"texto": "`.call()` é síncrono e `.apply()` é assíncrono.", "correta": false},
+        {"texto": "`.apply()` retorna uma nova função e `.call()` a executa imediatamente.", "correta": false}
+      ]
     },
     {
-      "id": 74,
-      "pergunta": "Qual das seguintes afirmações sobre o `generateMetadata` no App Router é VERDADEIRA?",
+      "id": 114,
+      "pergunta": "O que a diretiva `'use strict';` faz?",
       "opcoes": [
-        {"texto": "Ele só pode exportar um objeto estático.", "correta": false},
-        {"texto": "Ele pode ser uma função assíncrona que busca dados para gerar metadados dinamicamente, como o título de um post.", "correta": true},
-        {"texto": "Ele é executado no lado do cliente para permitir metadados personalizados por usuário.", "correta": false},
-        {"texto": "Ele substitui completamente a necessidade do componente `<Head>` de `next/head`.", "correta": false}
-      ],
-      "dica": "Como você definiria o título da página e a imagem de preview (og:image) para milhares de páginas de produtos dinâmicos?",
-      "explicacao": "A função `generateMetadata` é a abordagem do App Router para metadados. Ela pode ser assíncrona, recebendo os `params` da rota, permitindo que você busque dados e gere metadados dinâmicos e específicos para cada página no servidor.",
-      "referencia": "https://nextjs.org/docs/app/api-reference/functions/generate-metadata"
+        {"texto": "Deixa o código mais rápido.", "correta": false},
+        {"texto": "Habilita o 'modo estrito', que altera a semântica silenciosa de erros para erros lançados e proíbe certas sintaxes.", "correta": true},
+        {"texto": "Permite o uso de TypeScript.", "correta": false},
+        {"texto": "Força o uso de `const` em vez de `let`.", "correta": false}
+      ]
     },
     {
-      "id": 75,
-      "pergunta": "Qual é a principal diferença entre os runtimes 'nodejs' e 'edge' em termos de ciclo de vida?",
+      "id": 115,
+      "pergunta": "O que `Object.create()` permite fazer?",
       "opcoes": [
-        {"texto": "Funções 'edge' têm um tempo de execução mais longo que funções 'nodejs'.", "correta": false},
-        {"texto": "Funções 'nodejs' (Serverless) têm 'cold starts', enquanto funções 'edge' têm 'warm starts' quase instantâneos.", "correta": true},
-        {"texto": "O runtime 'nodejs' é mais seguro que o 'edge'.", "correta": false},
-        {"texto": "O runtime 'edge' pode acessar o sistema de arquivos, enquanto 'nodejs' não pode.", "correta": false}
-      ],
-      "dica": "Pense no tempo que leva para uma função que não é usada há algum tempo responder à primeira requisição.",
-      "explicacao": "Funções serverless tradicionais (Node.js) podem sofrer com 'cold starts' - um atraso na primeira execução. O Edge Runtime é projetado para um provisionamento quase instantâneo, eliminando virtualmente os cold starts, o que o torna ideal para Middleware e outras funções de baixa latência.",
-      "referencia": "https://vercel.com/docs/functions/edge-functions#comparison"
+        {"texto": "Criar uma cópia profunda de um objeto.", "correta": false},
+        {"texto": "Criar um novo objeto, usando um objeto existente como o protótipo do novo objeto criado.", "correta": true},
+        {"texto": "Criar um objeto a partir de um arquivo JSON.", "correta": false},
+        {"texto": "Apenas criar um objeto vazio, como `{}`.", "correta": false}
+      ]
     },
     {
-      "id": 76,
-      "pergunta": "O que o `@next/bundle-analyzer` ajuda a diagnosticar?",
+      "id": 116,
+      "pergunta": "O que é 'debouncing'?",
       "opcoes": [
-        {"texto": "Erros de runtime na aplicação em produção.", "correta": false},
-        {"texto": "O tamanho e a composição dos bundles de JavaScript gerados, ajudando a identificar bibliotecas pesadas.", "correta": true},
-        {"texto": "Problemas de performance no servidor relacionados a chamadas de banco de dados.", "correta": false},
-        {"texto": "Inconsistências de cache entre o servidor e o cliente.", "correta": false}
-      ],
-      "dica": "É uma ferramenta para visualizar o que está dentro dos arquivos JavaScript que seu usuário final está baixando.",
-      "explicacao": "Esta ferramenta gera uma visualização interativa do conteúdo dos seus bundles JavaScript. É essencial para otimização de performance, pois permite identificar quais dependências estão contribuindo mais para o tamanho final da sua aplicação e tomar decisões sobre como reduzi-las.",
-      "referencia": "https://www.npmjs.com/package/@next/bundle-analyzer"
+        {"texto": "Uma forma de encontrar e corrigir bugs.", "correta": false},
+        {"texto": "Uma técnica de otimização que agrupa uma sequência de chamadas de função em uma única chamada, executando-a apenas após um certo tempo de inatividade.", "correta": true},
+        {"texto": "Um tipo de erro de compilação.", "correta": false},
+        {"texto": "Um método para criptografar dados.", "correta": false}
+      ]
     },
     {
-      "id": 77,
-      "pergunta": "No App Router, o que é uma 'Soft Navigation'?",
+      "id": 117,
+      "pergunta": "Qual é um dos principais casos de uso para `Symbol.iterator`?",
       "opcoes": [
-        {"texto": "Uma navegação que não altera a URL, apenas o estado da página.", "correta": false},
-        {"texto": "A navegação do lado do cliente que usa o Router Cache para evitar um recarregamento completo da página, preservando o estado do React.", "correta": true},
-        {"texto": "Uma navegação feita programaticamente usando `router.softPush()`.", "correta": false},
-        {"texto": "Um tipo de navegação que só funciona em dispositivos com tela sensível ao toque.", "correta": false}
-      ],
-      "dica": "Pense no que acontece quando você clica em um `<Link>` no App Router. Por que é tão rápido?",
-      "explicacao": "A 'Soft Navigation' é o comportamento padrão de navegação do App Router. O roteador busca o payload do RSC da rota de destino no Router Cache ou no servidor, faz a 'diff' do que mudou e atualiza o DOM sem um recarregamento completo, preservando o estado global do React e do navegador.",
-      "referencia": "https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#how-routing-and-navigation-works"
+        {"texto": "Para criar um loop infinito.", "correta": false},
+        {"texto": "Para definir o comportamento de iteração padrão de um objeto, tornando-o 'iterável' e compatível com o laço `for...of`.", "correta": true},
+        {"texto": "Para iterar sobre as propriedades de um objeto.", "correta": false},
+        {"texto": "Para encontrar um símbolo específico em uma string.", "correta": false}
+      ]
     },
     {
-      "id": 78,
-      "pergunta": "Para que serve a estratégia de 'Poisoning the cache' no contexto de segurança web?",
+      "id": 118,
+      "pergunta": "O que é 'throttling'?",
       "opcoes": [
-        {"texto": "Uma técnica para garantir que o cache esteja sempre atualizado com os dados mais recentes.", "correta": false},
-        {"texto": "Um ataque onde um ator malicioso insere uma resposta corrompida ou maliciosa no cache, que é então servida para outros usuários.", "correta": true},
-        {"texto": "Um método de depuração para forçar a limpeza de todos os caches da aplicação.", "correta": false},
-        {"texto": "Uma estratégia de otimização para pré-popular o cache com conteúdo antes que os usuários o solicitem.", "correta": false}
-      ],
-      "dica": "Pense no cache como um recurso compartilhado. O que aconteceria se alguém conseguisse salvar uma resposta maliciosa nele?",
-      "explicacao": "O envenenamento de cache é um vetor de ataque onde um invasor explora vulnerabilidades para fazer com que uma resposta prejudicial seja armazenada em um cache intermediário (como um CDN). O Next.js mitiga isso, por exemplo, incluindo o cabeçalho `Vary` para garantir que as respostas sejam cacheadas com base em cookies e outros headers relevantes.",
-      "referencia": "https://portswigger.net/web-security/web-cache-poisoning"
+        {"texto": "É o mesmo que 'debouncing'.", "correta": false},
+        {"texto": "Uma técnica de otimização que garante que uma função seja executada no máximo uma vez a cada período de tempo especificado.", "correta": true},
+        {"texto": "Um erro que acontece quando muitas funções são chamadas ao mesmo tempo.", "correta": false},
+        {"texto": "Uma forma de limitar a quantidade de memória que uma função pode usar.", "correta": false}
+      ]
     },
     {
-      "id": 79,
-      "pergunta": "Qual é a principal vantagem de usar uma estratégia de monorepo com Turborepo para gerenciar múltiplos projetos Next.js?",
+      "id": 119,
+      "pergunta": "O que o método `Promise.any()` faz?",
       "opcoes": [
-        {"texto": "Facilita o deploy de cada aplicação em um provedor de hospedagem diferente.", "correta": false},
-        {"texto": "Otimiza o processo de build e desenvolvimento através de caching remoto e execução de tarefas em paralelo, economizando tempo.", "correta": true},
-        {"texto": "Isola completamente as dependências de cada projeto, impedindo o compartilhamento de código.", "correta": false},
-        {"texto": "Reduz o tamanho final do repositório no Git.", "correta": false}
-      ],
-      "dica": "Pense em uma empresa com um site principal, um blog e um painel de controle, todos em Next.js e compartilhando uma biblioteca de componentes UI.",
-      "explicacao": "Turborepo é uma ferramenta de build de alta performance para monorepos. Ele entende as dependências entre os projetos e faz cache dos resultados das tarefas (como `build` e `test`). Se o código não mudou, ele restaura o resultado do cache em vez de re-executar a tarefa, resultando em CIs e builds locais drasticamente mais rápidos.",
-      "referencia": "https://turbo.build/repo"
+        {"texto": "Retorna a primeira Promise que resolver OU rejeitar.", "correta": false},
+        {"texto": "Retorna uma única Promise que resolve assim que uma das Promises no iterável resolver. Se todas forem rejeitadas, ele rejeita.", "correta": true},
+        {"texto": "Verifica se alguma Promise no iterável resolveu com sucesso.", "correta": false},
+        {"texto": "Executa uma função para cada Promise no iterável.", "correta": false}
+      ]
     },
     {
-      "id": 80,
-      "pergunta": "O que a função `draftMode()` permite no App Router?",
+      "id": 120,
+      "pergunta": "O que é 'Shadow DOM'?",
       "opcoes": [
-        {"texto": "Salvar rascunhos de posts diretamente no servidor do Next.js.", "correta": false},
-        {"texto": "Habilitar um modo que, por requisição, opta por uma renderização dinâmica em vez de servir conteúdo do cache estático.", "correta": true},
-        {"texto": "Criar uma versão de rascunho de todo o site para testes A/B.", "correta": false},
-        {"texto": "Reduzir a qualidade das imagens e vídeos para acelerar o desenvolvimento local.", "correta": false}
-      ],
-      "dica": "É o sucessor do Preview Mode do Pages Router, projetado para funcionar com a arquitetura de cache do App Router.",
-      "explicacao": "O `draftMode()` é a implementação do Preview Mode para o App Router. Através de uma API Route segura, ele define um cookie que instrui o Next.js a ignorar os caches estáticos (Full Route Cache, Data Cache) para aquela sessão, buscando sempre o conteúdo mais recente do CMS, ideal para visualizar rascunhos.",
-      "referencia": "https://nextjs.org/docs/app/api-reference/functions/draft-mode"
+        {"texto": "Uma cópia oculta do DOM principal.", "correta": false},
+        {"texto": "Uma tecnologia para encapsular o estilo e a marcação de um componente web, mantendo-os separados do resto do DOM do documento.", "correta": true},
+        {"texto": "Um tema escuro para o DOM.", "correta": false},
+        {"texto": "Uma versão virtual do DOM usada pelo React.", "correta": false}
+      ]
     }
   ]
 }

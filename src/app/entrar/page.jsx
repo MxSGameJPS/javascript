@@ -24,16 +24,63 @@ export default function Entrar() {
       // Salva nome, id e email do usuário no localStorage para uso global
       if (data.user) {
         if (data.user.name) {
-          localStorage.setItem("nextpath_user_name", data.user.name);
+          localStorage.setItem("javascriptpath_user_name", data.user.name);
+          try {
+            localStorage.setItem("nextpath_user_name", data.user.name);
+          } catch (e) {}
         }
         if (data.user.id) {
-          localStorage.setItem("nextpath_user_id", data.user.id);
+          localStorage.setItem("javascriptpath_user_id", data.user.id);
+          try {
+            localStorage.setItem("nextpath_user_id", data.user.id);
+          } catch (e) {}
         }
         if (data.user.email) {
-          localStorage.setItem("nextpath_user_email", data.user.email);
+          localStorage.setItem("javascriptpath_user_email", data.user.email);
+          try {
+            localStorage.setItem("nextpath_user_email", data.user.email);
+          } catch (e) {}
         }
         // dispara evento para atualizar footer
-        window.dispatchEvent(new Event("nextpath:userChanged"));
+        window.dispatchEvent(new Event("javascriptpath:userChanged"));
+
+        // ensure local id matches DB: fetch canonical profile by email and persist returned id
+        try {
+          if (data.user.email) {
+            (async () => {
+              try {
+                const r = await fetch(
+                  `/api/user/profile?email=${encodeURIComponent(
+                    data.user.email
+                  )}`
+                );
+                if (r.ok) {
+                  const profile = await r.json();
+                  if (profile.id) {
+                    localStorage.setItem("javascriptpath_user_id", profile.id);
+                    try {
+                      localStorage.setItem("nextpath_user_id", profile.id);
+                    } catch (e) {}
+                  }
+                  if (profile.email) {
+                    localStorage.setItem(
+                      "javascriptpath_user_email",
+                      profile.email
+                    );
+                    try {
+                      localStorage.setItem(
+                        "nextpath_user_email",
+                        profile.email
+                      );
+                    } catch (e) {}
+                  }
+                }
+              } catch (e) {
+                // ignore network issues here
+              }
+            })();
+          }
+        } catch (e) {}
       }
       // Redireciona para /progresso
       window.location.href = "/progresso";

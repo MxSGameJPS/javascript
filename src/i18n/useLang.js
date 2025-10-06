@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const LANG_KEY = "nextpath_lang";
+const LANG_KEY = "javascriptpath_lang";
 
 export function useLang() {
   const [lang, setLang] = useState("pt-BR");
@@ -17,11 +17,11 @@ export function useLang() {
       if (newLang) setLang(newLang);
     };
     if (typeof window !== "undefined") {
-      window.addEventListener("nextpath:langChanged", onLangChange);
+      window.addEventListener("javascriptpath:langChanged", onLangChange);
     }
     return () => {
       if (typeof window !== "undefined") {
-        window.removeEventListener("nextpath:langChanged", onLangChange);
+        window.removeEventListener("javascriptpath:langChanged", onLangChange);
       }
     };
   }, []);
