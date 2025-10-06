@@ -4,7 +4,6 @@
   padding: 4rem 2rem 1.5rem; /* reduzido para diminuir espaço abaixo */
   position: relative;
   overflow: hidden;
-  border-bottom: #818181 1px solid;
 }
 
 .hero::before {
@@ -53,16 +52,12 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--text);
+  color: #fff;
   line-height: 1.2;
 }
 
 .title .next {
-  background: linear-gradient(
-    90deg,
-    var(--accent-dark) 0%,
-    var(--surface) 100%
-  );
+  background: linear-gradient(90deg, #06f 0%, #fff 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

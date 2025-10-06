@@ -89,6 +89,7 @@ export default function Footer() {
           {userName ? (
             <span
               className={styles.userName}
+              style={{ fontWeight: 600, color: "#fff" }}
             >
               Olá, {userName}!
             </span>

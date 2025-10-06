@@ -49,7 +49,7 @@
 
 .indicadorText {
   background: rgba(255, 255, 255, 0.1);
-  color: #057a15;
+  color: #ffffff;
   padding: 0.8rem 2rem;
   border-radius: 25px;
   font-weight: 600;
@@ -69,7 +69,7 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.2rem;
-  color: #057a15;
+  color: #007bff;
   animation: bounce 2s ease-in-out infinite;
 }
 

@@ -4,16 +4,12 @@ body,
   height: 100%;
 }
 :root {
-  /* Paleta base adaptada para JavaScript: branco / amarelo */
-  --background: #ffffff; /* página principal branca */
-  --surface: #fcfcfc; /* superfícies levemente distintas */
-  --text: #111111; /* texto escuro */
-  --muted: #4b4b4b;
-  --accent: #f7df1e; /* amarelo JS */
-  --accent-dark: #e6c50f;
-  --primary: var(--accent);
-  --secondary: #f0f0f0;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --primary: #007bff;
+  --secondary: #6c757d;
   --success: #28a745;
+  --warning: #ffc107;
   --danger: #dc3545;
   --info: #17a2b8;
 }
@@ -26,8 +22,8 @@ body {
 }
 
 body {
-  color: var(--text);
-  background: var(--background);
+  color: var(--foreground);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
   font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -43,7 +39,7 @@ body {
 }
 
 a {
-  color: var(--text);
+  color: inherit;
   text-decoration: none;
 }
 

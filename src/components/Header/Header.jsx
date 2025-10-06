@@ -39,8 +39,16 @@ const Header = ({ userStats = { streak: 0, gems: 0 } }) => {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>
+          <Image
+            src="/logos/LogoIcone.png"
+            alt="NextPath Logo"
+            width={40}
+            height={40}
+            className={styles.logoImage}
+          />
           <h1 className={styles.brandName}>
-            <span className={styles.brandGradient}>JavaScriptPath</span>
+            <span className={styles.next}>Next</span>
+            <span className={styles.path}>Path</span>
           </h1>
         </div>
 

@@ -6,16 +6,11 @@ const translations = {
     progresso: "Progresso",
     perfil: "Perfil",
     idioma: "Idioma",
-    heroTitle: "O jeito grátis, divertido\ne eficaz de aprender\nJavaScript",
+    heroTitle: "O jeito grátis, divertido\ne eficaz de aprender\nNext.Js!",
     heroSubtitle:
-      "Domine os conceitos de JavaScript através de quizzes interativos e desafios práticos.",
+      "Domine os conceitos de Next através de quizzes interativos e desafios práticos.",
     heroNote:
-      "Aprenda JavaScript do básico ao avançado com exercícios práticos, sistema de níveis e acompanhamento de progresso.",
-    heroTitle: "O jeito grátis, divertido\ne eficaz de aprender\nJavaScript",
-    heroSubtitle:
-      "Domine os conceitos de JavaScript através de quizzes interativos e desafios práticos.",
-    heroNote:
-      "Aprenda JavaScript do básico ao avançado com exercícios práticos, sistema de níveis e acompanhamento de progresso.",
+      "Aprenda Next do básico ao avançado com exercícios práticos, sistema de níveis e acompanhamento de progresso.",
     statusConcluido: "Concluído",
     statusDisponivel: "Disponível",
     statusBloqueado: "Bloqueado",
@@ -43,16 +38,11 @@ const translations = {
     progresso: "Progress",
     perfil: "Profile",
     idioma: "Language",
-    heroTitle: "The free, fun\nand effective way to\nlearn JavaScript",
+    heroTitle: "The free, fun\nand effective way to\nlearn Next.js!",
     heroSubtitle:
-      "Master JavaScript concepts through interactive quizzes and practical challenges.",
+      "Master Next concepts through interactive quizzes and practical challenges.",
     heroNote:
-      "Learn JavaScript from basics to advanced with practical exercises, levels system and progress tracking.",
-    heroTitle: "The free, fun\nand effective way to\nlearn JavaScript",
-    heroSubtitle:
-      "Master JavaScript concepts through interactive quizzes and practical challenges.",
-    heroNote:
-      "Learn JavaScript from basics to advanced with practical exercises, levels system and progress tracking.",
+      "Learn Next from basics to advanced with practical exercises, levels system and progress tracking.",
     statusConcluido: "Completed",
     statusDisponivel: "Available",
     statusBloqueado: "Locked",
@@ -80,16 +70,11 @@ const translations = {
     progresso: "Progreso",
     perfil: "Perfil",
     idioma: "Idioma",
-    heroTitle: "La forma gratuita, divertida\ny eficaz de aprender\nJavaScript",
+    heroTitle: "La forma gratuita, divertida\ny eficaz de aprender\nNext.js!",
     heroSubtitle:
-      "Domina los conceptos de JavaScript mediante cuestionarios interactivos y desafíos prácticos.",
+      "Domina los conceptos de Next mediante cuestionarios interactivos y desafíos prácticos.",
     heroNote:
-      "Aprende JavaScript desde lo básico hasta avanzado con ejercicios prácticos, sistema de niveles y seguimiento de progreso.",
-    heroTitle: "La forma gratuita, divertida\ny eficaz de aprender\nJavaScript",
-    heroSubtitle:
-      "Domina los conceptos de JavaScript mediante cuestionarios interactivos y desafíos prácticos.",
-    heroNote:
-      "Aprende JavaScript desde lo básico hasta avanzado con ejercicios prácticos, sistema de niveles y seguimiento de progreso.",
+      "Aprende Next desde lo básico hasta avanzado con ejercicios prácticos, sistema de niveles y seguimiento de progreso.",
     statusConcluido: "Completado",
     statusDisponivel: "Disponible",
     statusBloqueado: "Bloqueado",

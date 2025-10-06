@@ -14,15 +14,13 @@ export default function LandingHero() {
     <section className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.left}>
-          <div className={styles.logoWrapper}>
-            <Image
-              src="/logos/js-logo.png"
-              alt="JavaScript logo"
-              width={320}
-              height={320}
-              className={styles.logoImage}
-            />
-          </div>
+          <Image
+            src="/next.svg"
+            alt="logo"
+            width={320}
+            height={320}
+            className={styles.logoImage}
+          />
         </div>
         <div className={styles.right}>
           <h1 className={styles.title}>
