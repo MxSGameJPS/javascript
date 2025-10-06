@@ -3,11 +3,54 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.6rem 1.25rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.center {
+  flex: 1;
 }
 .brand {
   font-weight: 700;
-  color: #79a9ff;
+}
+.brandGradient {
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.jsWord {
+  font-weight: 800;
+  margin-right: 0.15rem;
+}
+.path {
+  color: var(--text);
+}
+
+.brandGradient {
+  font-weight: 900;
+  background: linear-gradient(90deg, #f7df1e 0%, #f0c000 40%, #e5a700 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: jsShimmer 3s linear infinite;
+}
+
+@keyframes jsShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 .right {
   display: flex;
@@ -15,15 +58,13 @@
   gap: 1rem;
 }
 .nextLogo img {
-  /* inverter e clarear o SVG para ficar branco sem alterar o arquivo */
-  filter: invert(1) brightness(2) saturate(0);
   display: block;
 }
 .levelInfo {
   display: flex;
   gap: 0.8rem;
   align-items: center;
-  color: #fff;
+  color: var(--text);
 }
 .level {
   font-weight: 700;
@@ -38,6 +79,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: linear-gradient(180deg, var(--surface), rgb(117, 117, 117));
 }
 .question {
   font-size: 1.6rem;
@@ -55,17 +97,17 @@
 .option {
   padding: 1rem 1.25rem;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(255, 255, 255, 0.03);
-  color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  background: var(--surface);
+  color: var(--text);
   text-align: left;
 }
 .option:hover {
   box-shadow: 0 6px 18px rgba(2, 6, 23, 0.3);
 }
 .selected {
-  outline: 3px solid rgba(0, 123, 255, 0.18);
-  background: rgba(0, 123, 255, 0.06);
+  outline: 3px solid rgba(247, 223, 30, 0.18);
+  background: rgba(247, 223, 30, 0.06);
 }
 
 .footer {
@@ -78,14 +120,14 @@
 .skipBtn {
   padding: 0.8rem 1.2rem;
   border-radius: 10px;
-  background: #fff;
+  background: var(--surface);
   color: #222;
 }
 .verifyBtn {
   padding: 0.8rem 1.2rem;
   border-radius: 12px;
-  background: #07b25a;
-  color: #fff;
+  background: var(--accent);
+  color: var(--text);
   font-weight: 700;
 }
 .life {
@@ -103,7 +145,7 @@
 }
 .progressFill {
   height: 100%;
-  background: linear-gradient(90deg, #07b25a, #00e1ff);
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
   width: 0%;
 }
 
@@ -123,7 +165,7 @@
   border-radius: 10px;
   padding: 1.25rem 1.5rem;
   box-shadow: 0 20px 60px rgba(2, 6, 23, 0.6);
-  color: #fff;
+  color: var(--text);
   max-width: 680px;
   width: 100%;
 }
@@ -156,8 +198,8 @@
 .modalBtn {
   padding: 0.6rem 1rem;
   border-radius: 8px;
-  background: #07b25a;
-  color: #fff;
+  background: var(--accent);
+  color: var(--text);
   font-weight: 700;
   border: none;
 }
@@ -166,7 +208,7 @@
   color: rgba(255, 255, 255, 0.85);
 }
 .modalSuccess .modalBtn {
-  background: linear-gradient(90deg, #07b25a, #00d27a);
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
 }
 .modalError .modalBtn {
   background: linear-gradient(90deg, #ff4d4f, #d93025);
