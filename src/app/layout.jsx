@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "NextPath - Aprenda Next.js de forma divertida",
+  title: "JavaScriptPath - Aprenda JavaScript de forma divertida",
   description:
-    "Plataforma gamificada para aprender Next.js inspirada no Duolingo",
+    "Plataforma gamificada para aprender JavaScript inspirada no Duolingo",
 };
 
 export default function RootLayout({ children }) {
